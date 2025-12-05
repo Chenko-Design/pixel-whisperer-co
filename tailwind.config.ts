@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         body: ["Heebo", "sans-serif"],
-        display: ["DM Sans", "sans-serif"],
+        display: ["Playfair Display", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -84,8 +84,9 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        glass: "0 8px 32px rgba(0, 0, 0, 0.06)",
-        glow: "0 0 30px 5px hsl(var(--accent) / 0.2)",
+        glass: "0 8px 32px rgba(0, 0, 0, 0.08)",
+        glow: "0 4px 30px hsl(var(--accent) / 0.35)",
+        "glow-lg": "0 8px 50px hsl(var(--accent) / 0.4)",
       },
       keyframes: {
         "accordion-down": {
@@ -97,7 +98,7 @@ export default {
           to: { height: "0" },
         },
         "fade-up": {
-          from: { opacity: "0", transform: "translateY(30px)" },
+          from: { opacity: "0", transform: "translateY(40px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "fade-in": {
