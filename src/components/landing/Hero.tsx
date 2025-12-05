@@ -39,7 +39,7 @@ const Hero = () => {
         >
           עיצוב ובניית אתרים
           <br />
-          <span className="text-accent">שמעבירים את המסר שלך</span>
+          <span className="text-accent font-handwriting text-5xl md:text-6xl lg:text-7xl">שמעבירים את המסר שלך</span>
         </h1>
 
         {/* Subheading */}
