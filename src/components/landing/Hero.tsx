@@ -28,7 +28,7 @@ const Hero = () => {
           <img 
             src={logo} 
             alt="Chenko Design Logo" 
-            className="h-20 md:h-24 mx-auto drop-shadow-lg"
+            className="h-14 md:h-18 mx-auto"
           />
         </div>
 
