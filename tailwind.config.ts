@@ -17,7 +17,7 @@ export default {
         body: ["Heebo", "sans-serif"],
         display: ["Playfair Display", "serif"],
         headline: ["Secular One", "sans-serif"],
-        handwriting: ["Karantina", "cursive"],
+        handwriting: ["Ktav Yad", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
