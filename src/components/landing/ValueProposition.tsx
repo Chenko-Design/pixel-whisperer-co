@@ -5,58 +5,46 @@ const values = [
     icon: Target,
     title: "חוויית משתמש אינטואיטיבית",
     description: "כל אתר שאני בונה מרגיש ברור, ישר וקל להתמצאות — בלי עומס ובלי בלגן.",
-    gradient: "from-primary to-purple-500",
   },
   {
     icon: Sparkles,
     title: "עיצוב נקי ומדויק",
     description: "ויזואליות מודרנית שמעלה את תחושת האמון במותג שלך.",
-    gradient: "from-purple-500 to-pink-500",
   },
   {
     icon: Code2,
     title: "רקע טכנולוגי ומוצרי",
     description: "אני משלבת חשיבה אנליטית עם עין עיצובית כדי לייצר פתרון שעובד וגם נראה טוב.",
-    gradient: "from-pink-500 to-accent",
   },
   {
     icon: HeartHandshake,
     title: "תהליך עבודה פשוט ונעים",
     description: "שלבי עבודה ברורים, שקיפות מלאה, בלי הפתעות ובלי כאב ראש.",
-    gradient: "from-accent to-primary",
   },
 ];
 
 const ValueProposition = () => {
   return (
-    <section className="section-padding relative overflow-hidden" dir="rtl">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
-      
-      <div className="container-tight relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            למה דווקא <span className="gradient-text">אני?</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            הגישה שלי משלבת בין עיצוב יפהפה לבין חשיבה מעשית שמייצרת תוצאות
-          </p>
-        </div>
+    <section className="section-padding bg-cream-dark/50" dir="rtl">
+      <div className="container-tight">
+        <h2 className="font-display text-2xl md:text-3xl font-bold text-center mb-4">
+          למה דווקא אני?
+        </h2>
+        <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
+          הגישה שלי משלבת בין עיצוב יפהפה לבין חשיבה מעשית שמייצרת תוצאות
+        </p>
         
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {values.map((value, index) => (
             <div
               key={value.title}
-              className="group relative bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border/50 hover-lift transition-all duration-300 hover:border-primary/30"
+              className="group bg-card p-6 lg:p-8 rounded-2xl border border-border/50 hover-lift"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Gradient border on hover */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-xl from-primary/20 to-accent/20" />
-              
-              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${value.gradient} flex items-center justify-center mb-5 shadow-lg`}>
-                <value.icon className="w-7 h-7 text-white" />
+              <div className="w-12 h-12 bg-gradient-to-br from-accent/30 to-rose-200/50 rounded-xl flex items-center justify-center mb-4 group-hover:from-accent/50 group-hover:to-rose-300/60 transition-all duration-300">
+                <value.icon className="w-6 h-6 text-charcoal" />
               </div>
-              <h3 className="font-display text-xl font-semibold mb-3">
+              <h3 className="font-display text-lg font-semibold mb-2">
                 {value.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
