@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         body: ["Heebo", "sans-serif"],
-        display: ["DM Sans", "sans-serif"],
+        display: ["Plus Jakarta Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -23,15 +23,13 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        cream: {
-          DEFAULT: "hsl(var(--cream))",
-          dark: "hsl(var(--cream-dark))",
+        glass: {
+          DEFAULT: "hsl(var(--glass-bg))",
+          border: "hsl(var(--glass-border))",
         },
-        charcoal: {
-          DEFAULT: "hsl(var(--charcoal))",
-          light: "hsl(var(--charcoal-light))",
-        },
-        "warm-gray": "hsl(var(--warm-gray))",
+        "gradient-start": "hsl(var(--gradient-start))",
+        "gradient-mid": "hsl(var(--gradient-mid))",
+        "gradient-end": "hsl(var(--gradient-end))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -76,6 +74,11 @@ export default {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        glass: "0 8px 32px rgba(0, 0, 0, 0.08)",
+        glow: "0 0 40px 10px hsl(var(--primary) / 0.15)",
+        "glow-accent": "0 0 40px 10px hsl(var(--accent) / 0.15)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -93,12 +96,17 @@ export default {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.6s ease-out forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
+        shimmer: "shimmer 3s linear infinite",
       },
     },
   },

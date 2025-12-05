@@ -15,25 +15,35 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="section-padding bg-cream-dark/50" dir="rtl">
-      <div className="container-tight">
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-center mb-12">
-          מה אומרים עליי
-        </h2>
+    <section className="section-padding relative overflow-hidden" dir="rtl">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background" />
+      
+      <div className="container-tight relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="font-display text-3xl md:text-4xl font-bold">
+            מה אומרים <span className="gradient-text">עליי</span>
+          </h2>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card p-8 rounded-2xl border border-border/50 relative"
+              className="group bg-card/50 backdrop-blur-sm p-8 rounded-2xl border border-border/50 relative hover-lift hover:border-primary/30 transition-all duration-300"
             >
-              <Quote className="w-10 h-10 text-primary/10 absolute top-6 right-6" />
-              <blockquote className="text-lg leading-relaxed mb-6 relative z-10">
+              {/* Quote icon with gradient */}
+              <div className="absolute top-6 right-6 w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                <Quote className="w-6 h-6 text-primary/50" />
+              </div>
+              
+              <blockquote className="text-lg leading-relaxed mb-6 mt-8 relative z-10">
                 "{testimonial.quote}"
               </blockquote>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
-                  <span className="font-display font-semibold text-lg">
+              
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center shadow-lg">
+                  <span className="font-display font-semibold text-lg text-white">
                     {testimonial.author.charAt(0)}
                   </span>
                 </div>
