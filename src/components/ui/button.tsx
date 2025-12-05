@@ -17,7 +17,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         hero: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-xl hover:-translate-y-1 font-bold",
         "hero-outline": "border-2 border-primary bg-transparent text-primary hover:bg-primary/5 font-bold",
-        gradient: "bg-gradient-to-r from-accent via-rose-500 to-amber-500 text-white hover:shadow-xl hover:-translate-y-1 font-bold",
+        gradient: "bg-accent text-white hover:bg-accent/90 hover:shadow-xl hover:-translate-y-1 font-bold",
         glass: "bg-card border-2 border-border text-foreground hover:border-accent/50 hover:shadow-lg font-bold",
       },
       size: {
