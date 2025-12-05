@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         body: ["Heebo", "sans-serif"],
         display: ["Playfair Display", "serif"],
+        headline: ["Secular One", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

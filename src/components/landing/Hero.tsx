@@ -34,7 +34,7 @@ const Hero = () => {
 
         {/* Main Heading */}
         <h1 
-          className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6 animate-fade-up"
+          className="font-headline text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6 animate-fade-up"
           style={{ animationDelay: "0.2s" }}
         >
           עיצוב ובניית אתרים
