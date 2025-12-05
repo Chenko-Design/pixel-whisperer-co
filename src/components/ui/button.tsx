@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl text-sm font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-5 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -15,17 +15,17 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-xl hover:-translate-y-0.5 font-semibold",
-        "hero-outline": "border-2 border-primary bg-transparent text-primary hover:bg-primary/5 font-semibold",
-        gradient: "bg-gradient-to-r from-accent via-rose-400 to-amber-600 text-white hover:shadow-xl hover:-translate-y-0.5 font-semibold",
-        glass: "bg-card/80 backdrop-blur-sm border border-border text-foreground hover:bg-card hover:border-accent/30 font-semibold",
+        hero: "bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-xl hover:-translate-y-1 font-bold",
+        "hero-outline": "border-2 border-primary bg-transparent text-primary hover:bg-primary/5 font-bold",
+        gradient: "bg-gradient-to-r from-accent via-rose-500 to-amber-500 text-white hover:shadow-xl hover:-translate-y-1 font-bold",
+        glass: "bg-card border-2 border-border text-foreground hover:border-accent/50 hover:shadow-lg font-bold",
       },
       size: {
-        default: "h-10 px-6 py-2",
-        sm: "h-9 rounded-md px-4",
-        lg: "h-12 rounded-lg px-8 text-base",
-        xl: "h-14 rounded-lg px-10 text-lg",
-        icon: "h-10 w-10",
+        default: "h-11 px-6 py-2",
+        sm: "h-9 rounded-lg px-4",
+        lg: "h-13 rounded-xl px-8 text-base",
+        xl: "h-14 rounded-xl px-10 text-lg",
+        icon: "h-11 w-11",
       },
     },
     defaultVariants: {

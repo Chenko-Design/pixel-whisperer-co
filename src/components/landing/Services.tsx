@@ -1,54 +1,61 @@
-import { Globe, Rocket, Layout, RefreshCw } from "lucide-react";
+import { Globe, Rocket, Layout, RefreshCw, ArrowLeft } from "lucide-react";
 
 const services = [
   {
     icon: Globe,
     title: "עיצוב ובניית אתרי תדמית",
     description: "אתרים רספונסיביים, נקיים, מותאמים אישית ומבוססי UX.",
+    accent: "bg-accent",
   },
   {
     icon: Rocket,
     title: "דפי נחיתה ממוקדי המרה",
     description: "מתאימים למכירה, לקמפיינים, להשקות ולנוכחות דיגיטלית ראשונית.",
+    accent: "bg-rose-500",
   },
   {
     icon: Layout,
     title: "UX/UI לאפליקציות ומערכות Web",
     description: "ממשקים שעוזרים לאנשים להבין ולבצע משימות בקלות.",
+    accent: "bg-pink-500",
   },
   {
     icon: RefreshCw,
     title: "שדרוג אתרים קיימים",
     description: "הפיכת אתר מיושן למודרני, נוח, מרשים ונעים לעין.",
+    accent: "bg-amber-500",
   },
 ];
 
 const Services = () => {
   return (
-    <section className="section-padding" dir="rtl">
+    <section className="section-padding bg-cream-dark/70" dir="rtl">
       <div className="container-tight">
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-center mb-12">
-          שירותים
-        </h2>
+        <div className="text-center mb-16">
+          <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">מה אני מציעה</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold">
+            שירותים
+          </h2>
+        </div>
 
         <div className="space-y-4">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group flex items-start gap-5 p-6 rounded-2xl border border-transparent hover:border-border hover:bg-card transition-all duration-300"
+              className="group flex items-center gap-6 p-6 md:p-8 rounded-2xl bg-card border border-border/30 hover:border-accent/30 hover:shadow-lg transition-all duration-300 cursor-pointer"
             >
-              <div className="w-14 h-14 bg-secondary rounded-xl flex items-center justify-center shrink-0 group-hover:bg-gradient-to-br group-hover:from-accent/40 group-hover:to-rose-200/50 transition-all duration-300">
-                <service.icon className="w-7 h-7" />
+              <div className={`w-16 h-16 ${service.accent} rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <service.icon className="w-8 h-8 text-white" />
               </div>
-              <div>
-                <h3 className="font-display text-lg font-semibold mb-1 flex items-center gap-2">
-                  <span className="text-accent">⭐</span>
+              <div className="flex-1">
+                <h3 className="font-display text-xl font-bold mb-1">
                   {service.title}
                 </h3>
                 <p className="text-muted-foreground">
                   {service.description}
                 </p>
               </div>
+              <ArrowLeft className="w-6 h-6 text-muted-foreground/40 group-hover:text-accent group-hover:-translate-x-2 transition-all duration-300" />
             </div>
           ))}
         </div>

@@ -33,35 +33,38 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="section-padding bg-cream-dark/50" dir="rtl">
-      <div className="container-tight">
-        <h2 className="font-display text-2xl md:text-3xl font-bold text-center mb-4">
-          איך זה עובד?
-        </h2>
-        <p className="text-muted-foreground text-center mb-12 max-w-xl mx-auto">
-          תהליך עבודה ברור ושקוף מתחילה ועד סוף
-        </p>
+    <section className="section-padding relative overflow-hidden" dir="rtl">
+      {/* Background decoration */}
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-rose-400/10 decorative-blob blur-3xl animate-morph" />
+      
+      <div className="container-tight relative z-10">
+        <div className="text-center mb-16">
+          <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">תהליך העבודה</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            איך זה עובד?
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            תהליך עבודה ברור ושקוף מתחילה ועד סוף
+          </p>
+        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {steps.map((step, index) => (
             <div
               key={step.number}
-              className="relative group"
+              className="group relative"
             >
-              <div className="bg-card p-6 rounded-2xl border border-border/50 h-full hover-lift">
-                <span className="font-display text-4xl font-bold text-accent/30 group-hover:text-accent/50 transition-colors">
+              <div className="bg-card p-8 rounded-3xl border border-border/50 h-full hover-lift group-hover:border-accent/30 transition-all duration-300">
+                <span className="font-display text-6xl font-bold text-accent/20 group-hover:text-accent/40 transition-colors">
                   {step.number}
                 </span>
-                <h3 className="font-display text-lg font-semibold mt-2 mb-1">
+                <h3 className="font-display text-xl font-bold mt-2 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground">
                   {step.description}
                 </p>
               </div>
-              {index < steps.length - 1 && index % 3 !== 2 && (
-                <div className="hidden lg:block absolute top-1/2 -left-3 w-6 h-0.5 bg-border" />
-              )}
             </div>
           ))}
         </div>
