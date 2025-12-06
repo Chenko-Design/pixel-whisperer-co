@@ -32,8 +32,9 @@ const Hero = () => {
           muted 
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
+          key="hero-video-v2"
         >
-          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+          <source src="/videos/hero-bg.mp4?v=2" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/30 to-background/60" />
         
