@@ -34,10 +34,10 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/30 to-background/60" />
         
         {/* Content Grid */}
-        <div className="relative z-10 w-full px-8 md:px-16">
-          <div className="flex justify-end">
-            {/* Text content - aligned right */}
-            <div className="text-right" dir="rtl">
+        <div className="relative z-10 w-full px-8 md:px-16" dir="rtl">
+          <div className="flex justify-start">
+            {/* Text content - aligned right (start in RTL) */}
+            <div className="text-right">
               <h1 className="font-headline text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-4 animate-fade-up">
                 עיצוב ובניית אתרים
               </h1>
