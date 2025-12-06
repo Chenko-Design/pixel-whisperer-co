@@ -35,11 +35,8 @@ const Hero = () => {
         
         {/* Content Grid */}
         <div className="relative z-10 w-full px-8 md:px-16">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left side - empty for background image */}
-            <div />
-            
-            {/* Right side - Text content */}
+          <div className="flex justify-end">
+            {/* Text content - aligned right */}
             <div className="text-right" dir="rtl">
               <h1 className="font-headline text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-4 animate-fade-up">
                 עיצוב ובניית אתרים
