@@ -48,6 +48,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Miriwin';
+  src: url('/fonts/miriwin-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Yarden';
+  src: url('/fonts/yarden-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Yarden';
+  src: url('/fonts/yarden-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
