@@ -8,6 +8,30 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Polin';
+  src: url('/fonts/polin-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Polin';
+  src: url('/fonts/polin-extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Polin';
+  src: url('/fonts/polin-black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
