@@ -56,12 +56,9 @@ const Hero = () => {
           
           {/* Bottom section */}
           <div 
-            className="absolute bottom-20 left-8 md:left-16 max-w-md animate-fade-up"
+            className="absolute bottom-8 left-8 md:left-16 right-8 md:right-16 flex items-center justify-between animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <p className="text-foreground/80 text-lg mb-6">
-              Crafting seamless experiences every step of the way.
-            </p>
             <div className="flex items-center gap-6">
               <Button 
                 variant="outline" 
