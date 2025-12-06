@@ -43,14 +43,8 @@ const Hero = () => {
             {/* Text content - aligned right (start in RTL) */}
             <div className="text-right">
               <h1 className="font-headline font-black text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-4 animate-fade-up">
-                עיצוב ובניית אתרים
+                אתר שמעביר את הערך שלכם
               </h1>
-              <h2 
-                className="font-handwriting text-4xl md:text-5xl lg:text-6xl text-violet-600 mb-12 animate-fade-up"
-                style={{ animationDelay: "0.1s" }}
-              >
-                שמעבירים את המסר שלך
-              </h2>
             </div>
           </div>
           
