@@ -1,75 +1,87 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Eye } from "lucide-react";
+import { Instagram, Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   return (
-    <section 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      dir="rtl"
-    >
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background" />
-      
-      {/* Decorative floating shapes */}
-      <div className="absolute top-32 right-[15%] w-72 h-72 bg-accent/25 decorative-blob animate-morph animate-float blur-2xl" />
-      <div className="absolute bottom-32 left-[10%] w-56 h-56 bg-rose-400/20 decorative-blob animate-morph animate-float-reverse blur-2xl" style={{ animationDelay: "2s" }} />
-      <div className="absolute top-1/2 right-[60%] w-40 h-40 bg-amber-400/15 decorative-blob animate-morph blur-xl" style={{ animationDelay: "4s" }} />
-      
-      {/* Content */}
-      <div className="container-tight relative z-10 text-center py-20">
-        {/* Logo */}
-        <div className="mb-10 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+    <section className="relative min-h-screen flex flex-col">
+      {/* Header */}
+      <header className="relative z-20 flex items-center justify-between py-6 px-8 md:px-16">
+        <div className="flex items-center gap-3">
           <img 
             src={logo} 
             alt="Chenko Design Logo" 
-            className="h-14 md:h-18 mx-auto"
+            className="h-10 md:h-12"
           />
         </div>
+        <nav className="hidden md:flex items-center gap-8">
+          <a href="#" className="text-foreground hover:text-accent transition-colors font-medium border-b-2 border-foreground pb-1">Home</a>
+          <a href="#portfolio" className="text-foreground/70 hover:text-foreground transition-colors">Portfolio</a>
+          <a href="#about" className="text-foreground/70 hover:text-foreground transition-colors">About</a>
+          <a href="#process" className="text-foreground/70 hover:text-foreground transition-colors">Process</a>
+        </nav>
+        <div className="w-24" /> {/* Spacer for balance */}
+      </header>
 
-        {/* Main Heading */}
-        <h1 
-          className="font-headline text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-6 animate-fade-up"
-          style={{ animationDelay: "0.2s" }}
-        >
-          עיצוב ובניית אתרים
-          <br />
-          <span className="text-accent font-handwriting text-5xl md:text-6xl lg:text-7xl">שמעבירים את המסר שלך</span>
-        </h1>
-
-        {/* Subheading */}
-        <p 
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-up leading-relaxed"
-          style={{ animationDelay: "0.3s" }}
-        >
-          מאתרים תדמיתיים ועד דפי נחיתה — אני בונה חוויות דיגיטליות שמתאימות בדיוק לעסק שלך ומייצרות אמון והמרה.
-        </p>
-
-        {/* CTA Buttons */}
+      {/* Hero Content */}
+      <div className="flex-1 relative flex items-center">
+        {/* Background with texture */}
         <div 
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <Button variant="gradient" size="xl" className="group glow-lg">
-            דברו איתי
-            <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
-          </Button>
-          <Button variant="glass" size="xl" className="group">
-            <Eye className="h-5 w-5" />
-            צפו בעבודות
-          </Button>
-        </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">
-        <div className="w-7 h-11 border-2 border-accent/40 rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-2.5 bg-accent/60 rounded-full animate-bounce" />
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/30 to-background/60" />
+        
+        {/* Content Grid */}
+        <div className="relative z-10 w-full px-8 md:px-16">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left side - empty for background image */}
+            <div />
+            
+            {/* Right side - Text content */}
+            <div className="text-right" dir="rtl">
+              <h1 className="font-headline text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-4 animate-fade-up">
+                עיצוב ובניית אתרים
+              </h1>
+              <h2 
+                className="font-handwriting text-4xl md:text-5xl lg:text-6xl text-violet-600 mb-12 animate-fade-up"
+                style={{ animationDelay: "0.1s" }}
+              >
+                שמעבירים את המסר שלך
+              </h2>
+            </div>
+          </div>
+          
+          {/* Bottom section */}
+          <div 
+            className="absolute bottom-20 left-8 md:left-16 max-w-md animate-fade-up"
+            style={{ animationDelay: "0.2s" }}
+          >
+            <p className="text-foreground/80 text-lg mb-6">
+              Crafting seamless experiences every step of the way.
+            </p>
+            <div className="flex items-center gap-6">
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="rounded-full px-8 border-foreground/30 hover:bg-foreground hover:text-background"
+              >
+                See More
+              </Button>
+              <div className="flex items-center gap-4">
+                <a href="#" className="text-foreground/70 hover:text-foreground transition-colors">
+                  <Instagram className="h-5 w-5" />
+                </a>
+                <a href="#" className="text-foreground/70 hover:text-foreground transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a href="#" className="text-foreground/70 hover:text-foreground transition-colors">
+                  <Mail className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
