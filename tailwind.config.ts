@@ -21,6 +21,8 @@ export default {
         doodle: ["Rubik Doodle Triangles", "cursive"],
         gadi: ["Gadi Almog", "sans-serif"],
         dana: ["Dana Yad", "cursive"],
+        miriwin: ["Miriwin", "sans-serif"],
+        yarden: ["Yarden", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
