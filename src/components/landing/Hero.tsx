@@ -56,7 +56,7 @@ const Hero = () => {
           
           {/* Bottom section */}
           <div 
-            className="absolute bottom-4 left-8 md:left-16 right-8 md:right-16 flex items-center justify-between animate-fade-up"
+            className="absolute -bottom-16 left-8 md:left-16 right-8 md:right-16 flex items-center justify-between animate-fade-up pb-8"
             style={{ animationDelay: "0.2s" }}
           >
             <div className="flex items-center gap-6">
