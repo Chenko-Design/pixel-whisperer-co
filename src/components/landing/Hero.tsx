@@ -45,6 +45,12 @@ const Hero = () => {
               <h1 className="font-headline font-black text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-4 animate-fade-up">
                 אתר שמעביר את הערך שלכם
               </h1>
+              <h2 
+                className="font-headline font-bold text-3xl md:text-4xl lg:text-5xl text-foreground/80 mb-12 animate-fade-up"
+                style={{ animationDelay: "0.1s" }}
+              >
+                וגורם ללקוחות להבין שהם במקום הנכון
+              </h2>
             </div>
           </div>
           
