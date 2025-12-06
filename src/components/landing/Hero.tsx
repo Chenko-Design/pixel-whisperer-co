@@ -42,7 +42,7 @@ const Hero = () => {
           <div className="flex justify-start">
             {/* Text content - aligned right (start in RTL) */}
             <div className="text-right">
-              <h1 className="font-headline text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-4 animate-fade-up">
+              <h1 className="font-headline font-black text-5xl md:text-6xl lg:text-7xl text-foreground leading-tight mb-4 animate-fade-up">
                 עיצוב ובניית אתרים
               </h1>
               <h2 

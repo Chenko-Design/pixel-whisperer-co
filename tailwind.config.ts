@@ -16,7 +16,7 @@ export default {
       fontFamily: {
         body: ["Heebo", "sans-serif"],
         display: ["Playfair Display", "serif"],
-        headline: ["Secular One", "sans-serif"],
+        headline: ["Polin", "sans-serif"],
         handwriting: ["Ktav Yad", "cursive"],
       },
       colors: {
