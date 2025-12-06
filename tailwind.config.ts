@@ -18,6 +18,7 @@ export default {
         display: ["Playfair Display", "serif"],
         headline: ["Polin", "sans-serif"],
         handwriting: ["Ktav Yad", "cursive"],
+        doodle: ["Rubik Doodle Triangles", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
