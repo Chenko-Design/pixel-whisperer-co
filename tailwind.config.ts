@@ -19,6 +19,8 @@ export default {
         headline: ["Polin", "sans-serif"],
         handwriting: ["Ktav Yad", "cursive"],
         doodle: ["Rubik Doodle Triangles", "cursive"],
+        gadi: ["Gadi Almog", "sans-serif"],
+        dana: ["Dana Yad", "cursive"],
       },
       colors: {
         border: "hsl(var(--border))",
