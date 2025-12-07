@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
-import heroBg from "@/assets/hero-bg-orange.jpg";
+import heroBg from "@/assets/hero-bg-abstract.jpg";
 
 const Hero = () => {
 
@@ -31,7 +31,7 @@ const Hero = () => {
         <img 
           src={heroBg} 
           alt="Abstract background"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover -scale-x-100 -scale-y-100"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/30 to-background/60" />
         
