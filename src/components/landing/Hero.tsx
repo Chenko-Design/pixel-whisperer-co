@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
-import heroBg from "@/assets/hero-bg-abstract.jpg";
+import heroBg from "@/assets/hero-bg-orange.jpg";
 
 const Hero = () => {
 
@@ -31,9 +31,9 @@ const Hero = () => {
         <img 
           src={heroBg} 
           alt="Abstract background"
-          className="absolute inset-0 w-full h-full object-cover -scale-x-100 -scale-y-100"
+          className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-background/30 to-background/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/30 to-background/60" />
         
         {/* Content Grid */}
         <div className="relative z-10 w-full px-8 md:px-16" dir="rtl">
