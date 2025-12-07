@@ -113,8 +113,8 @@ export default {
           to: { opacity: "1" },
         },
         "reveal": {
-          from: { clipPath: "inset(0 100% 0 0)" },
-          to: { clipPath: "inset(0 0% 0 0)" },
+          from: { clipPath: "inset(0 0 0 100%)" },
+          to: { clipPath: "inset(0 0 0 0%)" },
         },
       },
       animation: {
