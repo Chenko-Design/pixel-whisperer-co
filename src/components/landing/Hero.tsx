@@ -44,12 +44,11 @@ const Hero = () => {
                 אתר שמעביר את הערך שלכם
               </h1>
               <h2 
-                className="font-body text-2xl md:text-3xl lg:text-4xl mb-12 relative"
+                className="font-body text-2xl md:text-3xl lg:text-4xl mb-12 relative overflow-hidden"
                 style={{ animationDelay: "0.1s" }}
               >
-                <span className="text-gray-400">וגורם ללקוחות להבין שהם במקום הנכון</span>
                 <span 
-                  className="absolute inset-0 text-gray-800 overflow-hidden animate-[reveal_1.5s_ease-out_0.8s_forwards]"
+                  className="text-gray-800 animate-[reveal_2s_ease-out_0.8s_forwards]"
                   style={{ clipPath: 'inset(0 0 0 100%)' }}
                 >
                   וגורם ללקוחות להבין שהם במקום הנכון
