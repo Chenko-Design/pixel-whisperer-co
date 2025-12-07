@@ -50,7 +50,7 @@ const Hero = () => {
                 <span className="text-gray-400">וגורם ללקוחות להבין שהם במקום הנכון</span>
                 <span 
                   className="absolute inset-0 text-gray-800 overflow-hidden animate-[reveal_1.5s_ease-out_0.8s_forwards]"
-                  style={{ clipPath: 'inset(0 100% 0 0)' }}
+                  style={{ clipPath: 'inset(0 0 0 100%)' }}
                 >
                   וגורם ללקוחות להבין שהם במקום הנכון
                 </span>
