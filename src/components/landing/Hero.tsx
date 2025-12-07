@@ -44,7 +44,7 @@ const Hero = () => {
                 אתר שמעביר את הערך שלכם
               </h1>
               <h2 
-                className="font-body text-2xl md:text-3xl lg:text-4xl mb-12 relative overflow-hidden"
+                className="font-body text-xl md:text-3xl lg:text-4xl mb-12 relative overflow-hidden"
                 style={{ animationDelay: "0.1s" }}
               >
                 <span 
