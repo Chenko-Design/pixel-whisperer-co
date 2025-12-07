@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
+import heroBg from "@/assets/hero-bg-abstract.jpg";
 
 const Hero = () => {
   return (
@@ -25,17 +26,12 @@ const Hero = () => {
 
       {/* Hero Content */}
       <div className="flex-1 relative flex items-center">
-        {/* Video Background */}
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
+        {/* Image Background */}
+        <img 
+          src={heroBg} 
+          alt="Abstract background"
           className="absolute inset-0 w-full h-full object-cover"
-          key="hero-video-v3"
-        >
-          <source src="/videos/hero-bg.mp4?v=3" type="video/mp4" />
-        </video>
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/30 to-background/60" />
         
         {/* Content Grid */}
