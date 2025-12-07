@@ -25,7 +25,7 @@ const Hero = () => {
       </header>
 
       {/* Hero Content */}
-      <div className="flex-1 relative flex items-center">
+      <div className="flex-1 relative flex items-start pt-16 md:pt-24">
         {/* Image Background */}
         <img 
           src={heroBg} 
