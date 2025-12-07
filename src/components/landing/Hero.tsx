@@ -1,31 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail } from "lucide-react";
-import { useState, useEffect } from "react";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg-abstract.jpg";
 
 const Hero = () => {
-  const fullText = "וגורם ללקוחות להבין שהם במקום הנכון";
-  const [displayedText, setDisplayedText] = useState("");
-  const [showCursor, setShowCursor] = useState(true);
-
-  useEffect(() => {
-    let currentIndex = 0;
-    const typingDelay = setTimeout(() => {
-      const interval = setInterval(() => {
-        if (currentIndex < fullText.length) {
-          setDisplayedText(fullText.slice(0, currentIndex + 1));
-          currentIndex++;
-        } else {
-          clearInterval(interval);
-          setTimeout(() => setShowCursor(false), 500);
-        }
-      }, 50);
-      return () => clearInterval(interval);
-    }, 800);
-
-    return () => clearTimeout(typingDelay);
-  }, []);
 
   return (
     <section className="relative min-h-screen flex flex-col">
@@ -66,11 +44,16 @@ const Hero = () => {
                 אתר שמעביר את הערך שלכם
               </h1>
               <h2 
-                className="font-body text-2xl md:text-3xl lg:text-4xl text-gray-800 mb-12"
+                className="font-body text-2xl md:text-3xl lg:text-4xl mb-12 relative"
                 style={{ animationDelay: "0.1s" }}
               >
-                {displayedText}
-                {showCursor && <span className="animate-pulse">|</span>}
+                <span className="text-gray-400">וגורם ללקוחות להבין שהם במקום הנכון</span>
+                <span 
+                  className="absolute inset-0 text-gray-800 overflow-hidden animate-[reveal_1.5s_ease-out_0.8s_forwards]"
+                  style={{ clipPath: 'inset(0 100% 0 0)' }}
+                >
+                  וגורם ללקוחות להבין שהם במקום הנכון
+                </span>
               </h2>
             </div>
           </div>

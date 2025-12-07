@@ -112,6 +112,10 @@ export default {
           from: { opacity: "0" },
           to: { opacity: "1" },
         },
+        "reveal": {
+          from: { clipPath: "inset(0 100% 0 0)" },
+          to: { clipPath: "inset(0 0% 0 0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
