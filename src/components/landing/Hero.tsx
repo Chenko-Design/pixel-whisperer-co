@@ -39,11 +39,11 @@ const Hero = () => {
           <div className="flex justify-start">
             {/* Text content - aligned right (start in RTL) */}
             <div className="text-right">
-              <h1 className="font-headline font-black text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight mb-4 animate-fade-up">
+              <h1 className="font-headline font-black text-4xl md:text-5xl lg:text-6xl text-white leading-tight mb-4 animate-fade-up">
                 אתר שמעביר את הערך שלכם
               </h1>
               <h2 
-                className="font-body text-2xl md:text-3xl lg:text-4xl text-foreground/80 mb-12 animate-fade-up"
+                className="font-body text-2xl md:text-3xl lg:text-4xl text-white/80 mb-12 animate-fade-up"
                 style={{ animationDelay: "0.1s" }}
               >
                 וגורם ללקוחות להבין שהם במקום הנכון
