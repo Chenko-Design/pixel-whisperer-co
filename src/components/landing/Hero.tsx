@@ -48,16 +48,16 @@ const Hero = () => {
             style={{ animationDelay: "0.2s" }}
           >
             <div className="flex items-center gap-3">
-              <span className="text-gray-900 font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
               <img src={iconSparkles} alt="" className="h-10 w-10" />
+              <span className="text-gray-900 font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-gray-900 font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
               <img src={iconHandshake} alt="" className="h-10 w-10" />
+              <span className="text-gray-900 font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
             </div>
             <div className="flex items-center gap-3">
-              <span className="text-gray-900 font-medium text-sm md:text-base">תהליך ברור ונעים</span>
               <img src={iconLeaf} alt="" className="h-10 w-10" />
+              <span className="text-gray-900 font-medium text-sm md:text-base">תהליך ברור ונעים</span>
             </div>
           </div>
           
