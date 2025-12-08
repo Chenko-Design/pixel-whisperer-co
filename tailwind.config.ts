@@ -117,12 +117,17 @@ export default {
           from: { clipPath: "inset(0 0 0 100%)" },
           to: { clipPath: "inset(0 0 0 0%)" },
         },
+        "typing": {
+          from: { width: "0" },
+          to: { width: "100%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.6s ease-out forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
+        "typing": "typing 2s steps(30, end) 0.3s forwards",
       },
     },
   },

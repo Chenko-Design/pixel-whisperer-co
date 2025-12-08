@@ -35,8 +35,8 @@ const Hero = () => {
             </h1>
             
             <h2 
-              className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-12 animate-fade-up w-full"
-              style={{ animationDelay: "0.1s", textAlign: "justify", textAlignLast: "justify" }}
+              className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-12 w-full overflow-hidden whitespace-nowrap animate-typing"
+              style={{ textAlign: "justify", textAlignLast: "justify" }}
             >
               וגורם ללקוחות להבין שהם במקום הנכון
             </h2>
