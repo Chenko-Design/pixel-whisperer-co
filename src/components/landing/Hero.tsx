@@ -30,12 +30,15 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto" dir="rtl">
           {/* Main Heading with subtitle */}
           <div className="inline-block">
-            <h1 className="font-horev text-6xl md:text-7xl lg:text-9xl text-gray-900 leading-tight mb-2 animate-fade-up">
+            <h1 
+              className="font-horev text-6xl md:text-7xl lg:text-9xl text-gray-900 leading-tight mb-2 animate-fade-up"
+              style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)" }}
+            >
               אתר שמעביר את הערך שלך
             </h1>
             
             <h2 
-              className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-12 w-full overflow-hidden whitespace-nowrap animate-typing tracking-wide font-semibold"
+              className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-16 w-full overflow-hidden whitespace-nowrap animate-typing tracking-wide font-semibold"
               style={{ textAlign: "justify", textAlignLast: "justify", wordSpacing: "-0.2em" }}
             >
               וגורם ללקוחות להבין שהם במקום הנכון
@@ -44,26 +47,26 @@ const Hero = () => {
           
           {/* 3 Feature Icons */}
           <div 
-            className="flex flex-wrap justify-center gap-8 md:gap-16 mb-8 animate-fade-up"
+            className="flex flex-wrap justify-center gap-10 md:gap-20 mb-12 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="flex items-center gap-3">
-              <img src={iconSparkles} alt="" className="h-10 w-10" />
+            <div className="flex items-center gap-3 group cursor-pointer">
+              <img src={iconSparkles} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
               <span className="text-gray-900 font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
             </div>
-            <div className="flex items-center gap-3">
-              <img src={iconHandshake} alt="" className="h-10 w-10" />
+            <div className="flex items-center gap-3 group cursor-pointer">
+              <img src={iconHandshake} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
               <span className="text-gray-900 font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
             </div>
-            <div className="flex items-center gap-3">
-              <img src={iconLeaf} alt="" className="h-10 w-10" />
+            <div className="flex items-center gap-3 group cursor-pointer">
+              <img src={iconLeaf} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
               <span className="text-gray-900 font-medium text-sm md:text-base">תהליך ברור ונעים</span>
             </div>
           </div>
           
           {/* Tagline */}
           <p 
-            className="text-gray-900 text-base md:text-lg mb-10 animate-fade-up"
+            className="text-gray-900 text-base md:text-lg mb-14 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
             בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
@@ -71,7 +74,7 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div 
-            className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-up"
+            className="flex flex-wrap justify-center gap-5 mb-16 animate-fade-up"
             style={{ animationDelay: "0.4s" }}
           >
             <Button 
