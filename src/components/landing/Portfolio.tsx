@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, ChevronRight, ChevronLeft } from "lucide-react";
 import projectRidely from "@/assets/project-ridely.jpg";
 import projectTopbred from "@/assets/project-topbred.jpg";
 import projectWomen from "@/assets/project-women.jpg";
@@ -23,6 +24,16 @@ const projects = [
 ];
 
 const Portfolio = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const nextSlide = () => {
+    setActiveIndex((prev) => (prev + 1) % projects.length);
+  };
+
+  const prevSlide = () => {
+    setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  };
+
   return (
     <section className="section-padding bg-cream-dark/70" dir="rtl">
       <div className="container-tight">
@@ -33,36 +44,78 @@ const Portfolio = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="group relative overflow-hidden rounded-3xl bg-secondary aspect-[4/5] cursor-pointer shadow-lg"
-            >
+        {/* Carousel */}
+        <div className="flex flex-col md:flex-row gap-4 items-center">
+          {/* Main large image */}
+          <div className="w-full md:w-2/3 relative">
+            <div className="group relative overflow-hidden rounded-3xl bg-secondary aspect-[4/3] cursor-pointer shadow-xl">
               <img
-                src={project.image}
-                alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                src={projects[activeIndex].image}
+                alt={projects[activeIndex].title}
+                className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
               />
               {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" />
               
               {/* Icon */}
-              <div className="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
+              <div className="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
                 <ExternalLink className="w-5 h-5 text-white" />
               </div>
               
               {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+              <div className="absolute bottom-0 left-0 right-0 p-8">
                 <span className="text-white/70 text-sm font-medium">
-                  {project.category}
+                  {projects[activeIndex].category}
                 </span>
-                <h3 className="font-display text-2xl font-bold text-white">
-                  {project.title}
+                <h3 className="font-display text-3xl md:text-4xl font-bold text-white">
+                  {projects[activeIndex].title}
                 </h3>
               </div>
             </div>
-          ))}
+
+            {/* Navigation arrows */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
+              <button
+                onClick={prevSlide}
+                className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto hover:scale-110"
+              >
+                <ChevronLeft className="w-6 h-6 text-gray-800" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto hover:scale-110"
+              >
+                <ChevronRight className="w-6 h-6 text-gray-800" />
+              </button>
+            </div>
+          </div>
+
+          {/* Thumbnails */}
+          <div className="w-full md:w-1/3 flex md:flex-col gap-3">
+            {projects.map((project, index) => (
+              <button
+                key={project.title}
+                onClick={() => setActiveIndex(index)}
+                className={`relative overflow-hidden rounded-2xl aspect-[4/3] flex-1 transition-all duration-300 ${
+                  index === activeIndex 
+                    ? "ring-4 ring-[#D87341] shadow-lg scale-105" 
+                    : "opacity-60 hover:opacity-100"
+                }`}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
+                <div className="absolute bottom-2 right-2 left-2">
+                  <span className="text-white text-xs font-medium truncate block">
+                    {project.title}
+                  </span>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">
