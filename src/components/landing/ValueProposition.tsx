@@ -115,7 +115,7 @@ const ValueProposition = () => {
                 </div>
               ) : null}
               
-              <h3 className="font-display text-xl font-bold mb-3 relative z-10 text-center">
+              <h3 className="font-headline text-xl font-bold mb-3 relative z-10 text-center text-foreground">
                 {value.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed relative z-10 text-center">
