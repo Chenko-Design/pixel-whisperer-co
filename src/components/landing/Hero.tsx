@@ -29,13 +29,13 @@ const Hero = () => {
         {/* Main content - centered */}
         <div className="text-center max-w-4xl mx-auto" dir="rtl">
           {/* Main Heading */}
-          <h1 className="font-horev text-5xl md:text-6xl lg:text-8xl text-white leading-tight mb-4 animate-fade-up">
+          <h1 className="font-horev text-5xl md:text-6xl lg:text-8xl text-gray-900 leading-tight mb-4 animate-fade-up">
             אתר שמעביר את הערך שלך
           </h1>
           
           {/* Subtitle */}
           <h2 
-            className="font-body text-xl md:text-2xl lg:text-3xl text-gray-900 mb-12 animate-fade-up"
+            className="font-body text-xl md:text-2xl lg:text-3xl text-white mb-12 animate-fade-up"
             style={{ animationDelay: "0.1s" }}
           >
             וגורם ללקוחות להבין שהם במקום הנכון
