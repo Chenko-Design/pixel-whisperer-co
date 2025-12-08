@@ -38,7 +38,7 @@ const Services = () => {
           </h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-4 max-w-2xl mx-auto">
           {services.map((service, index) => (
             <div
               key={service.title}
