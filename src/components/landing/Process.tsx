@@ -48,8 +48,8 @@ const Process = () => {
           </p>
         </div>
 
-        {/* Timeline - Desktop */}
-        <div className="hidden lg:block relative">
+        {/* Timeline - Desktop/Tablet */}
+        <div className="hidden md:block relative">
           {/* Wavy SVG Line */}
           <svg 
             className="absolute top-1/2 right-0 w-full h-24 -translate-y-1/2 z-0" 
@@ -118,8 +118,8 @@ const Process = () => {
           </div>
         </div>
 
-        {/* Timeline - Mobile/Tablet (vertical) */}
-        <div className="lg:hidden relative">
+        {/* Timeline - Mobile (vertical) */}
+        <div className="md:hidden relative">
           {/* Vertical line */}
           <div className="absolute right-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#D87341] to-[#F4CBB5]" />
           
