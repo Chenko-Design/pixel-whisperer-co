@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink, ChevronRight, ChevronLeft } from "lucide-react";
 import projectRidely from "@/assets/project-ridely.jpg";
 import projectTopbred from "@/assets/project-topbred.jpg";
 import projectWomen from "@/assets/project-women.jpg";
+import projectCaptain from "@/assets/project-captain.jpg";
 
 const projects = [
   {
@@ -21,18 +22,37 @@ const projects = [
     category: "דף נחיתה",
     image: projectWomen,
   },
+  {
+    title: "Captain Invest",
+    category: "אתר תדמית",
+    image: projectCaptain,
+  },
 ];
+
+const AUTOPLAY_INTERVAL = 4000;
 
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % projects.length);
-  };
+  }, []);
 
   const prevSlide = () => {
     setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
   };
+
+  // Autoplay
+  useEffect(() => {
+    if (isPaused) return;
+    
+    const interval = setInterval(() => {
+      nextSlide();
+    }, AUTOPLAY_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [isPaused, nextSlide]);
 
   return (
     <section className="section-padding bg-cream-dark/70" dir="rtl">
@@ -45,7 +65,11 @@ const Portfolio = () => {
         </div>
 
         {/* Carousel */}
-        <div className="flex flex-col md:flex-row gap-4 items-center">
+        <div 
+          className="flex flex-col md:flex-row gap-4 items-center"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           {/* Main large image */}
           <div className="w-full md:w-2/3 relative">
             <div className="group relative overflow-hidden rounded-3xl bg-secondary aspect-[4/3] cursor-pointer shadow-xl">
@@ -70,6 +94,17 @@ const Portfolio = () => {
                 <h3 className="font-display text-3xl md:text-4xl font-bold text-white">
                   {projects[activeIndex].title}
                 </h3>
+              </div>
+
+              {/* Progress bar */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
+                <div 
+                  className="h-full bg-[#D87341] transition-all"
+                  style={{
+                    animation: isPaused ? 'none' : `progress ${AUTOPLAY_INTERVAL}ms linear`,
+                    width: isPaused ? '0%' : '100%'
+                  }}
+                />
               </div>
             </div>
 
@@ -125,6 +160,13 @@ const Portfolio = () => {
           </Button>
         </div>
       </div>
+
+      <style>{`
+        @keyframes progress {
+          from { width: 0%; }
+          to { width: 100%; }
+        }
+      `}</style>
     </section>
   );
 };
