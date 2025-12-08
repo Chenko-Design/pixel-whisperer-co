@@ -29,7 +29,7 @@ const Hero = () => {
         {/* Main content - centered */}
         <div className="text-center max-w-4xl mx-auto" dir="rtl">
           {/* Main Heading */}
-          <h1 className="font-horev text-5xl md:text-6xl lg:text-8xl text-gray-900 leading-tight mb-4 animate-fade-up">
+          <h1 className="font-horev text-6xl md:text-7xl lg:text-9xl text-gray-900 leading-tight mb-4 animate-fade-up">
             אתר שמעביר את הערך שלך
           </h1>
           
