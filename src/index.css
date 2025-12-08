@@ -9,6 +9,14 @@
 }
 
 @font-face {
+  font-family: 'Horev CLM';
+  src: url('/fonts/HorevCLM-Heavy.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: 'Polin';
   src: url('/fonts/polin-bold.ttf') format('truetype');
   font-weight: 700;

@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Instagram, Linkedin, Mail, Facebook, MessageCircle, Sparkles, Handshake, Leaf } from "lucide-react";
+import { Instagram, Linkedin, Mail, Facebook, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg-geometric.png";
-
+import iconSparkles from "@/assets/icon-sparkles.svg";
+import iconHandshake from "@/assets/icon-handshake.svg";
+import iconLeaf from "@/assets/icon-leaf.svg";
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col">
@@ -27,7 +29,7 @@ const Hero = () => {
         {/* Main content - centered */}
         <div className="text-center max-w-4xl mx-auto" dir="rtl">
           {/* Main Heading */}
-          <h1 className="font-headline font-black text-4xl md:text-5xl lg:text-7xl text-gray-900 leading-tight mb-4 animate-fade-up">
+          <h1 className="font-horev text-4xl md:text-5xl lg:text-7xl text-gray-900 leading-tight mb-4 animate-fade-up">
             אתר שמעביר את הערך שלך
           </h1>
           
@@ -44,17 +46,17 @@ const Hero = () => {
             className="flex flex-wrap justify-center gap-8 md:gap-16 mb-8 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <span className="text-gray-900 font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
-              <Sparkles className="h-6 w-6 text-gray-900" />
+              <img src={iconSparkles} alt="" className="h-10 w-10" />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <span className="text-gray-900 font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
-              <Handshake className="h-6 w-6 text-gray-900" />
+              <img src={iconHandshake} alt="" className="h-10 w-10" />
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <span className="text-gray-900 font-medium text-sm md:text-base">תהליך ברור ונעים</span>
-              <Leaf className="h-6 w-6 text-gray-900" />
+              <img src={iconLeaf} alt="" className="h-10 w-10" />
             </div>
           </div>
           
