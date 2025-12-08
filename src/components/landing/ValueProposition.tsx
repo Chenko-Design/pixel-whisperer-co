@@ -1,26 +1,25 @@
-import IconTarget from "@/assets/icon-target.svg";
-import IconDesign from "@/assets/icon-design.svg";
-import IconCode from "@/assets/icon-code.svg";
-import IconProcess from "@/assets/icon-process.svg";
+import { Sparkles, Target, Code2, HeartHandshake } from "lucide-react";
+
+const iconColor = "from-[#D87341] to-[#E8956A]";
 
 const values = [
   {
-    icon: IconTarget,
+    icon: Target,
     title: "חוויית משתמש אינטואיטיבית",
     description: "כל אתר שאני בונה מרגיש ברור, ישר וקל להתמצאות — בלי עומס ובלי בלגן.",
   },
   {
-    icon: IconDesign,
+    icon: Sparkles,
     title: "עיצוב נקי ומדויק",
     description: "ויזואליות מודרנית שמעלה את תחושת האמון במותג שלך.",
   },
   {
-    icon: IconCode,
+    icon: Code2,
     title: "רקע טכנולוגי ומוצרי",
     description: "אני משלבת חשיבה אנליטית עם עין עיצובית כדי לייצר פתרון שעובד וגם נראה טוב.",
   },
   {
-    icon: IconProcess,
+    icon: HeartHandshake,
     title: "תהליך עבודה פשוט ונעים",
     description: "שלבי עבודה ברורים, שקיפות מלאה, בלי הפתעות ובלי כאב ראש.",
   },
@@ -51,10 +50,10 @@ const ValueProposition = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Hover gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D87341]/5 to-[#E8956A]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className={`absolute inset-0 bg-gradient-to-br ${iconColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
               
-              <div className="w-20 h-20 mb-5 group-hover:scale-110 transition-transform duration-300">
-                <img src={value.icon} alt="" className="w-full h-full" />
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconColor} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <value.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="font-display text-xl font-bold mb-3 relative z-10">
                 {value.title}
