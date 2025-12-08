@@ -78,8 +78,6 @@ const Portfolio = () => {
                 alt={projects[activeIndex].title}
                 className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
               />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" />
               
               {/* Icon */}
               <div className="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
