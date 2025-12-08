@@ -111,13 +111,13 @@ const Portfolio = () => {
             {/* Navigation arrows */}
             <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
               <button
-                onClick={prevSlide}
+                onClick={nextSlide}
                 className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto hover:scale-110"
               >
                 <ChevronLeft className="w-6 h-6 text-gray-800" />
               </button>
               <button
-                onClick={nextSlide}
+                onClick={prevSlide}
                 className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto hover:scale-110"
               >
                 <ChevronRight className="w-6 h-6 text-gray-800" />
