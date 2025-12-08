@@ -38,16 +38,16 @@ const Services = () => {
           </h2>
         </div>
 
-        <div className="space-y-4">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group flex items-center gap-6 p-6 md:p-8 rounded-2xl bg-card border-r-4 border-r-[#D87341] border border-border/30 hover:shadow-lg transition-all duration-300"
+              className="group flex flex-col items-center gap-4 p-6 md:p-8 rounded-2xl bg-card border-b-4 border-b-[#D87341] border border-border/30 hover:shadow-lg transition-all duration-300 text-center"
             >
               <div className={`w-16 h-16 ${service.accent} rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 <service.icon className="w-8 h-8 text-white" />
               </div>
-              <div className="flex-1">
+              <div>
                 <h3 className="font-headline text-xl font-bold mb-1 text-foreground">
                   {service.title}
                 </h3>
