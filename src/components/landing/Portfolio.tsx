@@ -18,7 +18,7 @@ const projects = [
     image: projectTopbred,
   },
   {
-    title: "Women Empowerment",
+    title: "מפגשי העצמה נשית",
     category: "דף נחיתה",
     image: projectWomen,
   },
@@ -66,13 +66,13 @@ const Portfolio = () => {
 
         {/* Carousel */}
         <div 
-          className="flex flex-col md:flex-row gap-4 items-center"
+          className="flex flex-col gap-6"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Main large image */}
-          <div className="w-full md:w-2/3 relative">
-            <div className="group relative overflow-hidden rounded-3xl bg-secondary aspect-[4/3] cursor-pointer shadow-xl">
+          <div className="w-full max-w-4xl mx-auto relative">
+            <div className="group relative overflow-hidden rounded-3xl bg-secondary aspect-[16/10] cursor-pointer shadow-xl">
               <img
                 src={projects[activeIndex].image}
                 alt={projects[activeIndex].title}
@@ -125,16 +125,16 @@ const Portfolio = () => {
             </div>
           </div>
 
-          {/* Thumbnails */}
-          <div className="w-full md:w-1/3 flex md:flex-col gap-3">
+          {/* Thumbnails - below main image */}
+          <div className="flex justify-center gap-3">
             {projects.map((project, index) => (
               <button
                 key={project.title}
                 onClick={() => setActiveIndex(index)}
-                className={`relative overflow-hidden rounded-2xl aspect-[4/3] flex-1 transition-all duration-300 ${
+                className={`relative overflow-hidden rounded-xl w-20 h-14 md:w-24 md:h-16 transition-all duration-300 ${
                   index === activeIndex 
-                    ? "ring-4 ring-[#D87341] shadow-lg scale-105" 
-                    : "opacity-60 hover:opacity-100"
+                    ? "ring-2 ring-[#D87341] shadow-lg scale-110" 
+                    : "opacity-50 hover:opacity-100"
                 }`}
               >
                 <img
@@ -142,12 +142,6 @@ const Portfolio = () => {
                   alt={project.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
-                <div className="absolute bottom-2 right-2 left-2">
-                  <span className="text-white text-xs font-medium truncate block">
-                    {project.title}
-                  </span>
-                </div>
               </button>
             ))}
           </div>
