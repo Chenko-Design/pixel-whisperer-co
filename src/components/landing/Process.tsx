@@ -35,7 +35,7 @@ const Process = () => {
   return (
     <section className="section-padding relative overflow-hidden" dir="rtl">
       {/* Background decoration */}
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-rose-400/10 decorative-blob blur-3xl animate-morph" />
+      <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#F4CBB5]/20 decorative-blob blur-3xl animate-morph" />
       
       <div className="container-tight relative z-10">
         <div className="text-center mb-16">

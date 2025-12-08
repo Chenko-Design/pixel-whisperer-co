@@ -66,7 +66,7 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="gradient" size="lg" className="group glow">
+          <Button size="lg" className="group bg-[#D87341] hover:bg-[#C4652F] text-white shadow-lg hover:shadow-xl">
             לצפייה בכל העבודות
             <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
           </Button>
