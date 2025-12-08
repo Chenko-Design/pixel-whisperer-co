@@ -77,14 +77,14 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full py-3 w-[200px] bg-white/90 border-white text-primary hover:bg-white"
+              className="rounded-full py-3 w-[160px] bg-[#F4CBB5] border-[#F4CBB5] text-primary hover:bg-[#F4CBB5]/80"
             >
               צור קשר
             </Button>
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full py-3 w-[200px] border-white/50 text-gray-900 hover:bg-white/20"
+              className="rounded-full py-3 w-[160px] border-[#F4CBB5] text-gray-900 hover:bg-[#F4CBB5]/20"
             >
               צפיה בעבודות
             </Button>
