@@ -104,16 +104,16 @@
     --muted: 30 15% 88%;
     --muted-foreground: 25 15% 40%;
 
-    --accent: 262 60% 50%;
-    --violet: 262 60% 50%;
-    --accent-foreground: 35 30% 98%;
+    --accent: 22 75% 55%;
+    --accent-warm: 22 80% 84%;
+    --accent-foreground: 25 30% 15%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 35 30% 98%;
 
     --border: 30 20% 85%;
     --input: 30 20% 85%;
-    --ring: 262 60% 50%;
+    --ring: 22 75% 55%;
 
     --radius: 0.75rem;
 

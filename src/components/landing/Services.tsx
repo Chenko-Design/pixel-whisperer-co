@@ -5,25 +5,25 @@ const services = [
     icon: Globe,
     title: "עיצוב ובניית אתרי תדמית",
     description: "אתרים רספונסיביים, נקיים, מותאמים אישית ומבוססי UX.",
-    accent: "bg-accent",
+    accent: "bg-[#D87341]",
   },
   {
     icon: Rocket,
     title: "דפי נחיתה ממוקדי המרה",
     description: "מתאימים למכירה, לקמפיינים, להשקות ולנוכחות דיגיטלית ראשונית.",
-    accent: "bg-rose-500",
+    accent: "bg-[#E8956A]",
   },
   {
     icon: Layout,
     title: "UX/UI לאפליקציות ומערכות Web",
     description: "ממשקים שעוזרים לאנשים להבין ולבצע משימות בקלות.",
-    accent: "bg-pink-500",
+    accent: "bg-[#C4A77D]",
   },
   {
     icon: RefreshCw,
     title: "שדרוג אתרים קיימים",
     description: "הפיכת אתר מיושן למודרני, נוח, מרשים ונעים לעין.",
-    accent: "bg-amber-500",
+    accent: "bg-[#8B6F4E]",
   },
 ];
 

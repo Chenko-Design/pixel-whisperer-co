@@ -5,25 +5,25 @@ const values = [
     icon: Target,
     title: "חוויית משתמש אינטואיטיבית",
     description: "כל אתר שאני בונה מרגיש ברור, ישר וקל להתמצאות — בלי עומס ובלי בלגן.",
-    color: "from-accent to-rose-500",
+    color: "from-[#D87341] to-[#E8956A]",
   },
   {
     icon: Sparkles,
     title: "עיצוב נקי ומדויק",
     description: "ויזואליות מודרנית שמעלה את תחושת האמון במותג שלך.",
-    color: "from-rose-500 to-pink-500",
+    color: "from-[#E8956A] to-[#F4CBB5]",
   },
   {
     icon: Code2,
     title: "רקע טכנולוגי ומוצרי",
     description: "אני משלבת חשיבה אנליטית עם עין עיצובית כדי לייצר פתרון שעובד וגם נראה טוב.",
-    color: "from-pink-500 to-amber-500",
+    color: "from-[#C4A77D] to-[#D87341]",
   },
   {
     icon: HeartHandshake,
     title: "תהליך עבודה פשוט ונעים",
     description: "שלבי עבודה ברורים, שקיפות מלאה, בלי הפתעות ובלי כאב ראש.",
-    color: "from-amber-500 to-accent",
+    color: "from-[#8B6F4E] to-[#C4A77D]",
   },
 ];
 
@@ -31,7 +31,7 @@ const ValueProposition = () => {
   return (
     <section className="section-padding relative overflow-hidden" dir="rtl">
       {/* Background decoration */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-accent/10 decorative-blob blur-3xl animate-morph" />
+      <div className="absolute top-20 left-10 w-64 h-64 bg-[#F4CBB5]/30 decorative-blob blur-3xl animate-morph" />
       
       <div className="container-tight relative z-10">
         <div className="text-center mb-16">
