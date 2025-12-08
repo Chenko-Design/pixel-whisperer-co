@@ -28,18 +28,19 @@ const Hero = () => {
       >
         {/* Main content - centered */}
         <div className="text-center max-w-4xl mx-auto" dir="rtl">
-          {/* Main Heading */}
-          <h1 className="font-horev text-6xl md:text-7xl lg:text-9xl text-gray-900 leading-tight mb-4 animate-fade-up">
-            אתר שמעביר את הערך שלך
-          </h1>
-          
-          {/* Subtitle */}
-          <h2 
-            className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-12 animate-fade-up"
-            style={{ animationDelay: "0.1s", textAlign: "justify", textAlignLast: "justify" }}
-          >
-            וגורם ללקוחות להבין שהם במקום הנכון
-          </h2>
+          {/* Main Heading with subtitle */}
+          <div className="inline-block">
+            <h1 className="font-horev text-6xl md:text-7xl lg:text-9xl text-gray-900 leading-tight mb-4 animate-fade-up">
+              אתר שמעביר את הערך שלך
+            </h1>
+            
+            <h2 
+              className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-12 animate-fade-up w-full"
+              style={{ animationDelay: "0.1s", textAlign: "justify", textAlignLast: "justify" }}
+            >
+              וגורם ללקוחות להבין שהם במקום הנכון
+            </h2>
+          </div>
           
           {/* 3 Feature Icons */}
           <div 
