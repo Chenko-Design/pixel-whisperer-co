@@ -40,7 +40,7 @@ const Process = () => {
       <div className="container-tight relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">תהליך העבודה</span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             איך זה עובד?
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">

@@ -22,7 +22,7 @@ const Testimonials = () => {
       <div className="container-tight relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">המלצות</span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold">
             מה אומרים עליי
           </h2>
         </div>
