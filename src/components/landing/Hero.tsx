@@ -47,7 +47,7 @@ const Hero = () => {
           
           {/* 3 Feature Icons */}
           <div 
-            className="flex flex-wrap justify-center gap-6 md:gap-12 mb-12 animate-fade-up"
+            className="flex flex-wrap justify-center gap-6 md:gap-12 mb-6 animate-fade-up"
             style={{ animationDelay: "0.2s" }}
           >
             <div className="flex items-center gap-3 group cursor-pointer">
