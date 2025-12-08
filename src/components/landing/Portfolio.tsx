@@ -89,7 +89,7 @@ const Portfolio = () => {
                 <span className="text-white/70 text-sm font-medium">
                   {projects[activeIndex].category}
                 </span>
-                <h3 className="font-display text-3xl md:text-4xl font-bold text-white">
+                <h3 className="font-headline text-3xl md:text-4xl font-bold text-white">
                   {projects[activeIndex].title}
                 </h3>
               </div>
