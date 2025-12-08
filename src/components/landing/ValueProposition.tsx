@@ -95,6 +95,11 @@ const ValueProposition = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
+              {/* Decorative corner accent */}
+              <div className="absolute top-0 left-0 w-20 h-20 overflow-hidden">
+                <div className={`absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-br ${iconColor} opacity-20 rounded-full group-hover:opacity-40 group-hover:scale-125 transition-all duration-500`} />
+              </div>
+              
               {/* Hover gradient background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${iconColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
               
