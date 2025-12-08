@@ -1,4 +1,4 @@
-import { Globe, Rocket, Layout, RefreshCw, ArrowLeft } from "lucide-react";
+import { Globe, Rocket, Layout, RefreshCw } from "lucide-react";
 
 const services = [
   {
@@ -42,7 +42,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group flex items-center gap-6 p-6 md:p-8 rounded-2xl bg-card border border-border/30 hover:border-accent/30 hover:shadow-lg transition-all duration-300 cursor-pointer"
+              className="group flex items-center gap-6 p-6 md:p-8 rounded-2xl bg-card border-r-4 border-r-[#D87341] border border-border/30 hover:shadow-lg transition-all duration-300"
             >
               <div className={`w-16 h-16 ${service.accent} rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 <service.icon className="w-8 h-8 text-white" />
@@ -55,7 +55,6 @@ const Services = () => {
                   {service.description}
                 </p>
               </div>
-              <ArrowLeft className="w-6 h-6 text-muted-foreground/40 group-hover:text-accent group-hover:-translate-x-2 transition-all duration-300" />
             </div>
           ))}
         </div>
