@@ -54,13 +54,14 @@ const LottieIcon = ({ animationData, isHovered, isMobile }: { animationData: obj
   }, [isHovered, isMobile]);
 
   return (
-    <div className="w-14 h-14 mb-5">
+    <div className="w-14 h-14 mb-5 overflow-hidden">
       <Lottie 
         lottieRef={lottieRef}
         animationData={animationData} 
         loop={true}
         autoplay={isMobile}
         className="w-full h-full"
+        style={{ transform: 'scale(1.8)', transformOrigin: 'center center' }}
       />
     </div>
   );
