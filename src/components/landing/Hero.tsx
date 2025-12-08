@@ -30,7 +30,7 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto" dir="rtl">
           {/* Main Heading with subtitle */}
           <div className="inline-block">
-            <h1 className="font-horev text-6xl md:text-7xl lg:text-9xl text-gray-900 leading-tight mb-4 animate-fade-up">
+            <h1 className="font-horev text-6xl md:text-7xl lg:text-9xl text-gray-900 leading-tight mb-2 animate-fade-up">
               אתר שמעביר את הערך שלך
             </h1>
             
