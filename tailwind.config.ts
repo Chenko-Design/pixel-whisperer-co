@@ -17,6 +17,7 @@ export default {
         body: ["Heebo", "sans-serif"],
         display: ["Playfair Display", "serif"],
         headline: ["Polin", "sans-serif"],
+        horev: ["Horev CLM", "cursive"],
         handwriting: ["Ktav Yad", "cursive"],
         doodle: ["Rubik Doodle Triangles", "cursive"],
         gadi: ["Gadi Almog", "sans-serif"],
