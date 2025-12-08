@@ -1,33 +1,33 @@
 const steps = [
   {
     number: "01",
-    title: "שיחת היכרות קצרה",
+    title: "שיחת היכרות",
     description: "להבין את הצרכים והמטרות",
   },
   {
     number: "02",
     title: "אפיון UX",
-    description: "תכנון מבנה העמודים והחוויה",
+    description: "תכנון מבנה העמודים",
   },
   {
     number: "03",
     title: "עיצוב UI",
-    description: "יצירת שפה ויזואלית נקייה ומודרנית",
+    description: "שפה ויזואלית נקייה",
   },
   {
     number: "04",
     title: "פיתוח ובנייה",
-    description: "הפיכת העיצוב לקוד עובד",
+    description: "הפיכת העיצוב לקוד",
   },
   {
     number: "05",
-    title: "בדיקות והתאמות",
-    description: "כולל התאמה מלאה למובייל",
+    title: "בדיקות",
+    description: "התאמה מלאה למובייל",
   },
   {
     number: "06",
     title: "השקה וליווי",
-    description: "תמיכה גם אחרי העלייה לאוויר",
+    description: "תמיכה אחרי העלייה",
   },
 ];
 
@@ -48,25 +48,102 @@ const Process = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {steps.map((step, index) => (
-            <div
-              key={step.number}
-              className="group relative"
-            >
-              <div className="bg-card p-8 rounded-3xl border border-border/50 h-full hover-lift group-hover:border-accent/30 transition-all duration-300">
-                <span className="font-display text-6xl font-bold text-accent/20 group-hover:text-accent/40 transition-colors">
-                  {step.number}
-                </span>
-                <h3 className="font-display text-xl font-bold mt-2 mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground">
-                  {step.description}
-                </p>
+        {/* Timeline - Desktop */}
+        <div className="hidden lg:block relative">
+          {/* Wavy SVG Line */}
+          <svg 
+            className="absolute top-1/2 right-0 w-full h-24 -translate-y-1/2 z-0" 
+            viewBox="0 0 1200 100" 
+            preserveAspectRatio="none"
+            fill="none"
+          >
+            <path 
+              d="M0,50 Q100,20 200,50 T400,50 T600,50 T800,50 T1000,50 T1200,50" 
+              stroke="url(#gradient)" 
+              strokeWidth="3" 
+              strokeLinecap="round"
+              fill="none"
+            />
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#D87341" />
+                <stop offset="100%" stopColor="#F4CBB5" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          {/* Steps */}
+          <div className="relative z-10 flex justify-between items-center">
+            {steps.map((step, index) => {
+              const isTop = index % 2 === 0;
+              
+              return (
+                <div 
+                  key={step.number} 
+                  className="flex flex-col items-center group"
+                  style={{ width: `${100 / steps.length}%` }}
+                >
+                  {/* Content above or below */}
+                  <div className={`flex flex-col items-center ${isTop ? 'order-1' : 'order-3'}`}>
+                    <div className={`text-center ${isTop ? 'mb-4' : 'mt-4'}`}>
+                      <span className="font-display text-2xl font-bold text-accent/60 group-hover:text-accent transition-colors">
+                        {step.number}
+                      </span>
+                      <h3 className="font-display text-base font-bold mt-1">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm mt-1">
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Arrow connector */}
+                  <div className={`order-2 flex flex-col items-center ${isTop ? 'flex-col' : 'flex-col-reverse'}`}>
+                    {/* Vertical line */}
+                    <div className={`w-0.5 bg-gradient-to-b from-[#D87341] to-[#F4CBB5] ${isTop ? 'h-8' : 'h-8'}`} />
+                    
+                    {/* Circle point */}
+                    <div className="w-5 h-5 rounded-full bg-[#D87341] border-4 border-background shadow-lg group-hover:scale-125 transition-transform" />
+                    
+                    {/* Vertical line */}
+                    <div className={`w-0.5 bg-gradient-to-b from-[#F4CBB5] to-[#D87341] ${isTop ? 'h-8' : 'h-8'}`} />
+                  </div>
+                  
+                  {/* Spacer for alternating layout */}
+                  <div className={`${isTop ? 'order-3 h-24' : 'order-1 h-24'}`} />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Timeline - Mobile/Tablet (vertical) */}
+        <div className="lg:hidden relative">
+          {/* Vertical line */}
+          <div className="absolute right-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#D87341] to-[#F4CBB5]" />
+          
+          <div className="space-y-8">
+            {steps.map((step, index) => (
+              <div key={step.number} className="relative flex items-start gap-6 pr-12">
+                {/* Circle point */}
+                <div className="absolute right-4 w-5 h-5 rounded-full bg-[#D87341] border-4 border-background shadow-lg" />
+                
+                {/* Content */}
+                <div className="bg-card p-6 rounded-2xl border border-border/50 flex-1 hover-lift">
+                  <span className="font-display text-2xl font-bold text-accent/40">
+                    {step.number}
+                  </span>
+                  <h3 className="font-display text-lg font-bold mt-1">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mt-1">
+                    {step.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
