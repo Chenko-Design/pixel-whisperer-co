@@ -1,8 +1,9 @@
-import { Sparkles, HeartHandshake, LucideIcon } from "lucide-react";
+import { HeartHandshake, LucideIcon } from "lucide-react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { useState, useRef, useEffect } from "react";
 import targetAnimation from "@/assets/target-animation.json";
 import laptopAnimation from "@/assets/laptop-animation.json";
+import digitalArtAnimation from "@/assets/digital-art-animation.json";
 import { useIsMobile } from "@/hooks/use-mobile";
 const iconColor = "from-[#D87341] to-[#E8956A]";
 
@@ -20,7 +21,7 @@ const values: ValueItem[] = [
     description: "כל אתר שאני בונה מרגיש ברור, ישר וקל להתמצאות — בלי עומס ובלי בלגן.",
   },
   {
-    icon: Sparkles,
+    lottie: digitalArtAnimation,
     title: "עיצוב נקי ומדויק",
     description: "ויזואליות מודרנית שמעלה את תחושת האמון במותג שלך.",
   },
