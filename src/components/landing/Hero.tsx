@@ -87,7 +87,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full py-3 w-[160px] border-[#F4CBB5] text-[#F4CBB5] hover:bg-[#F4CBB5]/20"
+              className="rounded-full py-3 w-[160px] bg-gradient-to-r from-transparent to-[#F4CBB5]/20 border-[#F4CBB5] text-[#D9A68E] hover:from-[#F4CBB5]/10 hover:to-[#F4CBB5]/30 shadow-md"
             >
               צפיה בעבודות
             </Button>
