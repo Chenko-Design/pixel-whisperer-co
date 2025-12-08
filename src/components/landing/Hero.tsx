@@ -66,7 +66,7 @@ const Hero = () => {
           
           {/* Tagline */}
           <p 
-            className="text-gray-900 text-lg md:text-xl mb-14 animate-fade-up font-medium"
+            className="text-gray-900 text-base md:text-lg mb-14 animate-fade-up font-semibold"
             style={{ animationDelay: "0.3s" }}
           >
             בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
