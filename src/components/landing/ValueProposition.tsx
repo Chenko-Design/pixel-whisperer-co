@@ -54,7 +54,7 @@ const LottieIcon = ({ animationData, isHovered, isMobile }: { animationData: obj
   }, [isHovered, isMobile]);
 
   return (
-    <div className="w-14 h-14 mb-5">
+    <div className="w-14 h-14 mb-5 mx-auto">
       <Lottie 
         lottieRef={lottieRef}
         animationData={animationData} 
@@ -110,15 +110,15 @@ const ValueProposition = () => {
                   isMobile={isMobile}
                 />
               ) : value.icon ? (
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconColor} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconColor} flex items-center justify-center mb-5 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   <value.icon className="w-7 h-7 text-white" />
                 </div>
               ) : null}
               
-              <h3 className="font-display text-xl font-bold mb-3 relative z-10">
+              <h3 className="font-display text-xl font-bold mb-3 relative z-10 text-center">
                 {value.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed relative z-10">
+              <p className="text-muted-foreground leading-relaxed relative z-10 text-center">
                 {value.description}
               </p>
             </div>
