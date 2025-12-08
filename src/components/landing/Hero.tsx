@@ -80,7 +80,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full py-3 w-[160px] bg-[#F4CBB5] border-[#F4CBB5] text-primary hover:bg-[#F4CBB5]/80"
+              className="rounded-full py-3 w-[160px] bg-gradient-to-r from-[#F4CBB5] to-[#E8B69E] border-none text-primary hover:from-[#E8B69E] hover:to-[#D9A68E] shadow-md"
             >
               צור קשר
             </Button>
