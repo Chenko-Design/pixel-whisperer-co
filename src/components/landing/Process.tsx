@@ -89,7 +89,7 @@ const Process = () => {
                       <span className="font-display text-2xl font-bold text-accent/60 group-hover:text-accent transition-colors">
                         {step.number}
                       </span>
-                      <h3 className="font-headline text-base font-bold mt-1">
+                      <h3 className="font-headline text-base font-bold mt-1 text-foreground">
                         {step.title}
                       </h3>
                       <p className="text-muted-foreground text-sm mt-1">
@@ -134,7 +134,7 @@ const Process = () => {
                   <span className="font-display text-2xl font-bold text-accent/40">
                     {step.number}
                   </span>
-                  <h3 className="font-headline text-lg font-bold mt-1">
+                  <h3 className="font-headline text-lg font-bold mt-1 text-foreground">
                     {step.title}
                   </h3>
                   <p className="text-muted-foreground text-sm mt-1">
