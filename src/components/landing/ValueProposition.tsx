@@ -1,7 +1,8 @@
-import { Sparkles, Code2, HeartHandshake, LucideIcon } from "lucide-react";
+import { Sparkles, HeartHandshake, LucideIcon } from "lucide-react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { useState, useRef, useEffect } from "react";
 import targetAnimation from "@/assets/target-animation.json";
+import laptopAnimation from "@/assets/laptop-animation.json";
 import { useIsMobile } from "@/hooks/use-mobile";
 const iconColor = "from-[#D87341] to-[#E8956A]";
 
@@ -24,7 +25,7 @@ const values: ValueItem[] = [
     description: "ויזואליות מודרנית שמעלה את תחושת האמון במותג שלך.",
   },
   {
-    icon: Code2,
+    lottie: laptopAnimation,
     title: "רקע טכנולוגי ומוצרי",
     description: "אני משלבת חשיבה אנליטית עם עין עיצובית כדי לייצר פתרון שעובד וגם נראה טוב.",
   },
