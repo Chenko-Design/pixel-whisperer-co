@@ -35,8 +35,8 @@ const Hero = () => {
           
           {/* Subtitle */}
           <h2 
-            className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-12 animate-fade-up tracking-[0.5em]"
-            style={{ animationDelay: "0.1s" }}
+            className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-12 animate-fade-up"
+            style={{ animationDelay: "0.1s", textAlign: "justify", textAlignLast: "justify" }}
           >
             וגורם ללקוחות להבין שהם במקום הנכון
           </h2>
