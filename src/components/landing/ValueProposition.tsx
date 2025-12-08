@@ -1,9 +1,10 @@
-import { HeartHandshake, LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import { useState, useRef, useEffect } from "react";
 import targetAnimation from "@/assets/target-animation.json";
 import laptopAnimation from "@/assets/laptop-animation.json";
 import digitalArtAnimation from "@/assets/digital-art-animation.json";
+import careerAnimation from "@/assets/career-animation.json";
 import { useIsMobile } from "@/hooks/use-mobile";
 const iconColor = "from-[#D87341] to-[#E8956A]";
 
@@ -31,7 +32,7 @@ const values: ValueItem[] = [
     description: "אני משלבת חשיבה אנליטית עם עין עיצובית כדי לייצר פתרון שעובד וגם נראה טוב.",
   },
   {
-    icon: HeartHandshake,
+    lottie: careerAnimation,
     title: "תהליך עבודה פשוט ונעים",
     description: "שלבי עבודה ברורים, שקיפות מלאה, בלי הפתעות ובלי כאב ראש.",
   },
