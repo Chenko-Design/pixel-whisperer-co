@@ -17,13 +17,13 @@ const services = [
     icon: Layout,
     title: "UX/UI לאפליקציות ומערכות Web",
     description: "ממשקים שעוזרים לאנשים להבין ולבצע משימות בקלות.",
-    accent: "bg-[#4A6B8A]",
+    accent: "bg-[#C4A77D]",
   },
   {
     icon: RefreshCw,
     title: "שדרוג אתרים קיימים",
     description: "הפיכת אתר מיושן למודרני, נוח, מרשים ונעים לעין.",
-    accent: "bg-[#3D5A73]",
+    accent: "bg-[#8B6F4E]",
   },
 ];
 
