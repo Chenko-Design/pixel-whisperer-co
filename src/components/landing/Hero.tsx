@@ -35,7 +35,8 @@ const Hero = () => {
             </h1>
             
             <h2 
-              className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-12 w-full overflow-hidden whitespace-nowrap animate-typing tracking-[0.35em]"
+              className="font-body text-xl md:text-2xl lg:text-3xl text-[#F4CBB5] mb-12 w-full overflow-hidden whitespace-nowrap animate-typing"
+              style={{ textAlign: "justify", textAlignLast: "justify", textJustify: "inter-character" }}
             >
               וגורם ללקוחות להבין שהם במקום הנכון
             </h2>
