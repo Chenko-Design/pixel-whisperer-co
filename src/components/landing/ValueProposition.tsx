@@ -1,7 +1,8 @@
 import { Sparkles, Code2, HeartHandshake, LucideIcon } from "lucide-react";
-import Lottie from "lottie-react";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import { useState, useRef, useEffect } from "react";
 import targetAnimation from "@/assets/target-animation.json";
-
+import { useIsMobile } from "@/hooks/use-mobile";
 const iconColor = "from-[#D87341] to-[#E8956A]";
 
 interface ValueItem {
@@ -33,8 +34,39 @@ const values: ValueItem[] = [
     description: "שלבי עבודה ברורים, שקיפות מלאה, בלי הפתעות ובלי כאב ראש.",
   },
 ];
+// Separate component to handle Lottie ref properly
+const LottieIcon = ({ animationData, isHovered, isMobile }: { animationData: object; isHovered: boolean; isMobile: boolean }) => {
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
+
+  useEffect(() => {
+    if (!lottieRef.current) return;
+    
+    if (isMobile) {
+      lottieRef.current.play();
+    } else if (isHovered) {
+      lottieRef.current.play();
+    } else {
+      lottieRef.current.stop();
+    }
+  }, [isHovered, isMobile]);
+
+  return (
+    <div className="w-14 h-14 mb-5">
+      <Lottie 
+        lottieRef={lottieRef}
+        animationData={animationData} 
+        loop={true}
+        autoplay={isMobile}
+        className="w-full h-full"
+      />
+    </div>
+  );
+};
 
 const ValueProposition = () => {
+  const isMobile = useIsMobile();
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
   return (
     <section className="section-padding relative overflow-hidden" dir="rtl">
       {/* Background decoration */}
@@ -57,18 +89,18 @@ const ValueProposition = () => {
               key={value.title}
               className="group bg-card p-8 rounded-3xl border border-border/50 hover-lift relative overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Hover gradient background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${iconColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
               
               {value.lottie ? (
-                <div className="w-14 h-14 mb-5">
-                  <Lottie 
-                    animationData={value.lottie} 
-                    loop={true}
-                    className="w-full h-full"
-                  />
-                </div>
+                <LottieIcon 
+                  animationData={value.lottie} 
+                  isHovered={hoveredIndex === index}
+                  isMobile={isMobile}
+                />
               ) : value.icon ? (
                 <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconColor} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   <value.icon className="w-7 h-7 text-white" />
