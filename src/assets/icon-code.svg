@@ -1,0 +1,17 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Code/Tech design icon -->
+  <circle cx="256" cy="256" r="200" fill="#B8D4A8"/>
+  <circle cx="256" cy="256" r="140" fill="#fff"/>
+  
+  <!-- Code brackets -->
+  <path d="M180 180 L120 256 L180 332" stroke="#5A7D4C" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M332 180 L392 256 L332 332" stroke="#5A7D4C" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Slash -->
+  <line x1="290" y1="160" x2="222" y2="352" stroke="#7BA366" stroke-width="20" stroke-linecap="round"/>
+  
+  <!-- Decorative dots -->
+  <circle cx="160" cy="130" r="15" fill="#5A7D4C"/>
+  <circle cx="360" cy="380" r="12" fill="#7BA366"/>
+  <circle cx="380" cy="140" r="10" fill="#5A7D4C"/>
+</svg>
