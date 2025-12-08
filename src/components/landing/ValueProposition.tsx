@@ -1,10 +1,19 @@
-import { Sparkles, Target, Code2, HeartHandshake } from "lucide-react";
+import { Sparkles, Code2, HeartHandshake, LucideIcon } from "lucide-react";
+import Lottie from "lottie-react";
+import targetAnimation from "@/assets/target-animation.json";
 
 const iconColor = "from-[#D87341] to-[#E8956A]";
 
-const values = [
+interface ValueItem {
+  icon?: LucideIcon;
+  lottie?: object;
+  title: string;
+  description: string;
+}
+
+const values: ValueItem[] = [
   {
-    icon: Target,
+    lottie: targetAnimation,
     title: "חוויית משתמש אינטואיטיבית",
     description: "כל אתר שאני בונה מרגיש ברור, ישר וקל להתמצאות — בלי עומס ובלי בלגן.",
   },
@@ -52,9 +61,20 @@ const ValueProposition = () => {
               {/* Hover gradient background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${iconColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
               
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconColor} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                <value.icon className="w-7 h-7 text-white" />
-              </div>
+              {value.lottie ? (
+                <div className="w-14 h-14 mb-5">
+                  <Lottie 
+                    animationData={value.lottie} 
+                    loop={true}
+                    className="w-full h-full"
+                  />
+                </div>
+              ) : value.icon ? (
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconColor} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                  <value.icon className="w-7 h-7 text-white" />
+                </div>
+              ) : null}
+              
               <h3 className="font-display text-xl font-bold mb-3 relative z-10">
                 {value.title}
               </h3>
