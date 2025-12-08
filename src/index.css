@@ -87,15 +87,15 @@
 @layer base {
   :root {
     --background: 30 25% 96%;
-    --foreground: 25 30% 12%;
+    --foreground: 220 40% 18%;
 
     --card: 35 30% 98%;
-    --card-foreground: 25 30% 12%;
+    --card-foreground: 220 40% 18%;
 
     --popover: 35 30% 98%;
-    --popover-foreground: 25 30% 12%;
+    --popover-foreground: 220 40% 18%;
 
-    --primary: 25 30% 15%;
+    --primary: 220 40% 18%;
     --primary-foreground: 35 30% 98%;
 
     --secondary: 30 20% 92%;
@@ -120,8 +120,8 @@
     /* Rich brand colors */
     --cream: 30 25% 96%;
     --cream-dark: 30 22% 90%;
-    --charcoal: 25 30% 15%;
-    --charcoal-light: 25 15% 35%;
+    --charcoal: 220 40% 18%;
+    --charcoal-light: 220 25% 35%;
     --warm-gray: 25 10% 55%;
 
     /* Warm gradient - terracotta to dusty rose */

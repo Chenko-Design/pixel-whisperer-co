@@ -30,8 +30,8 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto" dir="rtl">
           {/* Main Heading with subtitle */}
           <div className="inline-block">
-            <h1 
-              className="font-horev text-6xl md:text-7xl lg:text-9xl text-gray-900 leading-tight mb-2 animate-fade-up"
+          <h1 
+              className="font-horev text-6xl md:text-7xl lg:text-9xl text-foreground leading-tight mb-2 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)" }}
             >
               אתר שמעביר את הערך שלך
@@ -52,21 +52,21 @@ const Hero = () => {
           >
             <div className="flex items-center gap-3 group cursor-pointer">
               <img src={iconSparkles} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
-              <span className="text-gray-900 font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
+              <span className="text-foreground font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
             </div>
             <div className="flex items-center gap-3 group cursor-pointer">
               <img src={iconHandshake} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
-              <span className="text-gray-900 font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
+              <span className="text-foreground font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
             </div>
             <div className="flex items-center gap-3 group cursor-pointer">
               <img src={iconLeaf} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
-              <span className="text-gray-900 font-medium text-sm md:text-base">תהליך ברור ונעים</span>
+              <span className="text-foreground font-medium text-sm md:text-base">תהליך ברור ונעים</span>
             </div>
           </div>
           
           {/* Tagline */}
           <p 
-            className="text-gray-900 text-base md:text-lg mb-14 animate-fade-up font-semibold"
+            className="text-foreground text-base md:text-lg mb-14 animate-fade-up font-semibold"
             style={{ animationDelay: "0.3s" }}
           >
             בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
@@ -98,19 +98,19 @@ const Hero = () => {
             className="flex justify-center items-center gap-6 animate-fade-up"
             style={{ animationDelay: "0.5s" }}
           >
-            <a href="#" className="text-gray-900 hover:text-gray-700 transition-colors">
+            <a href="#" className="text-foreground hover:text-foreground/70 transition-colors">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="#" className="text-gray-900 hover:text-gray-700 transition-colors">
+            <a href="#" className="text-foreground hover:text-foreground/70 transition-colors">
               <Facebook className="h-5 w-5" />
             </a>
-            <a href="#" className="text-gray-900 hover:text-gray-700 transition-colors">
+            <a href="#" className="text-foreground hover:text-foreground/70 transition-colors">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="#" className="text-gray-900 hover:text-gray-700 transition-colors">
+            <a href="#" className="text-foreground hover:text-foreground/70 transition-colors">
               <MessageCircle className="h-5 w-5" />
             </a>
-            <a href="#" className="text-gray-900 hover:text-gray-700 transition-colors">
+            <a href="#" className="text-foreground hover:text-foreground/70 transition-colors">
               <Mail className="h-5 w-5" />
             </a>
           </div>
