@@ -114,13 +114,13 @@ const Portfolio = () => {
                 onClick={nextSlide}
                 className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto hover:scale-110"
               >
-                <ChevronLeft className="w-6 h-6 text-gray-800" />
+                <ChevronRight className="w-6 h-6 text-gray-800" />
               </button>
               <button
                 onClick={prevSlide}
                 className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto hover:scale-110"
               >
-                <ChevronRight className="w-6 h-6 text-gray-800" />
+                <ChevronLeft className="w-6 h-6 text-gray-800" />
               </button>
             </div>
           </div>
