@@ -33,7 +33,7 @@ const Services = () => {
       <div className="container-tight">
         <div className="text-center mb-16">
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">מה אני מציעה</span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold">
+          <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold">
             שירותים
           </h2>
         </div>

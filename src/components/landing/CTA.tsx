@@ -11,7 +11,7 @@ const CTA = () => {
           <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2" />
           
           <div className="relative z-10">
-            <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
+            <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               רוצה אתר או דף נחיתה שמרגיש נכון לעסק שלך?
             </h2>
             <p className="text-white/85 text-lg mb-8 max-w-xl mx-auto">
