@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col">
       {/* White Header */}
-      <header className="bg-white py-6 px-8 md:px-16 flex justify-center">
+      <header className="bg-gradient-to-b from-white to-[#FDF8F5] py-6 px-8 md:px-16 flex justify-center">
         <img 
           src={logo} 
           alt="Chenko Design Logo" 
