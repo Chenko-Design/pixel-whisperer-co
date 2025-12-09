@@ -86,7 +86,7 @@ const Process = () => {
                   {/* Content above or below */}
                   <div className={`flex flex-col items-center ${isTop ? 'order-1' : 'order-3'}`}>
                     <div className={`text-center ${isTop ? 'mb-4' : 'mt-4'}`}>
-                      <span className="font-display text-2xl font-bold text-accent/60 group-hover:text-accent transition-colors">
+                      <span className="font-display text-2xl font-bold text-[hsl(145,25%,45%)] group-hover:text-[hsl(145,30%,40%)] transition-colors">
                         {step.number}
                       </span>
                       <h3 className="font-headline text-base font-bold mt-1 text-foreground">
@@ -131,7 +131,7 @@ const Process = () => {
                 
                 {/* Content */}
                 <div className="bg-card p-6 rounded-2xl border border-border/50 flex-1 hover-lift">
-                  <span className="font-display text-2xl font-bold text-accent/40">
+                  <span className="font-display text-2xl font-bold text-[hsl(145,25%,45%)]">
                     {step.number}
                   </span>
                   <h3 className="font-headline text-lg font-bold mt-1 text-foreground">
