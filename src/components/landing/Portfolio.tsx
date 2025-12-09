@@ -146,7 +146,7 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="group rounded-full py-3 w-[160px] bg-[#D87341] hover:bg-[#C4652F] text-white shadow-lg hover:shadow-xl">
+          <Button size="lg" className="group rounded-full py-3 px-8 bg-[#D87341] hover:bg-[#C4652F] text-white shadow-lg hover:shadow-xl">
             לצפייה בכל העבודות
             <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
           </Button>
