@@ -29,8 +29,11 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="section-padding bg-cream-dark/70" dir="rtl">
-      <div className="container-tight">
+    <section className="section-padding bg-cream-dark/70 relative overflow-hidden" dir="rtl">
+      {/* Decorative blob */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-[#D87341]/20 rounded-full -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#F4CBB5]/30 rounded-full translate-y-1/2 translate-x-1/2" />
+      <div className="container-tight relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">מה אני מציעה</span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold">
