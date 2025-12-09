@@ -20,7 +20,7 @@ const CTA = () => {
             <Button 
               variant="secondary" 
               size="xl" 
-              className="group rounded-full py-3 w-[200px] bg-white text-[#D87341] hover:bg-white/90"
+              className="group rounded-full py-3 px-8 bg-white text-[#D87341] hover:bg-white/90"
             >
               <MessageCircle className="w-5 h-5" />
               דברו איתי בוואטסאפ
