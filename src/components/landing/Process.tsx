@@ -104,7 +104,7 @@ const Process = () => {
                     <div className={`w-0.5 bg-gradient-to-b from-[#D87341] to-[#F4CBB5] ${isTop ? 'h-8' : 'h-8'}`} />
                     
                     {/* Circle point */}
-                    <div className="w-5 h-5 rounded-full bg-[#D87341] border-4 border-background shadow-lg group-hover:scale-125 transition-transform" />
+                    <div className="w-5 h-5 rounded-full bg-[#D87341] border-4 border-[#F4CBB5] shadow-lg group-hover:scale-125 transition-transform" />
                     
                     {/* Vertical line */}
                     <div className={`w-0.5 bg-gradient-to-b from-[#F4CBB5] to-[#D87341] ${isTop ? 'h-8' : 'h-8'}`} />
@@ -127,7 +127,7 @@ const Process = () => {
             {steps.map((step, index) => (
               <div key={step.number} className="relative flex items-start gap-6 pr-12">
                 {/* Circle point */}
-                <div className="absolute right-4 w-5 h-5 rounded-full bg-[#D87341] border-4 border-background shadow-lg" />
+                <div className="absolute right-4 w-5 h-5 rounded-full bg-[#D87341] border-4 border-[#F4CBB5] shadow-lg" />
                 
                 {/* Content */}
                 <div className="bg-card p-6 rounded-2xl border border-border/50 flex-1 hover-lift">
