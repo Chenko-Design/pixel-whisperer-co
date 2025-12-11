@@ -24,7 +24,6 @@ export default {
         dana: ["Dana Yad", "cursive"],
         miriwin: ["Miriwin", "sans-serif"],
         yarden: ["Yarden", "sans-serif"],
-        lampner: ["Lampner", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
