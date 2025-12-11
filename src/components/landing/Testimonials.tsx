@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const testimonials = [
   {
@@ -13,9 +14,35 @@ const testimonials = [
     role: "בעלת קליניקה",
     gradient: "from-[#8B6F5C] via-[#A68B7A] to-[#C4A99A]",
   },
+  {
+    quote: "לא האמנתי שאפשר ליצור אתר כזה מקצועי בזמן כל כך קצר. ממליצה בחום!",
+    author: "מיכל",
+    role: "יועצת עסקית",
+    gradient: "from-[#B8860B] via-[#DAA520] to-[#F4D03F]",
+  },
+  {
+    quote: "חן הבינה בדיוק מה אני צריכה עוד לפני שידעתי להסביר. האתר מושלם.",
+    author: "נועה",
+    role: "מעצבת פנים",
+    gradient: "from-[#6B8E7D] via-[#8FBC8F] to-[#A8D5BA]",
+  },
 ];
 
 const Testimonials = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 2) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const visibleTestimonials = [
+    testimonials[currentIndex],
+    testimonials[(currentIndex + 1) % testimonials.length],
+  ];
+
   return (
     <section className="section-padding relative overflow-hidden" dir="rtl">
       {/* Background decoration */}
@@ -30,10 +57,10 @@ const Testimonials = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {visibleTestimonials.map((testimonial, index) => (
             <div
-              key={index}
-              className="bg-card p-8 md:p-10 rounded-3xl border border-border/50 relative hover-lift"
+              key={`${currentIndex}-${index}`}
+              className="bg-card p-8 md:p-10 rounded-3xl border border-border/50 relative hover-lift animate-fade-in"
             >
               {/* Stars */}
               <div className="flex gap-1 mb-6">
@@ -58,6 +85,19 @@ const Testimonials = () => {
                 </div>
               </div>
             </div>
+          ))}
+        </div>
+
+        {/* Dots indicator */}
+        <div className="flex justify-center gap-2 mt-8">
+          {[0, 2].map((dotIndex) => (
+            <button
+              key={dotIndex}
+              onClick={() => setCurrentIndex(dotIndex)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                currentIndex === dotIndex ? "bg-[#D87341] w-6" : "bg-[#D87341]/30"
+              }`}
+            />
           ))}
         </div>
       </div>
