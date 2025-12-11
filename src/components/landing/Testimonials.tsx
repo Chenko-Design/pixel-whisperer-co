@@ -40,7 +40,7 @@ const Testimonials = () => {
                 ))}
               </div>
               
-              <blockquote className="font-display text-xl md:text-2xl font-medium leading-relaxed mb-8">
+              <blockquote className="font-heebo text-base md:text-lg font-medium leading-relaxed mb-8">
                 "{testimonial.quote}"
               </blockquote>
               
