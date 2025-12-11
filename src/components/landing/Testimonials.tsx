@@ -5,11 +5,13 @@ const testimonials = [
     quote: "חן קלטה בדיוק את מה שהעסק צריך. העיצוב יצא נקי, מקצועי, והלקוחות שלי באמת מגיבים לזה.",
     author: "ענת",
     role: "מאמנת רוכבים",
+    gradient: "from-[#D87341] via-[#E8956A] to-[#F4CBB5]",
   },
   {
     quote: "תהליך העבודה היה פשוט ונעים — קיבלתי אתר שמרגיש כמו המותג שלי.",
     author: "יעל",
     role: "בעלת קליניקה",
+    gradient: "from-[#8B6F5C] via-[#A68B7A] to-[#C4A99A]",
   },
 ];
 
@@ -45,7 +47,7 @@ const Testimonials = () => {
               </blockquote>
               
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#D87341] to-[#F4CBB5] rounded-full flex items-center justify-center shadow-lg">
+                <div className={`w-14 h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center shadow-lg`}>
                   <span className="font-display font-bold text-xl text-white">
                     {testimonial.author.charAt(0)}
                   </span>
