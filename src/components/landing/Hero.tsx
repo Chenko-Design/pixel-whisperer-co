@@ -31,18 +31,11 @@ const Hero = () => {
           {/* Main Heading with subtitle */}
           <div className="inline-block">
           <h1 
-              className="font-horev text-5xl md:text-6xl lg:text-8xl text-foreground leading-tight mb-2 animate-fade-up"
+              className="font-horev text-5xl md:text-6xl lg:text-8xl text-white leading-tight mb-16 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)" }}
             >
               חולמים על אתר שגורם ללקוחות להבין שהם במקום הנכון?
             </h1>
-            
-            <h2 
-              className="font-body text-xl md:text-2xl lg:text-3xl text-white/90 mb-16 w-full overflow-hidden whitespace-nowrap animate-typing tracking-wide font-semibold"
-              style={{ textAlign: "justify", textAlignLast: "justify", wordSpacing: "-0.2em" }}
-            >
-              וגורם ללקוחות להבין שהם במקום הנכון
-            </h2>
           </div>
           
           {/* 3 Feature Icons */}
