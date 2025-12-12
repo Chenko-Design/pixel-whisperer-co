@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail, Facebook, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
-import heroBg from "@/assets/hero-bg-geometric.png";
+import heroBg from "@/assets/hero-bg-waves.jpg";
 import iconSparkles from "@/assets/icon-sparkles.svg";
 import iconHandshake from "@/assets/icon-handshake.svg";
 import iconLeaf from "@/assets/icon-leaf.svg";
