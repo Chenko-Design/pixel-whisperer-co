@@ -90,11 +90,11 @@ const Testimonials = () => {
 
           {/* Carousel */}
           <div className="overflow-hidden mx-12" ref={emblaRef}>
-            <div className="flex gap-8">
+            <div className="flex">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="flex-[0_0_100%] md:flex-[0_0_calc(50%-1rem)] min-w-0"
+                  className="flex-[0_0_100%] md:flex-[0_0_50%] min-w-0 px-4"
                 >
                   <div className="bg-card p-8 md:p-10 rounded-3xl border border-border/50 relative hover-lift h-full">
                     {/* Stars */}
