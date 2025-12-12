@@ -1,5 +1,7 @@
-import { Star } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 
 const testimonials = [
   {
@@ -29,19 +31,27 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, direction: "rtl", align: "start" },
+    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+  );
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 2) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    if (!emblaApi) return;
+    
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
+    
+    emblaApi.on("select", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
 
-  const visibleTestimonials = [
-    testimonials[currentIndex],
-    testimonials[(currentIndex + 1) % testimonials.length],
-  ];
+  const scrollPrev = () => emblaApi?.scrollPrev();
+  const scrollNext = () => emblaApi?.scrollNext();
 
   return (
     <section className="section-padding relative overflow-hidden" dir="rtl">
@@ -56,46 +66,67 @@ const Testimonials = () => {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {visibleTestimonials.map((testimonial, index) => (
-            <div
-              key={`${currentIndex}-${index}`}
-              className="bg-card p-8 md:p-10 rounded-3xl border border-border/50 relative hover-lift animate-fade-in"
-            >
-              {/* Stars */}
-              <div className="flex gap-1 mb-6">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-[#D87341] text-[#D87341]" />
-                ))}
-              </div>
-              
-              <blockquote className="font-heebo text-base md:text-lg font-medium leading-relaxed mb-8">
-                "{testimonial.quote}"
-              </blockquote>
-              
-              <div className="flex items-center gap-4">
-                <div className={`w-14 h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center shadow-lg`}>
-                  <span className="font-display font-bold text-xl text-white">
-                    {testimonial.author.charAt(0)}
-                  </span>
+        <div className="relative">
+          {/* Navigation arrows */}
+          <button
+            onClick={scrollNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-card border border-border/50 rounded-full flex items-center justify-center hover:bg-[#D87341] hover:text-white transition-colors shadow-md"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+          <button
+            onClick={scrollPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-card border border-border/50 rounded-full flex items-center justify-center hover:bg-[#D87341] hover:text-white transition-colors shadow-md"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Carousel */}
+          <div className="overflow-hidden mx-12" ref={emblaRef}>
+            <div className="flex gap-8">
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="flex-[0_0_100%] md:flex-[0_0_calc(50%-1rem)] min-w-0"
+                >
+                  <div className="bg-card p-8 md:p-10 rounded-3xl border border-border/50 relative hover-lift h-full">
+                    {/* Stars */}
+                    <div className="flex gap-1 mb-6">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 fill-[#D87341] text-[#D87341]" />
+                      ))}
+                    </div>
+                    
+                    <blockquote className="font-heebo text-base md:text-lg font-medium leading-relaxed mb-8">
+                      "{testimonial.quote}"
+                    </blockquote>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className={`w-14 h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center shadow-lg`}>
+                        <span className="font-display font-bold text-xl text-white">
+                          {testimonial.author.charAt(0)}
+                        </span>
+                      </div>
+                      <div>
+                        <p className="font-bold text-lg">{testimonial.author}</p>
+                        <p className="text-muted-foreground">{testimonial.role}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-bold text-lg">{testimonial.author}</p>
-                  <p className="text-muted-foreground">{testimonial.role}</p>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         {/* Dots indicator */}
         <div className="flex justify-center gap-2 mt-8">
-          {[0, 2].map((dotIndex) => (
+          {testimonials.map((_, index) => (
             <button
-              key={dotIndex}
-              onClick={() => setCurrentIndex(dotIndex)}
+              key={index}
+              onClick={() => emblaApi?.scrollTo(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                currentIndex === dotIndex ? "bg-[#D87341] w-6" : "bg-[#D87341]/30"
+                selectedIndex === index ? "bg-[#D87341] w-6" : "bg-[#D87341]/30"
               }`}
             />
           ))}
