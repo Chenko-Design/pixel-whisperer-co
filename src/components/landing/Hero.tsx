@@ -38,10 +38,18 @@ const Hero = () => {
             </h1>
           </div>
           
+          {/* Tagline */}
+          <p 
+            className="text-foreground text-base md:text-lg mb-8 animate-fade-up font-semibold"
+            style={{ animationDelay: "0.2s" }}
+          >
+            בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
+          </p>
+          
           {/* 3 Feature Icons */}
           <div 
-            className="flex flex-wrap justify-center gap-6 md:gap-12 mb-8 animate-fade-up"
-            style={{ animationDelay: "0.2s" }}
+            className="flex flex-wrap justify-center gap-6 md:gap-12 mb-14 animate-fade-up"
+            style={{ animationDelay: "0.3s" }}
           >
             <div className="flex items-center gap-3 group cursor-pointer">
               <img src={iconSparkles} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
@@ -56,14 +64,6 @@ const Hero = () => {
               <span className="text-foreground font-medium text-sm md:text-base">תהליך ברור ונעים</span>
             </div>
           </div>
-          
-          {/* Tagline */}
-          <p 
-            className="text-foreground text-base md:text-lg mb-14 animate-fade-up font-semibold"
-            style={{ animationDelay: "0.3s" }}
-          >
-            בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
-          </p>
           
           {/* CTA Buttons */}
           <div 
