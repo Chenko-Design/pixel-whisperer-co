@@ -31,7 +31,7 @@ const Hero = () => {
           {/* Main Heading with subtitle */}
           <div className="inline-block">
           <h1 
-              className="font-shiri font-bold text-5xl md:text-6xl lg:text-8xl text-white leading-tight mb-16 animate-fade-up"
+              className="font-horev text-5xl md:text-6xl lg:text-8xl text-white leading-tight mb-16 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)" }}
             >
               חולמים על אתר שגורם ללקוחות להבין שהם במקום הנכון?
