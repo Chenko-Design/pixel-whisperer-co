@@ -18,6 +18,7 @@ export default {
         display: ["Playfair Display", "serif"],
         headline: ["Polin", "sans-serif"],
         horev: ["Horev CLM", "cursive"],
+        shiri: ["Fb Shiri", "sans-serif"],
         handwriting: ["Ktav Yad", "cursive"],
         doodle: ["Rubik Doodle Triangles", "cursive"],
         gadi: ["Gadi Almog", "sans-serif"],
