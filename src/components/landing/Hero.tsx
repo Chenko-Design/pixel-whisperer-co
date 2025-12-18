@@ -116,7 +116,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full py-3 w-[160px] bg-gradient-to-r from-white to-white/90 border-none text-primary hover:from-white/95 hover:to-white/85 shadow-md"
+              className="rounded-full py-3 w-[160px] bg-gradient-to-r from-white to-white/70 border-none text-primary hover:from-white/90 hover:to-white/60 shadow-md"
             >
               צור קשר
             </Button>
