@@ -3,9 +3,6 @@ import { Instagram, Linkedin, Mail, Facebook, MessageCircle } from "lucide-react
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg-waves.jpg";
-import iconSparkles from "@/assets/icon-sparkles.svg";
-import iconHandshake from "@/assets/icon-handshake.svg";
-import iconLeaf from "@/assets/icon-leaf.svg";
 
 const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -89,23 +86,22 @@ const Hero = () => {
             />
           </p>
           
-          {/* 3 Feature Icons */}
+          {/* 3 Feature Bullets with separators */}
           <div 
-            className="flex flex-wrap justify-center gap-6 md:gap-12 mb-20 animate-fade-up"
+            className="flex flex-wrap justify-center items-center gap-4 md:gap-6 mb-20 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <div className="flex items-center gap-3 group cursor-pointer">
-              <img src={iconSparkles} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
-              <span className="text-foreground font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
+            <span className="text-foreground font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
+            <div className="flex gap-1">
+              <div className="w-[2px] h-5 bg-[#D87341]" />
+              <div className="w-[2px] h-5 bg-[#D87341]" />
             </div>
-            <div className="flex items-center gap-3 group cursor-pointer">
-              <img src={iconHandshake} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-6" />
-              <span className="text-foreground font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
+            <span className="text-foreground font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
+            <div className="flex gap-1">
+              <div className="w-[2px] h-5 bg-[#D87341]" />
+              <div className="w-[2px] h-5 bg-[#D87341]" />
             </div>
-            <div className="flex items-center gap-3 group cursor-pointer">
-              <img src={iconLeaf} alt="" className="h-10 w-10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-12" />
-              <span className="text-foreground font-medium text-sm md:text-base">תהליך ברור ונעים</span>
-            </div>
+            <span className="text-foreground font-medium text-sm md:text-base">תהליך ברור ונעים</span>
           </div>
           
           {/* CTA Buttons */}
