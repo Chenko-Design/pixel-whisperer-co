@@ -20,7 +20,7 @@ const projects = [
   },
   {
     title: "TopBred Website",
-    category: "אתר תדמית",
+    category: "אתר תדמית + אפליקציה",
     image: projectTopbred,
   },
   {
