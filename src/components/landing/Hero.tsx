@@ -154,6 +154,23 @@ const Hero = () => {
               <Mail className="h-5 w-5 md:h-6 md:w-6" />
             </a>
           </div>
+
+          {/* Contact Info */}
+          <div 
+            className="flex justify-center items-center gap-4 mt-6 animate-fade-up text-foreground text-sm md:text-base"
+            style={{ animationDelay: "0.7s" }}
+          >
+            <a href="tel:0528934634" className="hover:text-foreground/70 transition-colors">
+              052-8934634
+            </a>
+            <div className="flex gap-1.5">
+              <div className="w-[2px] h-5 bg-foreground rounded-full" />
+              <div className="w-[2px] h-5 bg-foreground rounded-full" />
+            </div>
+            <a href="mailto:chen.shraga@gmail.com" className="hover:text-foreground/70 transition-colors">
+              chen.shraga@gmail.com
+            </a>
+          </div>
         </div>
       </div>
     </section>
