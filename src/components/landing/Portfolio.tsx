@@ -123,14 +123,14 @@ const Portfolio = () => {
                 <ExternalLink className={`w-5 h-5 ${projects[activeIndex].darkText ? "text-[#1a2a4a]" : "text-white"}`} />
               </div>
               
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-8">
+              {/* Content - hidden on mobile, shown on desktop */}
+              <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8">
                 <span className={`text-sm font-medium ${
                   projects[activeIndex].darkText ? "text-[#1a2a4a]/70" : "text-white/70"
                 }`}>
                   {projects[activeIndex].category}
                 </span>
-                <h3 className={`font-headline text-xl md:text-3xl lg:text-4xl font-bold ${
+                <h3 className={`font-headline text-3xl lg:text-4xl font-bold ${
                   projects[activeIndex].darkText ? "text-[#1a2a4a]" : "text-white"
                 }`}>
                   {projects[activeIndex].title}
@@ -147,6 +147,16 @@ const Portfolio = () => {
                   }}
                 />
               </div>
+            </div>
+
+            {/* Content - shown below image on mobile only */}
+            <div className="md:hidden text-center mt-4">
+              <span className="text-sm font-medium text-muted-foreground">
+                {projects[activeIndex].category}
+              </span>
+              <h3 className="font-headline text-xl font-bold text-foreground">
+                {projects[activeIndex].title}
+              </h3>
             </div>
 
             {/* Navigation arrows - hidden on mobile */}
