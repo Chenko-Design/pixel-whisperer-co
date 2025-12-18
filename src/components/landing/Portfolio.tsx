@@ -81,7 +81,7 @@ const Portfolio = () => {
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
+                  className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-500"
                 />
               ) : (
                 <img
@@ -98,7 +98,9 @@ const Portfolio = () => {
               
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <span className="text-white/70 text-sm font-medium">
+                <span className={`text-sm font-medium ${
+                  projects[activeIndex].title === "Captain Invest" ? "text-[#1a2a4a]" : "text-white/70"
+                }`}>
                   {projects[activeIndex].category}
                 </span>
                 <h3 className={`font-headline text-3xl md:text-4xl font-bold ${
