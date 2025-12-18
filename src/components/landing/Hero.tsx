@@ -56,7 +56,7 @@ const Hero = () => {
 
       {/* Hero Content with geometric background */}
       <div 
-        className="flex-1 relative flex flex-col items-center justify-center px-6 md:px-16 py-12 md:py-20"
+        className="flex-1 relative flex flex-col items-center justify-start px-6 md:px-16 pt-8 md:pt-16 pb-12 md:pb-20"
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: 'cover',
