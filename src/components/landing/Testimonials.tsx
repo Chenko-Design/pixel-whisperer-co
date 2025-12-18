@@ -7,25 +7,25 @@ const testimonials = [
   {
     quote: "חן, חייבת להגיד לך שהאתר פשוט מושלם! אני ממש מרגישה גאה לפרסם אותו ומקבלת פידבקים מטורפים",
     author: "ענת",
-    role: "מטפלת רגשית",
+    blurredName: "אברהמוביץ",
     time: "09:32",
   },
   {
     quote: "רציתי להודות לך על התהליך המדהים! קיבלתי בדיוק את מה שדמיינתי ואפילו יותר ❤️",
     author: "יעל",
-    role: "בעלת קליניקה",
+    blurredName: "כהן",
     time: "10:15",
   },
   {
     quote: "כבר קיבלתי 3 לקוחות חדשים מהאתר! תודה על עבודה מעולה 🔥",
     author: "מיכאל",
-    role: "יועץ עסקי",
+    blurredName: "אברהמוביץ",
     time: "14:47",
   },
   {
     quote: "היי חן! רק רציתי להגיד שאני מקבלת מלא מחמאות על האתר, ממליצה עלייך לכולם! 💕 קצת מתבאסת שסיימנו את התהליך 😂 היה ממש כיף לעבוד עליו יחד",
     author: "נועה",
-    role: "מעצבת פנים",
+    blurredName: "לוי",
     time: "16:23",
   },
 ];
@@ -41,7 +41,7 @@ const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] 
         {/* Author name with blurred "family name" */}
         <p className="text-[#075E54] font-semibold text-sm mb-2 flex items-center gap-1">
           <span>{testimonial.author}</span>
-          <span className="blur-[4px] select-none">אברהמוביץ</span>
+          <span className="blur-[4px] select-none">{testimonial.blurredName}</span>
         </p>
         
         {/* Message text */}
