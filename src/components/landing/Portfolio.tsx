@@ -99,7 +99,7 @@ const Portfolio = () => {
                       ? "object-contain scale-90" 
                       : "object-cover"
                   }`}
-                  style={{ objectPosition: projects[activeIndex].title === "המרחב הפתוח" ? 'center center' : 'center -40px' }}
+                  style={{ objectPosition: projects[activeIndex].title === "המרחב הפתוח" ? 'center -30px' : 'center -40px' }}
                 />
               ) : (
                 <img
