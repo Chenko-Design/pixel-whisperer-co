@@ -107,7 +107,7 @@ const Portfolio = () => {
                     projects[activeIndex].title === "Captain Invest" 
                       ? "md:object-[-60px_center] object-center" 
                       : projects[activeIndex].title === "Firesafety Toolkit" || projects[activeIndex].title === "המרחב הפתוח"
-                        ? "md:object-center object-[center_45%] max-md:scale-110"
+                        ? "md:object-center max-md:object-bottom max-md:scale-125"
                         : ""
                   }`}
                 />
