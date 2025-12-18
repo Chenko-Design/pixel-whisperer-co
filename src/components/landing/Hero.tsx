@@ -92,14 +92,14 @@ const Hero = () => {
             style={{ animationDelay: "0.3s" }}
           >
             <span className="text-foreground font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
-            <div className="flex gap-1">
-              <div className="w-[2px] h-5 bg-[#D87341]" />
-              <div className="w-[2px] h-5 bg-[#D87341]" />
+            <div className="flex gap-1.5">
+              <div className="w-[3px] h-6 bg-white rounded-full" />
+              <div className="w-[3px] h-6 bg-white rounded-full" />
             </div>
             <span className="text-foreground font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
-            <div className="flex gap-1">
-              <div className="w-[2px] h-5 bg-[#D87341]" />
-              <div className="w-[2px] h-5 bg-[#D87341]" />
+            <div className="flex gap-1.5">
+              <div className="w-[3px] h-6 bg-white rounded-full" />
+              <div className="w-[3px] h-6 bg-white rounded-full" />
             </div>
             <span className="text-foreground font-medium text-sm md:text-base">תהליך ברור ונעים</span>
           </div>
