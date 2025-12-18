@@ -17,7 +17,7 @@ const testimonials = [
     time: "10:15",
   },
   {
-    quote: "כבר קיבלתי 3 לקוחות חדשים מהאתר! תודה על עבודה מעולה 🔥",
+    quote: "אין עליך! אלופה! כבר קיבלתי 3 לקוחות חדשים מהאתר! תודה על עבודה מעולה 🔥",
     author: "מיכאל",
     blurredName: "אברהמוביץ",
     time: "14:47",
