@@ -22,6 +22,7 @@ const projects = [
     title: "TopBred Website",
     category: "אפליקציה + דף נחיתה",
     image: projectTopbred,
+    video: "/videos/topbred.mp4",
   },
   {
     title: "מפגשי העצמה נשית",
