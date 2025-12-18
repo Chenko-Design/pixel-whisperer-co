@@ -139,7 +139,7 @@ const Hero = () => {
             </a>
             <span className="text-foreground/50">|</span>
             <a href="https://wa.me/972528934634" className="hover:text-foreground/70 transition-colors">
-              052-893-4634
+              052-8934634
             </a>
           </div>
 

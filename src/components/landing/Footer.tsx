@@ -23,7 +23,7 @@ const Footer = () => {
               href="https://wa.me/972528934634" 
               className="hover:text-foreground transition-colors"
             >
-              052-893-4634
+              052-8934634
             </a>
           </div>
 
