@@ -109,7 +109,9 @@ const Portfolio = () => {
                   style={{ 
                     objectPosition: projects[activeIndex].title === "המרחב הפתוח" 
                       ? 'center -30px' 
-                      : 'center center' 
+                      : projects[activeIndex].title === "Captain Invest"
+                        ? 'center top'
+                        : 'center center' 
                   }}
                 />
               ) : (
