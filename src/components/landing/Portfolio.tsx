@@ -75,7 +75,7 @@ const Portfolio = () => {
   }, [isPaused, nextSlide]);
 
   return (
-    <section className="section-padding bg-cream-dark/70" dir="rtl">
+    <section id="portfolio" className="section-padding bg-cream-dark/70" dir="rtl">
       <div className="container-tight">
         <div className="text-center mb-16">
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">פורטפוליו</span>
