@@ -71,15 +71,14 @@ const Hero = () => {
               className="font-matritsa text-3xl md:text-5xl lg:text-6xl text-white mb-8 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)", lineHeight: "1.3" }}
             >
-              חולמים על אתר שגורם ללקוחות<br />
-              <span className="text-2xl md:text-4xl lg:text-5xl" style={{ letterSpacing: "-0.02em" }}>להבין שהם במקום הנכון?</span>
+              חולמים על אתר שגורם ללקוחות<br />להבין שהם במקום הנכון?
             </h1>
           </div>
           
           {/* Tagline with typing animation */}
           <p 
-            className="text-lg md:text-xl lg:text-[1.7rem] mb-16 font-semibold"
-            style={{ color: "hsl(220, 50%, 12%)" }}
+            className="text-base md:text-lg lg:text-xl mb-16 font-semibold"
+            style={{ color: "hsl(220, 50%, 12%)", letterSpacing: "-0.02em" }}
           >
             <TypewriterText 
               text="בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה" 
