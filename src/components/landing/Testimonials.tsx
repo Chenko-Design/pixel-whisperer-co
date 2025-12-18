@@ -41,9 +41,7 @@ const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] 
         {/* Author name with blurred "family name" */}
         <p className="text-[#075E54] font-semibold text-sm mb-2 flex items-center gap-1">
           <span>{testimonial.author}</span>
-          <span className="blur-[4px] select-none">כהן</span>
-          <span>•</span>
-          <span>{testimonial.role}</span>
+          <span className="blur-[4px] select-none">אברהמוביץ</span>
         </p>
         
         {/* Message text */}
