@@ -12,7 +12,7 @@ const projects = [
     category: "אתר תדמית",
     image: projectCaptain,
     video: "/videos/captain-invest.mp4",
-    bgColor: "#f5f6fa",
+    bgColor: "#F9F9FD",
     darkText: true,
   },
   {
