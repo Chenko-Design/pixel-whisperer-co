@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Linkedin, Mail, MessageCircle, Phone } from "lucide-react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg-waves.jpg";
@@ -146,9 +146,6 @@ const Hero = () => {
           >
             <a href="tel:+972528934634" className="text-foreground hover:text-foreground/70 transition-colors">
               <Phone className="h-5 w-5" />
-            </a>
-            <a href="https://www.linkedin.com/in/chenko" className="text-foreground hover:text-foreground/70 transition-colors">
-              <Linkedin className="h-5 w-5" />
             </a>
             <a href="https://wa.me/972528934634" className="text-foreground hover:text-foreground/70 transition-colors">
               <MessageCircle className="h-5 w-5" />
