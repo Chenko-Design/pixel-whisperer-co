@@ -36,7 +36,7 @@ const projects = [
     title: "המרחב הפתוח",
     category: "אתר תדמית",
     image: projectTopbred,
-    video: "/videos/topbred.mp4",
+    video: "/videos/hamerhav-haptuach.mp4",
     bgColor: "#ffffff",
     darkText: true,
   },
