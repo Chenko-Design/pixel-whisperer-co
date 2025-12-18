@@ -91,7 +91,7 @@ const Hero = () => {
           
           {/* 3 Feature Icons */}
           <div 
-            className="flex flex-wrap justify-center gap-6 md:gap-12 mb-8 animate-fade-up"
+            className="flex flex-wrap justify-center gap-6 md:gap-12 mb-20 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
             <div className="flex items-center gap-3 group cursor-pointer">
@@ -110,7 +110,7 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div 
-            className="flex flex-wrap justify-center gap-5 mb-16 animate-fade-up"
+            className="flex flex-wrap justify-center gap-5 mb-6 animate-fade-up"
             style={{ animationDelay: "0.4s" }}
           >
             <Button 
