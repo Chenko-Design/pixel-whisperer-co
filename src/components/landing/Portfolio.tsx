@@ -108,7 +108,7 @@ const Portfolio = () => {
                       ? "md:object-[-60px_center] object-center"
                       : projects[activeIndex].title === "Firesafety Toolkit" ||
                           projects[activeIndex].title === "המרחב הפתוח"
-                        ? "md:object-center max-md:object-[center_60%]"
+                        ? "md:object-center max-md:object-[center_75%]"
                         : ""
                   }`}
                 />
