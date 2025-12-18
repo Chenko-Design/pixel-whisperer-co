@@ -22,6 +22,11 @@ const projects = [
     title: "TopBred Website",
     category: "אפליקציה + דף נחיתה",
     image: projectTopbred,
+  },
+  {
+    title: "המרחב הפתוח",
+    category: "אתר תדמית",
+    image: projectTopbred,
     video: "/videos/topbred.mp4",
   },
   {
