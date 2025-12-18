@@ -45,7 +45,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group flex items-center gap-4 md:gap-6 p-5 md:p-8 rounded-2xl bg-card border-r-4 border-r-[#D87341] border border-border/30 hover:shadow-lg transition-all duration-300 h-[100px] md:h-auto md:min-h-[100px]"
+              className="group flex items-center gap-4 md:gap-6 p-5 md:p-8 rounded-2xl bg-card border-r-4 border-r-[#D87341] border border-border/30 hover:shadow-lg transition-all duration-300 h-[110px] md:h-auto md:min-h-[100px]"
             >
               <div className={`w-12 h-12 md:w-16 md:h-16 ${service.accent} rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
