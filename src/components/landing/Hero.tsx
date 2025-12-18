@@ -66,15 +66,13 @@ const Hero = () => {
         {/* Main content - centered */}
         <div className="text-center max-w-4xl mx-auto" dir="rtl">
           {/* Main Heading with subtitle */}
-          <div className="inline-block relative">
-            <h1 
-              className="font-horev text-5xl md:text-6xl lg:text-8xl text-white leading-tight mb-4 animate-fade-up"
+          <div className="inline-block">
+          <h1 
+              className="font-horev text-5xl md:text-6xl lg:text-8xl text-white leading-tight mb-8 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)" }}
             >
               חולמים על אתר שגורם ללקוחות להבין שהם במקום הנכון?
             </h1>
-            {/* Decorative underline */}
-            <div className="w-32 h-1 bg-white mx-auto rounded-full mb-8" />
           </div>
           
           {/* Tagline with typing animation */}
