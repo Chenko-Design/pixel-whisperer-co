@@ -40,7 +40,7 @@ const Hero = () => {
           
           {/* Tagline */}
           <p 
-            className="text-lg md:text-xl lg:text-2xl mb-8 animate-fade-up font-semibold"
+            className="text-lg md:text-xl lg:text-2xl mb-16 animate-fade-up font-semibold"
             style={{ animationDelay: "0.2s", color: "hsl(220, 50%, 12%)" }}
           >
             בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
@@ -48,7 +48,7 @@ const Hero = () => {
           
           {/* 3 Feature Icons */}
           <div 
-            className="flex flex-wrap justify-center gap-6 md:gap-12 mb-14 animate-fade-up"
+            className="flex flex-wrap justify-center gap-6 md:gap-12 mb-10 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
             <div className="flex items-center gap-3 group cursor-pointer">
