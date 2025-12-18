@@ -30,7 +30,7 @@ const projects = [
   },
 ];
 
-const AUTOPLAY_INTERVAL = 4000;
+const AUTOPLAY_INTERVAL = 12000;
 
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
