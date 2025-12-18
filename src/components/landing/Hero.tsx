@@ -88,7 +88,7 @@ const Hero = () => {
           
           {/* 3 Feature Bullets with separators */}
           <div 
-            className="flex flex-wrap justify-center items-center gap-4 md:gap-6 mb-10 md:mb-20 animate-fade-up"
+            className="flex flex-wrap justify-center items-center gap-4 md:gap-6 mb-[15px] md:mb-20 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
             <span className="text-white font-medium text-sm md:text-base cursor-pointer transition-transform duration-200 hover:-translate-y-1">עיצוב שמדבר אתכם</span>
