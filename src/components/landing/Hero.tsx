@@ -91,17 +91,17 @@ const Hero = () => {
             className="flex flex-wrap justify-center items-center gap-4 md:gap-6 mb-20 animate-fade-up"
             style={{ animationDelay: "0.3s" }}
           >
-            <span className="text-foreground font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
+            <span className="text-white font-medium text-sm md:text-base">עיצוב שמדבר אתכם</span>
             <div className="flex gap-1.5">
-              <div className="w-[3px] h-6 bg-white rounded-full" />
-              <div className="w-[3px] h-6 bg-white rounded-full" />
+              <div className="w-[3px] h-6 bg-[hsl(220,50%,12%)] rounded-full" />
+              <div className="w-[3px] h-6 bg-[hsl(220,50%,12%)] rounded-full" />
             </div>
-            <span className="text-foreground font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
+            <span className="text-white font-medium text-sm md:text-base">ליווי אישי אמיתי</span>
             <div className="flex gap-1.5">
-              <div className="w-[3px] h-6 bg-white rounded-full" />
-              <div className="w-[3px] h-6 bg-white rounded-full" />
+              <div className="w-[3px] h-6 bg-[hsl(220,50%,12%)] rounded-full" />
+              <div className="w-[3px] h-6 bg-[hsl(220,50%,12%)] rounded-full" />
             </div>
-            <span className="text-foreground font-medium text-sm md:text-base">תהליך ברור ונעים</span>
+            <span className="text-white font-medium text-sm md:text-base">תהליך ברור ונעים</span>
           </div>
           
           {/* CTA Buttons */}
