@@ -71,7 +71,8 @@ const Hero = () => {
               className="font-matritsa text-3xl md:text-5xl lg:text-6xl text-white mb-8 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)", lineHeight: "1.3" }}
             >
-              חולמים על אתר שגורם ללקוחות<br />להבין שהם במקום הנכון?
+              חולמים על אתר שגורם ללקוחות<br />
+              <span className="text-2xl md:text-4xl lg:text-5xl" style={{ letterSpacing: "-0.02em" }}>להבין שהם במקום הנכון?</span>
             </h1>
           </div>
           
