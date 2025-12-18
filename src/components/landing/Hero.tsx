@@ -143,7 +143,7 @@ const Hero = () => {
             <a href="#" className="text-foreground hover:text-foreground/70 transition-colors">
               <Instagram className="h-5 w-5" />
             </a>
-            <a href="#" className="text-foreground hover:text-foreground/70 transition-colors">
+            <a href="https://wa.me/972528934634" className="text-foreground hover:text-foreground/70 transition-colors">
               <MessageCircle className="h-5 w-5" />
             </a>
             <a href="mailto:chen.shraga@gmail.com" className="text-foreground hover:text-foreground/70 transition-colors">
