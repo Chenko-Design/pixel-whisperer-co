@@ -6,6 +6,7 @@ import projectTopbred from "@/assets/project-topbred.jpg";
 import projectWomen from "@/assets/project-women.jpg";
 import projectCaptain from "@/assets/project-captain.jpg";
 import projectFiresafety from "@/assets/project-firesafety.png";
+import projectHamerhav from "@/assets/project-hamerhav.png";
 
 const projects = [
   {
@@ -36,7 +37,7 @@ const projects = [
   {
     title: "המרחב הפתוח",
     category: "אתר תדמית",
-    image: projectTopbred,
+    image: projectHamerhav,
     video: "/videos/hamerhav-haptuach.mp4",
     bgColor: "#ffffff",
     darkText: true,
