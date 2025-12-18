@@ -103,12 +103,9 @@ const Portfolio = () => {
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
-                  style={{ 
-                    objectPosition: projects[activeIndex].title === "Captain Invest"
-                      ? 'center -60px'
-                      : 'center center' 
-                  }}
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+                    projects[activeIndex].title === "Captain Invest" ? "md:object-[-60px_center] object-center" : ""
+                  }`}
                 />
               ) : (
                 <img
