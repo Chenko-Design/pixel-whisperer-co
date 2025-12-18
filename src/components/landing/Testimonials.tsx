@@ -17,9 +17,9 @@ const testimonials = [
     time: "10:15",
   },
   {
-    quote: "חייבת לספר לך שכבר קיבלתי 3 לקוחות חדשים מהאתר! תודה על עבודה מעולה 🔥",
-    author: "מיכל",
-    role: "יועצת עסקית",
+    quote: "כבר קיבלתי 3 לקוחות חדשים מהאתר! תודה על עבודה מעולה 🔥",
+    author: "מיכאל",
+    role: "יועץ עסקי",
     time: "14:47",
   },
   {
