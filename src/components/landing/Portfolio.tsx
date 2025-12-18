@@ -189,9 +189,11 @@ const Portfolio = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" className="group rounded-full py-3 px-8 bg-[#D87341] hover:bg-[#C4652F] text-white shadow-lg hover:shadow-xl">
-            לצפייה בכל העבודות
-            <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
+          <Button size="lg" className="group rounded-full py-3 px-8 bg-[#D87341] hover:bg-[#C4652F] text-white shadow-lg hover:shadow-xl" asChild>
+            <a href="https://chenko-design.com/" target="_blank" rel="noopener noreferrer">
+              לצפייה בכל העבודות
+              <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
+            </a>
           </Button>
         </div>
       </div>
