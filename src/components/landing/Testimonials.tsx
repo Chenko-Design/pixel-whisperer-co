@@ -104,6 +104,8 @@ const Testimonials = () => {
         backgroundRepeat: 'repeat',
       }}
     >
+      {/* Terracotta divider line at top */}
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#D87341]" />
       <div className="container-tight relative z-10">
         <div className="text-center mb-12">
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">המלצות</span>
