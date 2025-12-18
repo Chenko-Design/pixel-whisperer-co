@@ -1,4 +1,4 @@
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -7,27 +7,35 @@ const testimonials = [
     quote: "חן קלטה בדיוק את מה שהעסק צריך. העיצוב יצא נקי, מקצועי, והלקוחות שלי באמת מגיבים לזה.",
     author: "ענת",
     role: "מטפלת רגשית",
-    gradient: "from-[#D87341] via-[#E8956A] to-[#F4CBB5]",
+    time: "10:32",
   },
   {
     quote: "תהליך העבודה היה פשוט ונעים — קיבלתי אתר שמרגיש כמו המותג שלי.",
     author: "יעל",
     role: "בעלת קליניקה",
-    gradient: "from-[#8B6F5C] via-[#A68B7A] to-[#C4A99A]",
+    time: "14:15",
   },
   {
     quote: "לא האמנתי שאפשר ליצור אתר כזה מקצועי בזמן כל כך קצר. ממליצה בחום!",
     author: "מיכל",
     role: "יועצת עסקית",
-    gradient: "from-[#B8860B] via-[#DAA520] to-[#F4D03F]",
+    time: "09:47",
   },
   {
     quote: "חן הבינה בדיוק מה אני צריכה עוד לפני שידעתי להסביר. האתר מושלם.",
     author: "נועה",
     role: "מעצבת פנים",
-    gradient: "from-[#6B8E7D] via-[#8FBC8F] to-[#A8D5BA]",
+    time: "16:22",
   },
 ];
+
+// WhatsApp double check icon component
+const WhatsAppCheck = () => (
+  <svg viewBox="0 0 16 11" className="w-4 h-3 text-[#53bdeb]" fill="currentColor">
+    <path d="M11.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-2.405-2.272a.463.463 0 0 0-.336-.136.47.47 0 0 0-.343.153.436.436 0 0 0-.109.334.46.46 0 0 0 .149.317l2.734 2.587a.477.477 0 0 0 .693-.044l6.484-8.004a.436.436 0 0 0 .087-.322.414.414 0 0 0-.164-.278l-.016-.013a.054.054 0 0 1 .009-.009l-.009-.008z" />
+    <path d="M15.071.653a.457.457 0 0 0-.304-.102.493.493 0 0 0-.381.178l-6.19 7.636-1.405-1.272-.696.9 1.772 1.672a.477.477 0 0 0 .693-.044l6.484-8.004a.436.436 0 0 0 .087-.322.414.414 0 0 0-.164-.278l-.016-.013a.054.054 0 0 1 .009-.009l-.009-.008z" />
+  </svg>
+);
 
 const Testimonials = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, direction: "rtl", align: "start" });
@@ -96,28 +104,27 @@ const Testimonials = () => {
                   key={index}
                   className="flex-[0_0_100%] md:flex-[0_0_50%] min-w-0 px-4"
                 >
-                  <div className="bg-card p-8 md:p-10 rounded-3xl border border-border/50 relative hover-lift h-full">
-                    {/* Stars */}
-                    <div className="flex gap-1 mb-6">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 fill-[#D87341] text-[#D87341]" />
-                      ))}
+                  {/* WhatsApp-style message bubble */}
+                  <div className="bg-[#dcf8c6] p-4 rounded-lg relative shadow-md max-w-md mx-auto">
+                    {/* WhatsApp bubble tail */}
+                    <div className="absolute top-0 -right-2 w-4 h-4 overflow-hidden">
+                      <div className="w-4 h-4 bg-[#dcf8c6] transform rotate-45 translate-x-2 -translate-y-2"></div>
                     </div>
                     
-                    <blockquote className="font-heebo text-base md:text-lg font-medium leading-relaxed mb-8">
-                      "{testimonial.quote}"
-                    </blockquote>
+                    {/* Author name (like WhatsApp contact name) */}
+                    <p className="text-[#128c7e] font-bold text-sm mb-1">
+                      {testimonial.author} • {testimonial.role}
+                    </p>
                     
-                    <div className="flex items-center gap-4">
-                      <div className={`w-14 h-14 bg-gradient-to-br ${testimonial.gradient} rounded-full flex items-center justify-center shadow-lg`}>
-                        <span className="font-display font-bold text-xl text-white">
-                          {testimonial.author.charAt(0)}
-                        </span>
-                      </div>
-                      <div>
-                        <p className="font-bold text-lg">{testimonial.author}</p>
-                        <p className="text-muted-foreground">{testimonial.role}</p>
-                      </div>
+                    {/* Message content */}
+                    <p className="text-gray-800 text-base leading-relaxed mb-2">
+                      {testimonial.quote}
+                    </p>
+                    
+                    {/* Time and read receipt */}
+                    <div className="flex items-center justify-end gap-1">
+                      <span className="text-[11px] text-gray-500">{testimonial.time}</span>
+                      <WhatsAppCheck />
                     </div>
                   </div>
                 </div>
@@ -133,7 +140,7 @@ const Testimonials = () => {
               key={index}
               onClick={() => emblaApi?.scrollTo(index)}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                selectedIndex === index ? "bg-[#D87341] w-6" : "bg-[#D87341]/30"
+                selectedIndex === index ? "bg-[#128c7e] w-6" : "bg-[#128c7e]/30"
               }`}
             />
           ))}
