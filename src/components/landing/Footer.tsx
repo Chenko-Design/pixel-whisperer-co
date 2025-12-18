@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p className="text-muted-foreground text-sm text-center mt-10 md:text-left">
+        <p className="text-muted-foreground text-sm text-center mt-10">
           Chenko Design © 2025
         </p>
       </div>
