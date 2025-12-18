@@ -103,16 +103,14 @@ const Portfolio = () => {
                   muted
                   playsInline
                   className={`absolute inset-0 w-full h-full transition-all duration-500 ${
-                    projects[activeIndex].title === "המרחב הפתוח" || projects[activeIndex].title === "Firesafety Toolkit"
+                    projects[activeIndex].title === "המרחב הפתוח"
                       ? "object-contain scale-90" 
                       : "object-cover"
                   }`}
                   style={{ 
                     objectPosition: projects[activeIndex].title === "המרחב הפתוח" 
                       ? 'center -30px' 
-                      : projects[activeIndex].title === "Firesafety Toolkit"
-                        ? 'center center'
-                        : 'center -40px' 
+                      : 'center center' 
                   }}
                 />
               ) : (
