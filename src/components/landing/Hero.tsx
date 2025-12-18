@@ -1,10 +1,50 @@
 import { Button } from "@/components/ui/button";
 import { Instagram, Linkedin, Mail, Facebook, MessageCircle } from "lucide-react";
+import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg-waves.jpg";
 import iconSparkles from "@/assets/icon-sparkles.svg";
 import iconHandshake from "@/assets/icon-handshake.svg";
 import iconLeaf from "@/assets/icon-leaf.svg";
+
+const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
+  const [displayedText, setDisplayedText] = useState("");
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const startTimer = setTimeout(() => {
+      setStarted(true);
+    }, delay);
+
+    return () => clearTimeout(startTimer);
+  }, [delay]);
+
+  useEffect(() => {
+    if (!started) return;
+
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      if (currentIndex <= text.length) {
+        setDisplayedText(text.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 50);
+
+    return () => clearInterval(interval);
+  }, [text, started]);
+
+  return (
+    <span>
+      {displayedText}
+      {displayedText.length < text.length && started && (
+        <span className="animate-pulse">|</span>
+      )}
+    </span>
+  );
+};
+
 const Hero = () => {
   return (
     <section className="min-h-screen flex flex-col">
@@ -38,12 +78,15 @@ const Hero = () => {
             </h1>
           </div>
           
-          {/* Tagline */}
+          {/* Tagline with typing animation */}
           <p 
-            className="text-lg md:text-xl lg:text-[1.7rem] mb-24 animate-fade-up font-semibold"
-            style={{ animationDelay: "0.2s", color: "hsl(220, 50%, 12%)" }}
+            className="text-lg md:text-xl lg:text-[1.7rem] mb-24 font-semibold"
+            style={{ color: "hsl(220, 50%, 12%)" }}
           >
-            בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
+            <TypewriterText 
+              text="בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה" 
+              delay={800}
+            />
           </p>
           
           {/* 3 Feature Icons */}
