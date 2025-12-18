@@ -32,7 +32,7 @@ const testimonials = [
 
 const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] }) => {
   return (
-    <div className="relative">
+    <div className="relative max-w-sm">
       {/* Message bubble */}
       <div className="bg-[#DCF8C6] rounded-lg rounded-tr-none px-4 py-3 shadow-sm relative min-h-[140px] flex flex-col">
         {/* Tail */}
@@ -132,7 +132,7 @@ const Testimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="flex-[0_0_100%] min-w-0 px-3"
+                  className="flex-[0_0_100%] min-w-0 px-3 flex justify-center"
                 >
                   <WhatsAppMessage testimonial={testimonial} />
                 </div>
