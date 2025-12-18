@@ -80,6 +80,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'FB Matritsa';
+  src: url('/fonts/FbMatritsaNarrow-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
