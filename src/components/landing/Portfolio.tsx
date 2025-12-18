@@ -110,7 +110,7 @@ const Portfolio = () => {
                     objectPosition: projects[activeIndex].title === "המרחב הפתוח" 
                       ? 'center -30px' 
                       : projects[activeIndex].title === "Captain Invest"
-                        ? 'center top'
+                        ? 'center -60px'
                         : 'center center' 
                   }}
                 />
