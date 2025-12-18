@@ -120,10 +120,6 @@ const Portfolio = () => {
                 />
               )}
               
-              {/* Icon */}
-              <div className="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                <ExternalLink className={`w-5 h-5 ${projects[activeIndex].darkText ? "text-[#1a2a4a]" : "text-white"}`} />
-              </div>
               
               {/* Content - hidden on mobile, shown on desktop */}
               <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8">
