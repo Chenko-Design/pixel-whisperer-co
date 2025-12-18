@@ -5,6 +5,7 @@ import projectRidely from "@/assets/project-ridely.jpg";
 import projectTopbred from "@/assets/project-topbred.jpg";
 import projectWomen from "@/assets/project-women.jpg";
 import projectCaptain from "@/assets/project-captain.jpg";
+import projectFiresafety from "@/assets/project-firesafety.png";
 
 const projects = [
   {
@@ -23,7 +24,7 @@ const projects = [
   {
     title: "Firesafety Toolkit",
     category: "אתר תדמית",
-    image: projectCaptain,
+    image: projectFiresafety,
     video: "/videos/firesafety.mp4",
     bgColor: "#ffffff",
   },
