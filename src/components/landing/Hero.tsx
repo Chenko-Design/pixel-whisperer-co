@@ -157,7 +157,7 @@ const Hero = () => {
 
           {/* Contact Info */}
           <div 
-            className="flex justify-center items-center gap-4 mt-6 animate-fade-up text-foreground text-sm md:text-base"
+            className="flex justify-center items-center gap-4 mt-10 animate-fade-up text-foreground text-sm md:text-base"
             style={{ animationDelay: "0.7s" }}
           >
             <a href="tel:0528934634" className="hover:text-foreground/70 transition-colors">
