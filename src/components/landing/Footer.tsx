@@ -5,6 +5,7 @@ const Footer = () => {
   return (
     <footer className="py-12 border-t border-border" dir="rtl">
       <div className="container-tight">
+        {/* Top row - Contact Info & Logo */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Right side - Contact Info */}
           <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm">
@@ -23,39 +24,39 @@ const Footer = () => {
             </a>
           </div>
 
-          {/* Center - Social Icons */}
-          <div className="flex items-center gap-6">
-            <a 
-              href="mailto:chen.shraga@gmail.com" 
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Email"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://wa.me/972528934634" 
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="WhatsApp"
-            >
-              <Phone className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://instagram.com/chenkodesign" 
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5" />
-            </a>
-          </div>
-
           {/* Left side - Logo */}
           <div className="flex items-center gap-4">
             <img src={logo} alt="Chenko Design" className="h-10" />
           </div>
         </div>
-        
+
+        {/* Social Icons - centered above copyright */}
+        <div className="flex items-center justify-center gap-6 mt-10">
+          <a 
+            href="mailto:chen.shraga@gmail.com" 
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Email"
+          >
+            <Mail className="w-5 h-5" />
+          </a>
+          <a 
+            href="https://wa.me/972528934634" 
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="WhatsApp"
+          >
+            <Phone className="w-5 h-5" />
+          </a>
+          <a 
+            href="https://instagram.com/chenkodesign" 
+            className="text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-5 h-5" />
+          </a>
+        </div>
+
         {/* Copyright */}
-        <p className="text-muted-foreground text-sm text-center mt-10">
+        <p className="text-muted-foreground text-sm text-center mt-4">
           Chenko Design © 2025
         </p>
       </div>
