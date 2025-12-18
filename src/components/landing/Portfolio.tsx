@@ -82,7 +82,7 @@ const Portfolio = () => {
                   muted
                   playsInline
                   className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
-                  style={{ objectPosition: 'center -80px' }}
+                  style={{ objectPosition: 'center -40px' }}
                 />
               ) : (
                 <img
