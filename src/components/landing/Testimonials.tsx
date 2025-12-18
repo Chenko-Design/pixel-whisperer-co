@@ -88,7 +88,7 @@ const Testimonials = () => {
     
     const interval = setInterval(() => {
       emblaApi.scrollNext();
-    }, 4000);
+    }, 6000);
     
     return () => clearInterval(interval);
   }, [emblaApi]);
