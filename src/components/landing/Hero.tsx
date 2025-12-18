@@ -80,7 +80,7 @@ const Hero = () => {
           
           {/* Tagline with typing animation */}
           <p 
-            className="text-lg md:text-xl lg:text-[1.7rem] mb-24 font-semibold"
+            className="text-lg md:text-xl lg:text-[1.7rem] mb-16 font-semibold"
             style={{ color: "hsl(220, 50%, 12%)" }}
           >
             <TypewriterText 
