@@ -7,43 +7,42 @@ import digitalArtAnimation from "@/assets/digital-art-animation.json";
 import careerAnimation from "@/assets/career-animation.json";
 import { useIsMobile } from "@/hooks/use-mobile";
 const iconColor = "from-[#D87341] to-[#E8956A]";
-
 interface ValueItem {
   icon?: LucideIcon;
   lottie?: object;
   title: string;
   description: string;
 }
-
-const values: ValueItem[] = [
-  {
-    lottie: targetAnimation,
-    title: "חוויית משתמש אינטואיטיבית",
-    description: "כל אתר שאני בונה מרגיש ברור, ישר וקל להתמצאות — בלי עומס ובלי בלגן.",
-  },
-  {
-    lottie: digitalArtAnimation,
-    title: "עיצוב נקי ומדויק",
-    description: "ויזואליות מודרנית שמעלה את תחושת האמון במותג שלך.",
-  },
-  {
-    lottie: laptopAnimation,
-    title: "רקע טכנולוגי ומוצרי",
-    description: "אני משלבת חשיבה אנליטית עם עין עיצובית כדי לייצר פתרון שעובד וגם נראה טוב.",
-  },
-  {
-    lottie: careerAnimation,
-    title: "תהליך עבודה פשוט ונעים",
-    description: "שלבי עבודה ברורים, שקיפות מלאה, בלי הפתעות ובלי כאב ראש.",
-  },
-];
+const values: ValueItem[] = [{
+  lottie: targetAnimation,
+  title: "חוויית משתמש אינטואיטיבית",
+  description: "כל אתר שאני בונה מרגיש ברור, ישר וקל להתמצאות — בלי עומס ובלי בלגן."
+}, {
+  lottie: digitalArtAnimation,
+  title: "עיצוב נקי ומדויק",
+  description: "ויזואליות מודרנית שמעלה את תחושת האמון במותג שלך."
+}, {
+  lottie: laptopAnimation,
+  title: "רקע טכנולוגי ומוצרי",
+  description: "אני משלבת חשיבה אנליטית עם עין עיצובית כדי לייצר פתרון שעובד וגם נראה טוב."
+}, {
+  lottie: careerAnimation,
+  title: "תהליך עבודה פשוט ונעים",
+  description: "שלבי עבודה ברורים, שקיפות מלאה, בלי הפתעות ובלי כאב ראש."
+}];
 // Separate component to handle Lottie ref properly
-const LottieIcon = ({ animationData, isHovered, isMobile }: { animationData: object; isHovered: boolean; isMobile: boolean }) => {
+const LottieIcon = ({
+  animationData,
+  isHovered,
+  isMobile
+}: {
+  animationData: object;
+  isHovered: boolean;
+  isMobile: boolean;
+}) => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
-
   useEffect(() => {
     if (!lottieRef.current) return;
-    
     if (isMobile) {
       lottieRef.current.play();
     } else if (isHovered) {
@@ -52,26 +51,14 @@ const LottieIcon = ({ animationData, isHovered, isMobile }: { animationData: obj
       lottieRef.current.stop();
     }
   }, [isHovered, isMobile]);
-
-  return (
-    <div className="w-14 h-14 mb-5 mx-auto">
-      <Lottie 
-        lottieRef={lottieRef}
-        animationData={animationData} 
-        loop={true}
-        autoplay={isMobile}
-        className="w-full h-full"
-      />
-    </div>
-  );
+  return <div className="w-14 h-14 mb-5 mx-auto">
+      <Lottie lottieRef={lottieRef} animationData={animationData} loop={true} autoplay={isMobile} className="w-full h-full" />
+    </div>;
 };
-
 const ValueProposition = () => {
   const isMobile = useIsMobile();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  return (
-    <section className="section-padding relative overflow-hidden" dir="rtl">
+  return <section className="section-padding relative overflow-hidden" dir="rtl">
       {/* Background decoration */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-[#F4CBB5]/30 decorative-blob blur-3xl animate-morph" />
       
@@ -81,20 +68,13 @@ const ValueProposition = () => {
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             למה דווקא אני?
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            הגישה שלי משלבת בין עיצוב יפהפה לבין חשיבה מעשית שמייצרת תוצאות
-          </p>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">הגישה שלי משלבת בין עיצוב מדוייק לבין חשיבה מעשית שמייצרת תוצאות</p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {values.map((value, index) => (
-            <div
-              key={value.title}
-              className="group bg-card p-8 rounded-3xl border border-border/50 hover-lift relative overflow-hidden"
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
+          {values.map((value, index) => <div key={value.title} className="group bg-card p-8 rounded-3xl border border-border/50 hover-lift relative overflow-hidden" style={{
+          animationDelay: `${index * 0.1}s`
+        }} onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)}>
               {/* Decorative corner accent */}
               <div className="absolute top-0 left-0 w-20 h-20 overflow-hidden">
                 <div className={`absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-br ${iconColor} opacity-20 rounded-full group-hover:opacity-40 group-hover:scale-125 transition-all duration-500`} />
@@ -103,17 +83,9 @@ const ValueProposition = () => {
               {/* Hover gradient background */}
               <div className={`absolute inset-0 bg-gradient-to-br ${iconColor} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
               
-              {value.lottie ? (
-                <LottieIcon 
-                  animationData={value.lottie} 
-                  isHovered={hoveredIndex === index}
-                  isMobile={isMobile}
-                />
-              ) : value.icon ? (
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconColor} flex items-center justify-center mb-5 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+              {value.lottie ? <LottieIcon animationData={value.lottie} isHovered={hoveredIndex === index} isMobile={isMobile} /> : value.icon ? <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${iconColor} flex items-center justify-center mb-5 mx-auto shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   <value.icon className="w-7 h-7 text-white" />
-                </div>
-              ) : null}
+                </div> : null}
               
               <h3 className="font-headline text-xl font-bold mb-3 relative z-10 text-center text-foreground">
                 {value.title}
@@ -121,12 +93,9 @@ const ValueProposition = () => {
               <p className="text-muted-foreground leading-relaxed relative z-10 text-center">
                 {value.description}
               </p>
-            </div>
-          ))}
+            </div>)}
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default ValueProposition;
