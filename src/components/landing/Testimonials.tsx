@@ -5,7 +5,7 @@ import testimonialsBg from "@/assets/testimonials-bg.png";
 
 const testimonials = [
   {
-    quote: "חן, חייבת להגיד לך שהאתר פשוט מושלם! הלקוחות שלי כל הזמן משבחים אותו 🙏",
+    quote: "חן, חייבת להגיד לך שהאתר פשוט מושלם! אני ממש מרגישה גאה לפרסם אותו ומקבלת פידבקים מטורפים 🙏",
     author: "ענת",
     role: "מטפלת רגשית",
     time: "09:32",
