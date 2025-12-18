@@ -26,6 +26,7 @@ const projects = [
     title: "Captain Invest",
     category: "אתר תדמית",
     image: projectCaptain,
+    video: "/videos/captain-invest.mp4",
   },
 ];
 
@@ -73,11 +74,22 @@ const Portfolio = () => {
           {/* Main large image */}
           <div className="w-full max-w-4xl mx-auto relative">
             <div className="group relative overflow-hidden rounded-3xl bg-secondary aspect-[16/10] cursor-pointer shadow-xl">
-              <img
-                src={projects[activeIndex].image}
-                alt={projects[activeIndex].title}
-                className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
-              />
+              {projects[activeIndex].video ? (
+                <video
+                  src={projects[activeIndex].video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
+                />
+              ) : (
+                <img
+                  src={projects[activeIndex].image}
+                  alt={projects[activeIndex].title}
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
+                />
+              )}
               
               {/* Icon */}
               <div className="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
