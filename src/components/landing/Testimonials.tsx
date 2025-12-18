@@ -25,7 +25,7 @@ const testimonials = [
   {
     quote: "היי חן! רק רציתי להגיד שאני מקבלת מלא מחמאות על האתר, ממליצה עלייך לכולם! 💕 קצת מתבאסת שסיימנו את התהליך 😂 היה ממש כיף לעבוד עליו יחד",
     author: "נועה",
-    blurredName: "לוי",
+    blurredName: "לוי-כהן",
     time: "16:23",
   },
 ];
