@@ -15,7 +15,7 @@ const projects = [
   },
   {
     title: "Ridely App",
-    category: "עיצוב אפליקציה",
+    category: "אפליקציה",
     image: projectRidely,
   },
   {
