@@ -31,7 +31,7 @@ const Hero = () => {
           {/* Main Heading with subtitle */}
           <div className="inline-block">
           <h1 
-              className="font-horev text-5xl md:text-6xl lg:text-8xl text-white leading-tight mb-16 animate-fade-up"
+              className="font-horev text-5xl md:text-6xl lg:text-8xl text-white leading-tight mb-4 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)" }}
             >
               חולמים על אתר שגורם ללקוחות להבין שהם במקום הנכון?
@@ -40,8 +40,8 @@ const Hero = () => {
           
           {/* Tagline */}
           <p 
-            className="text-foreground text-lg md:text-xl lg:text-2xl mb-8 animate-fade-up font-semibold"
-            style={{ animationDelay: "0.2s" }}
+            className="text-lg md:text-xl lg:text-2xl mb-8 animate-fade-up font-semibold"
+            style={{ animationDelay: "0.2s", color: "hsl(220, 50%, 12%)" }}
           >
             בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
           </p>
