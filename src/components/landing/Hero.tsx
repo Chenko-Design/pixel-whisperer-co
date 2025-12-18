@@ -126,7 +126,7 @@ const Hero = () => {
               className="rounded-full py-3 w-[160px] border-white text-white hover:bg-white/20"
               asChild
             >
-              <a href="https://chenko-design.com/" target="_blank" rel="noopener noreferrer">
+              <a href="#portfolio">
                 צפיה בעבודות
               </a>
             </Button>
