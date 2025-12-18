@@ -144,7 +144,7 @@ const Hero = () => {
             className="flex justify-center items-center gap-6 animate-fade-up"
             style={{ animationDelay: "0.6s" }}
           >
-            <a href="tel:+972528934634" className="text-foreground hover:text-foreground/70 transition-colors">
+            <a href="tel:0528934634" className="text-foreground hover:text-foreground/70 transition-colors">
               <Phone className="h-5 w-5" />
             </a>
             <a href="https://wa.me/972528934634" className="text-foreground hover:text-foreground/70 transition-colors">
