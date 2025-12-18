@@ -1,4 +1,4 @@
-import { Mail, Phone, Instagram } from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -40,11 +40,11 @@ const Footer = () => {
               <Phone className="w-5 h-5" />
             </a>
             <a 
-              href="https://instagram.com/chenkodesign" 
+              href="https://wa.me/972528934634" 
               className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Instagram"
+              aria-label="WhatsApp"
             >
-              <Instagram className="w-5 h-5" />
+              <MessageCircle className="w-5 h-5" />
             </a>
           </div>
 
