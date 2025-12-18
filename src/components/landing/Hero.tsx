@@ -3,9 +3,9 @@ import { Instagram, Linkedin, Mail, Facebook, MessageCircle } from "lucide-react
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg-waves.jpg";
-import iconSparkles from "@/assets/icon-sparkles-new.svg";
-import iconHandshake from "@/assets/icon-handshake-new.svg";
-import iconLeaf from "@/assets/icon-leaf-new.svg";
+import iconSparkles from "@/assets/icon-sparkles.svg";
+import iconHandshake from "@/assets/icon-handshake.svg";
+import iconLeaf from "@/assets/icon-leaf.svg";
 
 const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   const [displayedText, setDisplayedText] = useState("");
