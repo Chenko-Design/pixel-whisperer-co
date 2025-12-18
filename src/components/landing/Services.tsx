@@ -51,7 +51,7 @@ const Services = () => {
                 <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="font-headline text-base md:text-xl font-bold mb-0.5 text-foreground truncate">
+                <h3 className="font-headline text-base md:text-xl font-bold mb-0.5 text-foreground">
                   {service.title}
                 </h3>
                 <p className="text-xs md:text-base text-muted-foreground line-clamp-2">
