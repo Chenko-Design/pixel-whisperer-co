@@ -132,7 +132,7 @@ const Testimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="flex-[0_0_100%] md:flex-[0_0_50%] lg:flex-[0_0_33.333%] min-w-0 px-3"
+                  className="flex-[0_0_100%] min-w-0 px-3"
                 >
                   <WhatsAppMessage testimonial={testimonial} />
                 </div>
