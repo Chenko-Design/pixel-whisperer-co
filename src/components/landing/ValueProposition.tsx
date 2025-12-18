@@ -28,7 +28,7 @@ const values: ValueItem[] = [{
 }, {
   lottie: careerAnimation,
   title: "תהליך עבודה פשוט ונעים",
-  description: "שלבי עבודה ברורים, שקיפות מלאה, בלי הפתעות ובלי כאב ראש."
+  description: "אני מובילה את התהליך בצורה מסודרת וברורה עם שלבי עבודה מדויקים, שקיפות מלאה ובלי הפתעות. כך שתוכלו להרגיש בטוחים, רגועים ומלווים מהרגע הראשון ועד שהאתר שלכם עולה לאוויר."
 }];
 // Separate component to handle Lottie ref properly
 const LottieIcon = ({
