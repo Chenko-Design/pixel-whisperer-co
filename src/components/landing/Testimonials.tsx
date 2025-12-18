@@ -1,6 +1,7 @@
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useState, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import testimonialsBg from "@/assets/testimonials-bg.png";
 
 const testimonials = [
   {
@@ -61,9 +62,18 @@ const Testimonials = () => {
   }, [emblaApi]);
 
   return (
-    <section className="section-padding relative overflow-hidden" dir="rtl">
-      {/* Background decoration */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#F4CBB5]/15 decorative-blob blur-3xl animate-morph" />
+    <section 
+      className="section-padding relative overflow-hidden" 
+      dir="rtl"
+      style={{
+        backgroundImage: `url(${testimonialsBg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'repeat',
+      }}
+    >
+      {/* Background overlay for subtle effect */}
+      <div className="absolute inset-0 bg-background/30" />
       
       <div className="container-tight relative z-10">
         <div className="text-center mb-16">
