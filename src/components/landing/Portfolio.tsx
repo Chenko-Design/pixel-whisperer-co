@@ -30,7 +30,7 @@ const projects = [
     category: "אתר תדמית",
     image: projectTopbred,
     video: "/videos/topbred.mp4",
-    bgColor: "#f5f6fa",
+    bgColor: "#ffffff",
     darkText: true,
   },
   {
