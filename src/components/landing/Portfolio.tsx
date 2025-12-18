@@ -8,6 +8,12 @@ import projectCaptain from "@/assets/project-captain.jpg";
 
 const projects = [
   {
+    title: "Captain Invest",
+    category: "אתר תדמית",
+    image: projectCaptain,
+    video: "/videos/captain-invest.mp4",
+  },
+  {
     title: "Ridely App",
     category: "עיצוב אפליקציה",
     image: projectRidely,
@@ -21,12 +27,6 @@ const projects = [
     title: "מפגשי העצמה נשית",
     category: "דף נחיתה",
     image: projectWomen,
-  },
-  {
-    title: "Captain Invest",
-    category: "אתר תדמית",
-    image: projectCaptain,
-    video: "/videos/captain-invest.mp4",
   },
 ];
 
