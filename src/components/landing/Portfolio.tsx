@@ -21,6 +21,14 @@ const projects = [
     image: projectRidely,
   },
   {
+    title: "Firesafety Toolkit",
+    category: "אתר תדמית",
+    image: projectCaptain,
+    video: "/videos/firesafety.mp4",
+    bgColor: "#ffffff",
+    darkText: true,
+  },
+  {
     title: "TopBred Website",
     category: "אפליקציה + דף נחיתה",
     image: projectTopbred,
@@ -95,11 +103,17 @@ const Portfolio = () => {
                   muted
                   playsInline
                   className={`absolute inset-0 w-full h-full transition-all duration-500 ${
-                    projects[activeIndex].title === "המרחב הפתוח" 
+                    projects[activeIndex].title === "המרחב הפתוח" || projects[activeIndex].title === "Firesafety Toolkit"
                       ? "object-contain scale-90" 
                       : "object-cover"
                   }`}
-                  style={{ objectPosition: projects[activeIndex].title === "המרחב הפתוח" ? 'center -30px' : 'center -40px' }}
+                  style={{ 
+                    objectPosition: projects[activeIndex].title === "המרחב הפתוח" 
+                      ? 'center -30px' 
+                      : projects[activeIndex].title === "Firesafety Toolkit"
+                        ? 'center center'
+                        : 'center -40px' 
+                  }}
                 />
               ) : (
                 <img
