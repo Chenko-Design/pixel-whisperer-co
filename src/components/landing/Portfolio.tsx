@@ -26,7 +26,6 @@ const projects = [
     image: projectCaptain,
     video: "/videos/firesafety.mp4",
     bgColor: "#ffffff",
-    darkText: true,
   },
   {
     title: "TopBred Website",
