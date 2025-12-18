@@ -73,7 +73,9 @@ const Portfolio = () => {
         >
           {/* Main large image */}
           <div className="w-full max-w-4xl mx-auto relative">
-            <div className="group relative overflow-hidden rounded-3xl bg-secondary aspect-[16/10] cursor-pointer shadow-xl">
+            <div className={`group relative overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer shadow-xl ${
+              projects[activeIndex].title === "Captain Invest" ? "bg-[#f5f6fa]" : "bg-secondary"
+            }`}>
               {projects[activeIndex].video ? (
                 <video
                   src={projects[activeIndex].video}
