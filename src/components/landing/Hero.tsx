@@ -145,13 +145,13 @@ const Hero = () => {
             style={{ animationDelay: "0.6s" }}
           >
             <a href="tel:0528934634" className="text-foreground hover:text-foreground/70 transition-colors">
-              <Phone className="h-5 w-5" />
+              <Phone className="h-6 w-6 md:h-7 md:w-7" />
             </a>
             <a href="https://wa.me/972528934634" className="text-foreground hover:text-foreground/70 transition-colors">
-              <MessageCircle className="h-5 w-5" />
+              <MessageCircle className="h-6 w-6 md:h-7 md:w-7" />
             </a>
             <a href="mailto:chen.shraga@gmail.com" className="text-foreground hover:text-foreground/70 transition-colors">
-              <Mail className="h-5 w-5" />
+              <Mail className="h-6 w-6 md:h-7 md:w-7" />
             </a>
           </div>
         </div>
