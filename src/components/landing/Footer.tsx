@@ -8,19 +8,18 @@ const Footer = () => {
         {/* Top row - Contact Info & Logo */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Right side - Contact Info */}
-          <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm">
-            <a 
-              href="mailto:chen.shraga@gmail.com" 
-              className="hover:text-foreground transition-colors"
-            >
-              chen.shraga@gmail.com
-            </a>
-            <span className="text-muted-foreground/50">|</span>
+          <div className="flex flex-col items-start gap-1 text-muted-foreground text-sm">
             <a 
               href="https://wa.me/972528934634" 
               className="hover:text-foreground transition-colors"
             >
               052-8934634
+            </a>
+            <a 
+              href="mailto:chen.shraga@gmail.com" 
+              className="hover:text-foreground transition-colors"
+            >
+              chen.shraga@gmail.com
             </a>
           </div>
 
