@@ -12,6 +12,8 @@ const projects = [
     category: "אתר תדמית",
     image: projectCaptain,
     video: "/videos/captain-invest.mp4",
+    bgColor: "#f5f6fa",
+    darkText: true,
   },
   {
     title: "Ridely App",
@@ -28,6 +30,8 @@ const projects = [
     category: "אתר תדמית",
     image: projectTopbred,
     video: "/videos/topbred.mp4",
+    bgColor: "#f5f6fa",
+    darkText: true,
   },
   {
     title: "מפגשי העצמה נשית",
@@ -79,9 +83,10 @@ const Portfolio = () => {
         >
           {/* Main large image */}
           <div className="w-full max-w-4xl mx-auto relative">
-            <div className={`group relative overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer shadow-xl ${
-              projects[activeIndex].title === "Captain Invest" ? "bg-[#f5f6fa]" : "bg-secondary"
-            }`}>
+            <div 
+              className="group relative overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer shadow-xl"
+              style={{ backgroundColor: projects[activeIndex].bgColor || 'hsl(var(--secondary))' }}
+            >
               {projects[activeIndex].video ? (
                 <video
                   src={projects[activeIndex].video}
@@ -89,8 +94,12 @@ const Portfolio = () => {
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
-                  style={{ objectPosition: 'center -40px' }}
+                  className={`absolute inset-0 w-full h-full transition-all duration-500 ${
+                    projects[activeIndex].title === "המרחב הפתוח" 
+                      ? "object-contain scale-90" 
+                      : "object-cover"
+                  }`}
+                  style={{ objectPosition: projects[activeIndex].title === "המרחב הפתוח" ? 'center center' : 'center -40px' }}
                 />
               ) : (
                 <img
@@ -102,18 +111,18 @@ const Portfolio = () => {
               
               {/* Icon */}
               <div className="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                <ExternalLink className="w-5 h-5 text-white" />
+                <ExternalLink className={`w-5 h-5 ${projects[activeIndex].darkText ? "text-[#1a2a4a]" : "text-white"}`} />
               </div>
               
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <span className={`text-sm font-medium ${
-                  projects[activeIndex].title === "Captain Invest" ? "text-[#1a2a4a]" : "text-white/70"
+                  projects[activeIndex].darkText ? "text-[#1a2a4a]/70" : "text-white/70"
                 }`}>
                   {projects[activeIndex].category}
                 </span>
                 <h3 className={`font-headline text-3xl md:text-4xl font-bold ${
-                  projects[activeIndex].title === "Captain Invest" ? "text-[#1a2a4a]" : "text-white"
+                  projects[activeIndex].darkText ? "text-[#1a2a4a]" : "text-white"
                 }`}>
                   {projects[activeIndex].title}
                 </h3>
