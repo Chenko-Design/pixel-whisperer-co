@@ -124,8 +124,11 @@ const Hero = () => {
               variant="outline" 
               size="lg" 
               className="rounded-full py-3 w-[160px] border-white text-white hover:bg-white/20"
+              asChild
             >
-              צפיה בעבודות
+              <a href="https://chenko-design.com/" target="_blank" rel="noopener noreferrer">
+                צפיה בעבודות
+              </a>
             </Button>
           </div>
           
