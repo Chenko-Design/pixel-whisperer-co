@@ -129,10 +129,24 @@ const Hero = () => {
             </Button>
           </div>
           
+          {/* Contact Info */}
+          <div 
+            className="flex flex-wrap justify-center items-center gap-6 mb-6 text-foreground text-sm animate-fade-up"
+            style={{ animationDelay: "0.5s" }}
+          >
+            <a href="mailto:chen.shraga@gmail.com" className="hover:text-foreground/70 transition-colors">
+              chen.shraga@gmail.com
+            </a>
+            <span className="text-foreground/50">|</span>
+            <a href="https://wa.me/972528934634" className="hover:text-foreground/70 transition-colors">
+              052-893-4634
+            </a>
+          </div>
+
           {/* Social Icons */}
           <div 
             className="flex justify-center items-center gap-6 animate-fade-up"
-            style={{ animationDelay: "0.5s" }}
+            style={{ animationDelay: "0.6s" }}
           >
             <a href="#" className="text-foreground hover:text-foreground/70 transition-colors">
               <Linkedin className="h-5 w-5" />

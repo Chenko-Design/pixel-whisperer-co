@@ -5,11 +5,29 @@ const Footer = () => {
   return (
     <footer className="py-12 border-t border-border" dir="rtl">
       <div className="container-tight">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col items-center gap-6">
           <div className="flex items-center gap-4">
             <img src={logo} alt="Chenko Design" className="h-10" />
           </div>
           
+          {/* Contact Info */}
+          <div className="flex flex-wrap justify-center items-center gap-4 text-muted-foreground text-sm">
+            <a 
+              href="mailto:chen.shraga@gmail.com" 
+              className="hover:text-foreground transition-colors"
+            >
+              chen.shraga@gmail.com
+            </a>
+            <span className="text-muted-foreground/50">|</span>
+            <a 
+              href="https://wa.me/972528934634" 
+              className="hover:text-foreground transition-colors"
+            >
+              052-893-4634
+            </a>
+          </div>
+
+          {/* Social Icons */}
           <div className="flex items-center gap-6">
             <a 
               href="mailto:chen.shraga@gmail.com" 
