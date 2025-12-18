@@ -110,7 +110,7 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div 
-            className="flex flex-wrap justify-center gap-5 mb-6 animate-fade-up"
+            className="flex flex-wrap justify-center gap-5 mb-10 animate-fade-up"
             style={{ animationDelay: "0.4s" }}
           >
             <Button 
