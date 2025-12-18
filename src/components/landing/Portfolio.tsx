@@ -81,7 +81,8 @@ const Portfolio = () => {
                   loop
                   muted
                   playsInline
-                  className="absolute inset-0 w-full h-full object-cover object-top transition-all duration-500"
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
+                  style={{ objectPosition: 'center -80px' }}
                 />
               ) : (
                 <img
