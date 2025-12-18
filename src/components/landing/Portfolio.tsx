@@ -130,7 +130,7 @@ const Portfolio = () => {
                 }`}>
                   {projects[activeIndex].category}
                 </span>
-                <h3 className={`font-headline text-3xl md:text-4xl font-bold ${
+                <h3 className={`font-headline text-xl md:text-3xl lg:text-4xl font-bold ${
                   projects[activeIndex].darkText ? "text-[#1a2a4a]" : "text-white"
                 }`}>
                   {projects[activeIndex].title}
@@ -149,8 +149,8 @@ const Portfolio = () => {
               </div>
             </div>
 
-            {/* Navigation arrows */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
+            {/* Navigation arrows - hidden on mobile */}
+            <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-4 right-4 justify-between pointer-events-none">
               <button
                 onClick={nextSlide}
                 className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto hover:scale-110"
