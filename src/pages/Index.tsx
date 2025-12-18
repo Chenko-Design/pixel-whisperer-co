@@ -15,9 +15,6 @@ const Index = () => {
       <Services />
       <Process />
       <Portfolio />
-      <div className="w-full flex justify-center py-8">
-        <div className="w-1/2 h-[2px] bg-[#D87341]" />
-      </div>
       <Testimonials />
       <CTA />
       <Footer />
