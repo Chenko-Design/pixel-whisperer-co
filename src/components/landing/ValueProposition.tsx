@@ -16,7 +16,7 @@ interface ValueItem {
 const values: ValueItem[] = [{
   lottie: targetAnimation,
   title: "חוויית משתמש אינטואיטיבית",
-  description: "אני בונה אתרים שכיף לגלול בהם, קלים להתמצאות, זורמים וגורמים ללקוחות להשאר, להתעניין ולפעול"
+  description: "אני בונה אתרים שכיף לגלול בהם, קלים להתמצאות, זורמים וגורמים ללקוחות להשאר, להתעניין ולפעול."
 }, {
   lottie: digitalArtAnimation,
   title: "עיצוב נקי ומדויק",
