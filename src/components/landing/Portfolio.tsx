@@ -104,7 +104,11 @@ const Portfolio = () => {
                   muted
                   playsInline
                   className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
-                    projects[activeIndex].title === "Captain Invest" ? "md:object-[-60px_center] object-center" : ""
+                    projects[activeIndex].title === "Captain Invest" 
+                      ? "md:object-[-60px_center] object-center" 
+                      : projects[activeIndex].title === "Firesafety Toolkit" || projects[activeIndex].title === "המרחב הפתוח"
+                        ? "md:object-center object-[center_20%] scale-100 md:scale-100 max-md:scale-110"
+                        : ""
                   }`}
                 />
               ) : (
