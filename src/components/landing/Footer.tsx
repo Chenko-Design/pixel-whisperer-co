@@ -6,33 +6,36 @@ const Footer = () => {
     <footer className="py-12 border-t border-border" dir="rtl">
       <div className="container-tight">
         {/* Mobile layout */}
-        <div className="flex flex-col items-center gap-6 md:hidden">
-          {/* Logo first */}
-          <img src={logo} alt="Chenko Design" className="h-10" />
-          
-          {/* Social Icons */}
-          <div className="flex items-center gap-6">
-            <a 
-              href="mailto:chen.shraga@gmail.com" 
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="Email"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://wa.me/972528934634" 
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="WhatsApp"
-            >
-              <Phone className="w-5 h-5" />
-            </a>
-            <a 
-              href="https://wa.me/972528934634" 
-              className="text-muted-foreground hover:text-foreground transition-colors"
-              aria-label="WhatsApp"
-            >
-              <MessageCircle className="w-5 h-5" />
-            </a>
+        <div className="flex flex-col gap-6 md:hidden">
+          {/* Top row - Icons on right, Logo on left */}
+          <div className="flex flex-row items-center justify-between">
+            {/* Social Icons - right side */}
+            <div className="flex items-center gap-4">
+              <a 
+                href="mailto:chen.shraga@gmail.com" 
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://wa.me/972528934634" 
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="WhatsApp"
+              >
+                <Phone className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://wa.me/972528934634" 
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5" />
+              </a>
+            </div>
+            
+            {/* Logo - left side */}
+            <img src={logo} alt="Chenko Design" className="h-10" />
           </div>
           
           {/* Contact Info - centered */}
