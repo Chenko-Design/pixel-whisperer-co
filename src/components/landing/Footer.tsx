@@ -39,7 +39,7 @@ const Footer = () => {
           </div>
           
           {/* Contact Info - centered */}
-          <div className="flex flex-col items-center gap-1 text-muted-foreground text-sm">
+          <div className="flex flex-col items-center gap-1 text-muted-foreground text-sm mt-2">
             <a 
               href="https://wa.me/972528934634" 
               className="hover:text-foreground transition-colors"
