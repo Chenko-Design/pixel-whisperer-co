@@ -127,7 +127,11 @@ const Portfolio = () => {
                 <img
                   src={projects[activeIndex].image}
                   alt={projects[activeIndex].title}
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500"
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+                    projects[activeIndex].title === "מפגשי העצמה נשית"
+                      ? "max-md:scale-110"
+                      : ""
+                  }`}
                 />
               )}
               
