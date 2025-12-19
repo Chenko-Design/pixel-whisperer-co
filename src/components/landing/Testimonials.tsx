@@ -42,19 +42,23 @@ const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] 
         }}
       />
       {/* Message bubble - white for received messages */}
-      <div className="bg-white rounded-lg rounded-tr-none px-4 py-3 shadow-sm relative">
+      <div className="bg-white rounded-lg rounded-tr-none px-4 py-3 shadow-sm relative min-h-[140px] flex flex-col">
         
         {/* Author name with blurred "family name" */}
-        <p className="text-[#075E54] font-semibold text-sm mb-1 flex items-center gap-1">
+        <p className="text-[#075E54] font-semibold text-sm mb-2 flex items-center gap-1">
           <span>{testimonial.author}</span>
           <span className="blur-[4px] select-none">{testimonial.blurredName}</span>
         </p>
         
-        {/* Message text with time inline */}
-        <p className="text-[#303030] text-sm md:text-base leading-relaxed">
+        {/* Message text */}
+        <p className="text-[#303030] text-sm md:text-base leading-relaxed flex-1">
           {testimonial.quote}
-          <span className="text-[10px] text-[#667781] mr-2 inline-block align-bottom">{testimonial.time}</span>
         </p>
+        
+        {/* Time only - no checkmarks for received messages */}
+        <div className="flex items-center justify-end gap-1 mt-2">
+          <span className="text-[10px] text-[#667781]">{testimonial.time}</span>
+        </div>
       </div>
     </div>
   );
