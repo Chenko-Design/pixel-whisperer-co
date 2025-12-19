@@ -117,16 +117,16 @@ const Testimonials = () => {
         <div className="relative">
           {/* Navigation arrows */}
           <button
-            onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 bg-card border border-border/50 rounded-full flex items-center justify-center hover:bg-[#075E54] hover:text-white transition-colors shadow-md"
+            onClick={scrollPrev}
+            className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-transparent hover:bg-white/20 rounded-full flex items-center justify-center transition-all hover:scale-110"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="w-6 h-6 text-[#1a2a4a]" />
           </button>
           <button
-            onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 bg-card border border-border/50 rounded-full flex items-center justify-center hover:bg-[#075E54] hover:text-white transition-colors shadow-md"
+            onClick={scrollNext}
+            className="absolute left-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-transparent hover:bg-white/20 rounded-full flex items-center justify-center transition-all hover:scale-110"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="w-6 h-6 text-[#1a2a4a]" />
           </button>
 
           {/* Carousel */}
