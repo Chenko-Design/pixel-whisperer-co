@@ -32,7 +32,7 @@ const testimonials = [
 
 const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] }) => {
   return (
-    <div className="relative max-w-sm">
+    <div className="relative w-[85vw] md:max-w-sm md:w-auto">
       {/* WhatsApp-style tail on top right - outside the bubble */}
       <div 
         className="absolute top-0 -right-2 w-0 h-0"
@@ -120,19 +120,19 @@ const Testimonials = () => {
           {/* Navigation arrows */}
           <button
             onClick={scrollPrev}
-            className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-transparent hover:bg-white/20 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-transparent hover:bg-white/20 rounded-full items-center justify-center transition-all hover:scale-110"
           >
             <ChevronRight className="w-6 h-6 text-[#1a2a4a]" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute left-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-transparent hover:bg-white/20 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-transparent hover:bg-white/20 rounded-full items-center justify-center transition-all hover:scale-110"
           >
             <ChevronLeft className="w-6 h-6 text-[#1a2a4a]" />
           </button>
 
           {/* Carousel */}
-          <div className="overflow-hidden mx-12" ref={emblaRef}>
+          <div className="overflow-hidden mx-0 md:mx-12" ref={emblaRef}>
             <div className="flex">
               {testimonials.map((testimonial, index) => (
                 <div
