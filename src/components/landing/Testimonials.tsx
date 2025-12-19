@@ -42,7 +42,7 @@ const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] 
         }}
       />
       {/* Message bubble - white for received messages */}
-      <div className="bg-white rounded-lg rounded-tr-none px-4 py-3 shadow-sm relative min-h-[140px] flex flex-col">
+      <div className="bg-white rounded-lg rounded-tr-none px-4 py-3 shadow-sm relative flex flex-col">
         
         {/* Author name with blurred "family name" */}
         <p className="text-[#075E54] font-semibold text-sm mb-2 flex items-center gap-1">
