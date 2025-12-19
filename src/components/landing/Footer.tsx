@@ -3,7 +3,7 @@ import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-border" dir="rtl">
+    <footer className="py-8 md:py-12 border-t border-border" dir="rtl">
       <div className="container-tight">
         {/* Mobile layout */}
         <div className="flex flex-col gap-6 md:hidden">
