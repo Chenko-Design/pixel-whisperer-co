@@ -56,7 +56,7 @@ const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] 
         </p>
         
         {/* Time only - no checkmarks for received messages */}
-        <div className="flex items-center justify-end gap-1 mt-2">
+        <div className="flex items-center justify-end gap-1 mt-1">
           <span className="text-[10px] text-[#667781]">{testimonial.time}</span>
         </div>
       </div>
