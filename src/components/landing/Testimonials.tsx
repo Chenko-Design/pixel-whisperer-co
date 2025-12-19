@@ -52,10 +52,10 @@ const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] 
         {/* Time and read receipts */}
         <div className="flex items-center justify-end gap-1 mt-2">
           <span className="text-[10px] text-[#667781]">{testimonial.time}</span>
-          <div className="flex">
-            <Check className="w-4 h-4 text-[#53BDEB]" />
-            <Check className="w-4 h-4 text-[#53BDEB] -ml-2.5" />
-          </div>
+          <svg width="20" height="12" viewBox="0 0 20 12" fill="none" className="text-[#53BDEB]">
+            <path d="M1 6L4 9L10 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M6 6L9 9L15 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
       </div>
     </div>
