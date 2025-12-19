@@ -28,6 +28,7 @@ const projects = [
     category: "אתר תדמית",
     image: projectFiresafety,
     video: "/videos/firesafety.mp4",
+    mobileVideo: "/videos/firesafety-mobile.mp4",
     bgColor: "#ffffff",
   },
   {
