@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
-
 const CTA = () => {
-  return (
-    <section className="section-padding" dir="rtl">
+  return <section className="section-padding" dir="rtl">
       <div className="container-tight">
         <div className="bg-gradient-to-br from-[#D87341] to-[#C4652F] text-white rounded-3xl p-10 md:p-16 text-center relative overflow-hidden">
           {/* Decorative elements */}
@@ -14,15 +12,8 @@ const CTA = () => {
             <h2 className="font-headline text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
               רוצה אתר או דף נחיתה שמרגיש נכון לעסק שלך?
             </h2>
-            <p className="text-white/85 text-lg mb-8 max-w-xl mx-auto">
-              אני כאן כדי לבנות לך חוויה מקצועית, נקייה ומדויקת — באווירה רגועה ונעימה.
-            </p>
-            <Button 
-              variant="secondary" 
-              size="xl" 
-              className="group rounded-full py-3 px-8 bg-white text-[#D87341] hover:bg-white/90"
-              asChild
-            >
+            <p className="text-white/85 text-lg mb-8 max-w-xl mx-auto">אני כאן כדי לבנות לך חוויה מקצועית, נקייה ומדויקת באווירה רגועה ונעימה.</p>
+            <Button variant="secondary" size="xl" className="group rounded-full py-3 px-8 bg-white text-[#D87341] hover:bg-white/90" asChild>
               <a href="https://wa.me/972528934634">
                 <MessageCircle className="w-5 h-5" />
                 דברו איתי בוואטסאפ
@@ -31,8 +22,6 @@ const CTA = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTA;
