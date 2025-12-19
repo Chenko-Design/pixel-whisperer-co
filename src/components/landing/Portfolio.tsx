@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink, ChevronRight, ChevronLeft } from "lucide-react";
 import projectRidely from "@/assets/project-ridely.jpg";
@@ -39,6 +40,7 @@ const projects = [
     category: "אתר תדמית",
     image: projectHamerhav,
     video: "/videos/hamerhav-haptuach.mp4",
+    mobileVideo: "/videos/hamerhav-haptuach-mobile.mp4",
     bgColor: "#ffffff",
     darkText: true,
   },
@@ -54,6 +56,14 @@ const AUTOPLAY_INTERVAL = 12000;
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const isMobile = useIsMobile();
+
+  const getVideoSrc = (project: typeof projects[0]) => {
+    if (isMobile && project.mobileVideo) {
+      return project.mobileVideo;
+    }
+    return project.video;
+  };
 
   const nextSlide = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % projects.length);
@@ -98,7 +108,7 @@ const Portfolio = () => {
             >
               {projects[activeIndex].video ? (
                 <video
-                  src={projects[activeIndex].video}
+                  src={getVideoSrc(projects[activeIndex])}
                   autoPlay
                   loop
                   muted
