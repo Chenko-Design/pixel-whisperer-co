@@ -161,15 +161,15 @@ const Portfolio = () => {
             <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-4 right-4 justify-between pointer-events-none">
               <button
                 onClick={prevSlide}
-                className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto hover:scale-110"
+                className="w-12 h-12 bg-transparent hover:bg-white/20 rounded-full flex items-center justify-center transition-all pointer-events-auto hover:scale-110"
               >
-                <ChevronRight className="w-6 h-6 text-[#1a2a4a]" />
+                <ChevronRight className="w-6 h-6 text-white" />
               </button>
               <button
                 onClick={nextSlide}
-                className="w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto hover:scale-110"
+                className="w-12 h-12 bg-transparent hover:bg-white/20 rounded-full flex items-center justify-center transition-all pointer-events-auto hover:scale-110"
               >
-                <ChevronLeft className="w-6 h-6 text-gray-800" />
+                <ChevronLeft className="w-6 h-6 text-white" />
               </button>
             </div>
           </div>
