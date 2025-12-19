@@ -33,10 +33,10 @@ const testimonials = [
 const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] }) => {
   return (
     <div className="relative max-w-sm">
-      {/* Message bubble */}
-      <div className="bg-[#DCF8C6] rounded-lg rounded-tr-none px-4 py-3 shadow-sm relative min-h-[140px] flex flex-col">
-        {/* Tail */}
-        <div className="absolute -top-0 -right-2 w-0 h-0 border-l-[8px] border-l-[#DCF8C6] border-t-[8px] border-t-transparent" />
+      {/* Message bubble - white for received messages */}
+      <div className="bg-white rounded-lg rounded-tl-none px-4 py-3 shadow-sm relative min-h-[140px] flex flex-col">
+        {/* Tail on left side for received messages */}
+        <div className="absolute -top-0 -left-2 w-0 h-0 border-r-[8px] border-r-white border-t-[8px] border-t-transparent" />
         
         {/* Author name with blurred "family name" */}
         <p className="text-[#075E54] font-semibold text-sm mb-2 flex items-center gap-1">
@@ -49,13 +49,9 @@ const WhatsAppMessage = ({ testimonial }: { testimonial: typeof testimonials[0] 
           {testimonial.quote}
         </p>
         
-        {/* Time and read receipts */}
+        {/* Time only - no checkmarks for received messages */}
         <div className="flex items-center justify-end gap-1 mt-2">
           <span className="text-[10px] text-[#667781]">{testimonial.time}</span>
-          <svg width="20" height="12" viewBox="0 0 20 12" fill="none" className="text-[#53BDEB]">
-            <path d="M1 6L4 9L10 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M6 6L9 9L15 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
         </div>
       </div>
     </div>
