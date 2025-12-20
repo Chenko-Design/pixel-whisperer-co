@@ -68,7 +68,7 @@ const Hero = () => {
           {/* Main Heading with subtitle */}
           <div className="inline-block">
           <h1 
-              className="font-matritsa text-[clamp(1.8rem,8vw,2.5rem)] md:text-6xl lg:text-7xl text-white mb-8 animate-fade-up"
+              className="font-matritsa text-[clamp(2.2rem,10vw,3rem)] md:text-6xl lg:text-7xl text-white mb-8 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)", lineHeight: "1.3" }}
             >
               <span className="md:hidden">חולמים על אתר<br />שגורם ללקוחות להבין<br />שהם במקום הנכון?</span>
