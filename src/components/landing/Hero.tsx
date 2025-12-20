@@ -125,8 +125,11 @@ const Hero = () => {
               variant="outline" 
               size="lg" 
               className="rounded-full py-3 w-[160px] bg-white border-none text-primary shadow-md transition-all duration-200 hover:bg-white/90 hover:text-primary hover:scale-105 hover:shadow-lg"
+              asChild
             >
-              צור קשר
+              <a href="https://wa.me/972528934634">
+                צור קשר
+              </a>
             </Button>
             <Button 
               variant="outline" 
