@@ -141,7 +141,7 @@ const Portfolio = () => {
             onTouchEnd={onTouchEnd}
           >
             <div 
-              className="group relative overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer shadow-xl"
+              className="group relative isolate overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer shadow-xl"
               style={{ backgroundColor: projects[activeIndex].bgColor || 'hsl(var(--secondary))' }}
             >
               {projects[activeIndex].video ? (
@@ -208,7 +208,7 @@ const Portfolio = () => {
             </div>
 
             {/* Content - shown below image on mobile only */}
-            <div className="md:hidden text-center mt-4">
+            <div className="md:hidden text-center mt-8 relative z-30">
               <span className="text-sm font-medium text-muted-foreground">
                 {projects[activeIndex].category}
               </span>
