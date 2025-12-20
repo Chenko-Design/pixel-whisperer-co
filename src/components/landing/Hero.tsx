@@ -71,7 +71,7 @@ const Hero = () => {
               className="font-matritsa text-[2.2rem] sm:text-[2.5rem] md:text-6xl lg:text-7xl text-white mb-8 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)", lineHeight: "1.3" }}
             >
-              <span className="md:hidden">חולמים על אתר<br />שגורם ללקוחות<br />להבין שהם במקום הנכון?</span>
+              <span className="md:hidden">חולמים על אתר<br />שגורם ללקוחות להבין<br />שהם במקום הנכון?</span>
               <span className="hidden md:inline">חולמים על אתר שגורם ללקוחות<br />להבין שהם במקום הנכון?</span>
             </h1>
           </div>
