@@ -57,7 +57,11 @@ const AUTOPLAY_INTERVAL = 12000;
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const isMobile = useIsMobile();
+
+  const minSwipeDistance = 50;
 
   const getVideoSrc = (project: typeof projects[0]) => {
     if (isMobile && project.mobileVideo) {
@@ -70,8 +74,30 @@ const Portfolio = () => {
     setActiveIndex((prev) => (prev + 1) % projects.length);
   }, []);
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
+  }, []);
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      prevSlide(); // RTL: swipe left = previous
+    } else if (isRightSwipe) {
+      nextSlide(); // RTL: swipe right = next
+    }
   };
 
   // Autoplay
@@ -102,7 +128,12 @@ const Portfolio = () => {
           onMouseLeave={() => setIsPaused(false)}
         >
           {/* Main large image */}
-          <div className="w-full max-w-4xl mx-auto relative">
+          <div 
+            className="w-full max-w-4xl mx-auto relative"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+          >
             <div 
               className="group relative overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer shadow-xl"
               style={{ backgroundColor: projects[activeIndex].bgColor || 'hsl(var(--secondary))' }}
