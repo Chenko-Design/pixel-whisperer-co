@@ -151,7 +151,7 @@ const Portfolio = () => {
                   loop
                   muted
                   playsInline
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 z-0 ${
                     projects[activeIndex].title === "Captain Invest"
                       ? "md:object-[-60px_center] object-center"
                       : projects[activeIndex].title === "Firesafety Toolkit" ||
@@ -164,7 +164,7 @@ const Portfolio = () => {
                 <img
                   src={projects[activeIndex].image}
                   alt={projects[activeIndex].title}
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 z-0 ${
                     projects[activeIndex].title === "מפגשי העצמה נשית"
                       ? "max-md:scale-110"
                       : ""
