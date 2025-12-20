@@ -182,7 +182,7 @@ const Portfolio = () => {
               </button>
               
               {/* Content - hidden on mobile, shown on desktop */}
-              <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8">
+              <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8 z-20">
                 <span className={`text-sm font-medium ${
                   projects[activeIndex].darkText ? "text-[#1a2a4a]/70" : "text-white/70"
                 }`}>
@@ -196,7 +196,7 @@ const Portfolio = () => {
               </div>
 
               {/* Progress bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-20">
                 <div 
                   className="h-full bg-[#D87341] transition-all"
                   style={{
