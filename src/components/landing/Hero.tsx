@@ -93,9 +93,9 @@ const Hero = () => {
             style={{ animationDelay: "0.3s" }}
           >
             <span className="text-white font-medium text-sm md:text-base cursor-pointer transition-transform duration-200 hover:-translate-y-1">עיצוב שמדבר אתכם</span>
-            <div className="w-2 h-2 bg-[hsl(220,50%,12%)] rounded-full" />
+            <div className="w-3 h-3 bg-[hsl(220,50%,12%)] rounded-full" />
             <span className="text-white font-medium text-sm md:text-base cursor-pointer transition-transform duration-200 hover:-translate-y-1">ליווי אישי אמיתי</span>
-            <div className="w-2 h-2 bg-[hsl(220,50%,12%)] rounded-full" />
+            <div className="w-3 h-3 bg-[hsl(220,50%,12%)] rounded-full" />
             <span className="text-white font-medium text-sm md:text-base cursor-pointer transition-transform duration-200 hover:-translate-y-1">תהליך ברור ונעים</span>
           </div>
           
