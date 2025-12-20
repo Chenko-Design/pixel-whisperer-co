@@ -1,7 +1,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, ChevronRight, ChevronLeft } from "lucide-react";
+import { ArrowLeft, ChevronRight, ChevronLeft, Maximize2, X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+} from "@/components/ui/dialog";
 import projectRidely from "@/assets/project-ridely.jpg";
 import projectTopbred from "@/assets/project-topbred.jpg";
 import projectWomen from "@/assets/project-women.jpg";
@@ -59,6 +64,7 @@ const Portfolio = () => {
   const [isPaused, setIsPaused] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const isMobile = useIsMobile();
 
   const minSwipeDistance = 50;
@@ -166,6 +172,14 @@ const Portfolio = () => {
                 />
               )}
               
+              {/* Fullscreen button */}
+              <button
+                onClick={() => setIsFullscreen(true)}
+                className="absolute top-4 left-4 w-10 h-10 bg-black/30 hover:bg-black/50 rounded-full flex items-center justify-center transition-all z-10 backdrop-blur-sm"
+                aria-label="מסך מלא"
+              >
+                <Maximize2 className="w-5 h-5 text-white" />
+              </button>
               
               {/* Content - hidden on mobile, shown on desktop */}
               <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8">
@@ -251,6 +265,60 @@ const Portfolio = () => {
           </Button>
         </div>
       </div>
+
+      {/* Fullscreen Dialog */}
+      <Dialog open={isFullscreen} onOpenChange={setIsFullscreen}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 border-none bg-black/95 flex items-center justify-center">
+          <DialogClose className="absolute top-4 right-4 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all backdrop-blur-sm">
+            <X className="w-6 h-6 text-white" />
+          </DialogClose>
+          
+          <div className="relative w-full h-full flex items-center justify-center p-4">
+            {projects[activeIndex].video ? (
+              <video
+                src={getVideoSrc(projects[activeIndex])}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="max-w-full max-h-full object-contain rounded-lg"
+              />
+            ) : (
+              <img
+                src={projects[activeIndex].image}
+                alt={projects[activeIndex].title}
+                className="max-w-full max-h-full object-contain rounded-lg"
+              />
+            )}
+          </div>
+          
+          {/* Navigation in fullscreen */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
+            <button
+              onClick={prevSlide}
+              className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all pointer-events-auto backdrop-blur-sm"
+            >
+              <ChevronRight className="w-6 h-6 text-white" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all pointer-events-auto backdrop-blur-sm"
+            >
+              <ChevronLeft className="w-6 h-6 text-white" />
+            </button>
+          </div>
+          
+          {/* Title overlay */}
+          <div className="absolute bottom-8 left-0 right-0 text-center">
+            <span className="text-sm font-medium text-white/70">
+              {projects[activeIndex].category}
+            </span>
+            <h3 className="font-headline text-2xl md:text-3xl font-bold text-white">
+              {projects[activeIndex].title}
+            </h3>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <style>{`
         @keyframes progress {
