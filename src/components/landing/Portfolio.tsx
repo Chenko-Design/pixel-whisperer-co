@@ -230,7 +230,7 @@ const Portfolio = () => {
             </div>
 
             {/* Content - shown below image on mobile only */}
-            <div className="md:hidden text-center mt-8 relative z-30">
+            <div className="md:hidden text-center mt-3 relative z-30">
               <span className="text-sm font-medium text-muted-foreground">
                 {projects[activeIndex].category}
               </span>
