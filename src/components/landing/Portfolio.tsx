@@ -165,11 +165,9 @@ const Portfolio = () => {
                   src={projects[activeIndex].image}
                   alt={projects[activeIndex].title}
                   className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 z-0 ${
-                    projects[activeIndex].title === "Ridely App"
-                      ? "md:translate-y-[-28px]"
-                      : projects[activeIndex].title === "מפגשי העצמה נשית"
-                        ? "max-md:scale-110"
-                        : ""
+                    projects[activeIndex].title === "מפגשי העצמה נשית"
+                      ? "max-md:scale-110"
+                      : ""
                   }`}
                 />
               )}
