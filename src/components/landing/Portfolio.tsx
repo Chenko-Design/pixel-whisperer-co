@@ -65,7 +65,29 @@ const Portfolio = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(false);
   const isMobile = useIsMobile();
+
+  // Handle landscape mode for mobile fullscreen
+  useEffect(() => {
+    if (isFullscreen && isMobile) {
+      setIsLandscape(true);
+      // Try to lock orientation to landscape if supported
+      const orientation = screen.orientation as ScreenOrientation & { lock?: (orientation: string) => Promise<void>; unlock?: () => void };
+      if (orientation?.lock) {
+        orientation.lock('landscape').catch(() => {
+          // Orientation lock not supported or failed
+        });
+      }
+    } else {
+      setIsLandscape(false);
+      // Unlock orientation when exiting fullscreen
+      const orientation = screen.orientation as ScreenOrientation & { lock?: (orientation: string) => Promise<void>; unlock?: () => void };
+      if (orientation?.unlock) {
+        orientation.unlock();
+      }
+    }
+  }, [isFullscreen, isMobile]);
 
   const minSwipeDistance = 50;
 
