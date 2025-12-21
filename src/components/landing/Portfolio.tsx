@@ -153,7 +153,7 @@ const Portfolio = () => {
                   playsInline
                   className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 z-0 ${
                     projects[activeIndex].title === "Captain Invest"
-                      ? "md:object-[-60px_center] object-center"
+                      ? "md:object-[-60px_top] object-center"
                       : projects[activeIndex].title === "Firesafety Toolkit" ||
                           projects[activeIndex].title === "המרחב הפתוח"
                         ? "md:object-center max-md:object-[center_85%]"
