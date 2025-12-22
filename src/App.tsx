@@ -8,14 +8,23 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const basePath = new URL(import.meta.env.BASE_URL, window.location.origin).pathname;
+// Detect actual base path at runtime:
+// - If accessed via proxy at /landing, use /landing
+// - If accessed directly at Netlify root, use /
+const getBasePath = () => {
+  const path = window.location.pathname;
+  if (path === "/landing" || path.startsWith("/landing/")) {
+    return "/landing";
+  }
+  return "/";
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename={basePath}>
+      <BrowserRouter basename={getBasePath()}>
         <Routes>
           <Route path="/" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

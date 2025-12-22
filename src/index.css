@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Ktav Yad';
-  src: url('/fonts/KtavYadCLM-Bold.ttf') format('truetype');
+  src: url('./assets/fonts/KtavYadCLM-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'Horev CLM';
-  src: url('/fonts/HorevCLM-Heavy.otf') format('opentype');
+  src: url('./assets/fonts/HorevCLM-Heavy.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: 'Polin';
-  src: url('/fonts/polin-bold.ttf') format('truetype');
+  src: url('./assets/fonts/polin-bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: 'Polin';
-  src: url('/fonts/polin-extrabold.ttf') format('truetype');
+  src: url('./assets/fonts/polin-extrabold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -34,7 +34,7 @@
 
 @font-face {
   font-family: 'Polin';
-  src: url('/fonts/polin-black.ttf') format('truetype');
+  src: url('./assets/fonts/polin-black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -42,7 +42,7 @@
 
 @font-face {
   font-family: 'Gadi Almog';
-  src: url('/fonts/gadi-almog-regular.otf') format('opentype');
+  src: url('./assets/fonts/gadi-almog-regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -50,7 +50,7 @@
 
 @font-face {
   font-family: 'Dana Yad';
-  src: url('/fonts/dana-yad-normal.otf') format('opentype');
+  src: url('./assets/fonts/dana-yad-normal.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -58,7 +58,7 @@
 
 @font-face {
   font-family: 'Miriwin';
-  src: url('/fonts/miriwin-webfont.ttf') format('truetype');
+  src: url('./assets/fonts/miriwin-webfont.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -66,7 +66,7 @@
 
 @font-face {
   font-family: 'Yarden';
-  src: url('/fonts/yarden-regular.otf') format('opentype');
+  src: url('./assets/fonts/yarden-regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -74,7 +74,7 @@
 
 @font-face {
   font-family: 'Yarden';
-  src: url('/fonts/yarden-bold.otf') format('opentype');
+  src: url('./assets/fonts/yarden-bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -82,7 +82,7 @@
 
 @font-face {
   font-family: 'FB Matritsa';
-  src: url('/fonts/FbMatritsaNarrow-Black.otf') format('opentype');
+  src: url('./assets/fonts/FbMatritsaNarrow-Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;

@@ -1,10 +1,33 @@
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+# Rewrites for serving the /landing/ base path at Netlify root.
+# These MUST come before the catch-all SPA fallback.
 
 [[redirects]]
-from = "/landing/assets/*"
-to = "/assets/:splat"
-status = 200
+  from = "/landing/assets/*"
+  to = "/assets/:splat"
+  status = 200
 
+[[redirects]]
+  from = "/landing/fonts/*"
+  to = "/fonts/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/landing/videos/*"
+  to = "/videos/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/landing"
+  to = "/"
+  status = 200
+
+[[redirects]]
+  from = "/landing/*"
+  to = "/:splat"
+  status = 200
+
+# SPA fallback - must be last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

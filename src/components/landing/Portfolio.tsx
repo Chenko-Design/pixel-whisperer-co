@@ -14,6 +14,12 @@ import projectCaptain from "@/assets/project-captain.jpg";
 import projectFiresafety from "@/assets/project-firesafety.png";
 import projectHamerhav from "@/assets/project-hamerhav.png";
 
+// Get correct base path for public assets (videos, fonts, etc.)
+const getPublicAssetPath = (path: string) => {
+  const isUnderLanding = window.location.pathname === "/landing" || window.location.pathname.startsWith("/landing/");
+  return isUnderLanding ? `/landing${path}` : path;
+};
+
 const projects = [
   {
     title: "Captain Invest",
@@ -92,10 +98,8 @@ const Portfolio = () => {
   const minSwipeDistance = 50;
 
   const getVideoSrc = (project: typeof projects[0]) => {
-    if (isMobile && project.mobileVideo) {
-      return project.mobileVideo;
-    }
-    return project.video;
+    const videoPath = isMobile && project.mobileVideo ? project.mobileVideo : project.video;
+    return videoPath ? getPublicAssetPath(videoPath) : undefined;
   };
 
   const nextSlide = useCallback(() => {
