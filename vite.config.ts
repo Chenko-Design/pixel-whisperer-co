@@ -5,7 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/landing/",
+  // Use relative base so the build works both at Netlify root and when
+  // proxied under /landing.
+  base: "./",
   server: {
     host: "::",
     port: 8080,
