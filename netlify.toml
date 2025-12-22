@@ -3,3 +3,8 @@ from = "/*"
 to = "/index.html"
 status = 200
 
+[[redirects]]
+from = "/landing/assets/*"
+to = "/assets/:splat"
+status = 200
+
