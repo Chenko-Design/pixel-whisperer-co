@@ -125,9 +125,9 @@ const Portfolio = () => {
               >
                 {/* Image Container */}
                 <div 
-                  className={`relative w-full overflow-hidden bg-secondary ${
+                  className={`relative w-full overflow-hidden bg-secondary flex items-center justify-center ${
                     project.isLongScreen 
-                      ? 'aspect-[3/4] md:aspect-[4/5]' 
+                      ? '' 
                       : 'aspect-[16/9]'
                   }`}
                 >
@@ -136,9 +136,10 @@ const Portfolio = () => {
                     alt={project.title}
                     className={`transition-transform duration-700 group-hover:scale-[1.02] ${
                       project.isLongScreen 
-                        ? 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 h-full w-auto max-w-none origin-center' 
+                        ? '-rotate-90 w-full h-auto' 
                         : 'w-full h-full object-cover'
                     }`}
+                    style={project.isLongScreen ? { maxWidth: 'none' } : {}}
                   />
                   
                   {/* Gradient overlay for long screens */}
