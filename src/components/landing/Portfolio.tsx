@@ -127,17 +127,17 @@ const Portfolio = () => {
                 <div 
                   className={`relative w-full overflow-hidden bg-secondary ${
                     project.isLongScreen 
-                      ? 'max-h-[500px] md:max-h-[600px]' 
+                      ? 'aspect-[3/4] md:aspect-[4/5]' 
                       : 'aspect-[16/9]'
                   }`}
                 >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={`w-full transition-transform duration-700 group-hover:scale-[1.02] ${
+                    className={`transition-transform duration-700 group-hover:scale-[1.02] ${
                       project.isLongScreen 
-                        ? 'h-auto object-top object-cover' 
-                        : 'h-full object-cover'
+                        ? 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 h-full w-auto max-w-none origin-center' 
+                        : 'w-full h-full object-cover'
                     }`}
                   />
                   
