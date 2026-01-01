@@ -158,9 +158,9 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Long Screen Projects - Terra and מתכננת side by side */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
-          {projects.filter(p => p.title === "Terra" || p.title === "מתכננת").map((project, index) => (
+        {/* Long Screen Projects - All 3 side by side */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16">
+          {projects.filter(p => p.isLongScreen).map((project) => (
             <div
               key={project.title}
               className="group cursor-pointer transition-all duration-500 hover:scale-[1.01]"
@@ -169,38 +169,13 @@ const Portfolio = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-auto rounded-2xl shadow-lg transition-shadow duration-500 group-hover:shadow-2xl"
+                className="w-full h-auto rounded-xl shadow-lg transition-shadow duration-500 group-hover:shadow-2xl"
               />
-              <div className="mt-4 text-center">
+              <div className="mt-3 text-center">
                 <span className="text-sm font-medium text-muted-foreground">
                   {project.category}
                 </span>
-                <h3 className="font-headline text-xl md:text-2xl font-bold text-foreground">
-                  {project.title}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Photography - Full width */}
-        <div className="mt-16">
-          {projects.filter(p => p.title === "Photography").map((project) => (
-            <div
-              key={project.title}
-              className="group cursor-pointer transition-all duration-500 hover:scale-[1.005]"
-              onClick={() => setSelectedProject(project)}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full max-w-2xl mx-auto h-auto rounded-2xl shadow-lg transition-shadow duration-500 group-hover:shadow-2xl"
-              />
-              <div className="mt-4 text-center">
-                <span className="text-sm font-medium text-muted-foreground">
-                  {project.category}
-                </span>
-                <h3 className="font-headline text-xl md:text-2xl font-bold text-foreground">
+                <h3 className="font-headline text-lg md:text-xl font-bold text-foreground">
                   {project.title}
                 </h3>
               </div>
