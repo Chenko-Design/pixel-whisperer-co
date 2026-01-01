@@ -124,26 +124,21 @@ const Portfolio = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Image Container */}
-                {project.isLongScreen ? (
-                  <div className="relative w-full bg-secondary aspect-[9/16] md:aspect-[9/14] overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-auto h-full object-cover object-right -rotate-90 origin-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-700 group-hover:scale-[1.02]"
-                      style={{ minWidth: '177%' }}
-                    />
-                    {/* Gradient overlay */}
-                    <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
-                  </div>
-                ) : (
-                  <div className="relative w-full overflow-hidden bg-secondary aspect-[16/9]">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                    />
-                  </div>
-                )}
+                <div 
+                  className={`relative w-full overflow-hidden bg-secondary ${
+                    project.isLongScreen ? 'aspect-[9/16]' : 'aspect-[16/9]'
+                  }`}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className={`w-full h-full transition-transform duration-700 group-hover:scale-[1.02] ${
+                      project.isLongScreen ? 'object-cover object-top' : 'object-cover'
+                    }`}
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+                </div>
 
                 {/* Zoom Icon */}
                 <div className="absolute top-6 left-6 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
