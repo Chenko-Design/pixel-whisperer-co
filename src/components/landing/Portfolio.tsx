@@ -136,7 +136,7 @@ const Portfolio = () => {
                     alt={project.title}
                     className={`transition-transform duration-700 group-hover:scale-[1.02] ${
                       project.isLongScreen 
-                        ? 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 h-full w-auto max-w-none origin-center' 
+                        ? 'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 h-full w-auto max-w-none origin-center' 
                         : 'w-full h-full object-cover'
                     }`}
                   />
