@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, X, ZoomIn } from "lucide-react";
 import {
@@ -66,10 +66,33 @@ const projects: Project[] = [
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const getVideoSrc = (project: Project) => {
     return project.video ? getPublicAssetPath(project.video) : undefined;
   };
+
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = Number(entry.target.getAttribute('data-index'));
+          if (entry.isIntersecting) {
+            setVisibleItems((prev) => new Set(prev).add(index));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    itemRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="portfolio" className="section-padding bg-cream-dark/70" dir="rtl">
@@ -81,63 +104,74 @@ const Portfolio = () => {
           </h2>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
+        {/* Stacked Projects List */}
+        <div className="flex flex-col gap-12 md:gap-16">
+          {projects.map((project, index) => (
             <div
               key={project.title}
-              className={`group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${
-                project.isLongScreen 
-                  ? "aspect-[3/4]" 
-                  : "aspect-[4/3]"
+              ref={(el) => (itemRefs.current[index] = el)}
+              data-index={index}
+              className={`group relative transition-all duration-700 ${
+                visibleItems.has(index) 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-12'
               }`}
-              onClick={() => setSelectedProject(project)}
+              style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {/* Image/Video Container */}
-              <div className="absolute inset-0 bg-secondary">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+              {/* Project Card */}
+              <div 
+                className="relative overflow-hidden rounded-3xl shadow-xl cursor-pointer transition-all duration-500 hover:shadow-2xl"
+                onClick={() => setSelectedProject(project)}
+              >
+                {/* Image Container */}
+                <div 
+                  className={`relative w-full overflow-hidden bg-secondary ${
                     project.isLongScreen 
-                      ? "object-cover object-top" 
-                      : "object-cover"
+                      ? 'max-h-[500px] md:max-h-[600px]' 
+                      : 'aspect-[16/9]'
                   }`}
-                />
-              </div>
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className={`w-full transition-transform duration-700 group-hover:scale-[1.02] ${
+                      project.isLongScreen 
+                        ? 'h-auto object-top object-cover' 
+                        : 'h-full object-cover'
+                    }`}
+                  />
+                  
+                  {/* Gradient overlay for long screens */}
+                  {project.isLongScreen && (
+                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
+                  )}
+                </div>
 
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Zoom Icon */}
+                <div className="absolute top-6 left-6 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <ZoomIn className="w-6 h-6 text-white" />
+                </div>
 
-              {/* Zoom Icon */}
-              <div className="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <ZoomIn className="w-5 h-5 text-white" />
-              </div>
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-sm font-medium text-white/80 mb-1 block">
-                  {project.category}
-                </span>
-                <h3 className="font-headline text-xl font-bold text-white">
-                  {project.title}
-                </h3>
-              </div>
-
-              {/* Always visible label on mobile */}
-              <div className="md:hidden absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-                <span className="text-xs font-medium text-white/80 block">
-                  {project.category}
-                </span>
-                <h3 className="font-headline text-lg font-bold text-white">
-                  {project.title}
-                </h3>
+                {/* Content - appears on hover for desktop, always visible on mobile */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <div className="md:translate-y-4 md:group-hover:translate-y-0 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300">
+                    <span className="inline-block px-3 py-1 bg-[#D87341]/90 text-white text-sm font-medium rounded-full mb-3">
+                      {project.category}
+                    </span>
+                    <h3 className="font-headline text-2xl md:text-3xl lg:text-4xl font-bold text-white drop-shadow-lg">
+                      {project.title}
+                    </h3>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-16">
           <Button size="lg" className="group rounded-full py-3 px-8 bg-[#D87341] hover:bg-[#C4652F] text-white shadow-lg hover:shadow-xl" asChild>
             <a href="https://chenko-design.com/" target="_blank" rel="noopener noreferrer">
               לצפייה בכל העבודות
@@ -165,11 +199,11 @@ const Portfolio = () => {
                 className="max-w-full max-h-full object-contain rounded-lg"
               />
             ) : selectedProject?.isLongScreen ? (
-              <div className="w-full h-full overflow-auto flex justify-center">
+              <div className="w-full h-full overflow-auto flex justify-center py-8">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-auto max-w-full h-auto object-contain"
+                  className="w-auto max-w-[90%] h-auto"
                 />
               </div>
             ) : (
