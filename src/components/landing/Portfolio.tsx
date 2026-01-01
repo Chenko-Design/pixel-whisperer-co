@@ -125,14 +125,13 @@ const Portfolio = () => {
               >
                 {/* Image Container */}
                 {project.isLongScreen ? (
-                  <div className="relative w-full bg-secondary">
-                    <div className="relative w-full" style={{ paddingBottom: '300%' }}>
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 h-full w-auto max-w-none transition-transform duration-700 group-hover:scale-[1.02]"
-                      />
-                    </div>
+                  <div className="relative w-full bg-secondary aspect-[9/16] md:aspect-[9/14] overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-auto h-full object-cover object-right -rotate-90 origin-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-700 group-hover:scale-[1.02]"
+                      style={{ minWidth: '177%' }}
+                    />
                     {/* Gradient overlay */}
                     <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
                   </div>
