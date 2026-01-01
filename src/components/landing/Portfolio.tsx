@@ -1,7 +1,6 @@
-import { useState, useEffect, useCallback } from "react";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ChevronRight, ChevronLeft, Maximize2, X } from "lucide-react";
+import { ArrowLeft, X, ZoomIn } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -9,10 +8,10 @@ import {
 } from "@/components/ui/dialog";
 import projectRidely from "@/assets/project-ridely.jpg";
 import projectTopbred from "@/assets/project-topbred.jpg";
-import projectWomen from "@/assets/project-women.jpg";
 import projectCaptain from "@/assets/project-captain.jpg";
-import projectFiresafety from "@/assets/project-firesafety.png";
-import projectHamerhav from "@/assets/project-hamerhav.png";
+import projectTerra from "@/assets/project-terra.jpg";
+import projectMetaknenet from "@/assets/project-metaknenet.jpg";
+import projectPhotography from "@/assets/project-photography.jpg";
 
 // Get correct base path for public assets (videos, fonts, etc.)
 const getPublicAssetPath = (path: string) => {
@@ -20,14 +19,20 @@ const getPublicAssetPath = (path: string) => {
   return isUnderLanding ? `/landing${path}` : path;
 };
 
-const projects = [
+interface Project {
+  title: string;
+  category: string;
+  image: string;
+  video?: string;
+  isLongScreen?: boolean;
+}
+
+const projects: Project[] = [
   {
     title: "Captain Invest",
     category: "אתר תדמית",
     image: projectCaptain,
     video: "/videos/captain-invest.mp4",
-    bgColor: "#F9F9FD",
-    darkText: true,
   },
   {
     title: "Ridely App",
@@ -35,113 +40,36 @@ const projects = [
     image: projectRidely,
   },
   {
-    title: "Firesafety Toolkit",
-    category: "אתר תדמית",
-    image: projectFiresafety,
-    video: "/videos/firesafety.mp4",
-    mobileVideo: "/videos/firesafety-mobile.mp4",
-    bgColor: "#ffffff",
-  },
-  {
     title: "TopBred Website",
     category: "אפליקציה + דף נחיתה",
     image: projectTopbred,
   },
   {
-    title: "המרחב הפתוח",
+    title: "Terra",
     category: "אתר תדמית",
-    image: projectHamerhav,
-    video: "/videos/hamerhav-haptuach.mp4",
-    mobileVideo: "/videos/hamerhav-haptuach-mobile.mp4",
-    bgColor: "#ffffff",
-    darkText: true,
+    image: projectTerra,
+    isLongScreen: true,
   },
   {
-    title: "מפגשי העצמה נשית",
-    category: "דף נחיתה",
-    image: projectWomen,
+    title: "מתכננת",
+    category: "אתר תדמית",
+    image: projectMetaknenet,
+    isLongScreen: true,
+  },
+  {
+    title: "Photography",
+    category: "אתר תדמית",
+    image: projectPhotography,
+    isLongScreen: true,
   },
 ];
 
-const AUTOPLAY_INTERVAL = 12000;
-
 const Portfolio = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  const [isLandscape, setIsLandscape] = useState(false);
-  const isMobile = useIsMobile();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-  // Handle landscape mode for mobile fullscreen
-  useEffect(() => {
-    if (isFullscreen && isMobile) {
-      setIsLandscape(true);
-      // Try to lock orientation to landscape if supported
-      const orientation = screen.orientation as ScreenOrientation & { lock?: (orientation: string) => Promise<void>; unlock?: () => void };
-      if (orientation?.lock) {
-        orientation.lock('landscape').catch(() => {
-          // Orientation lock not supported or failed
-        });
-      }
-    } else {
-      setIsLandscape(false);
-      // Unlock orientation when exiting fullscreen
-      const orientation = screen.orientation as ScreenOrientation & { lock?: (orientation: string) => Promise<void>; unlock?: () => void };
-      if (orientation?.unlock) {
-        orientation.unlock();
-      }
-    }
-  }, [isFullscreen, isMobile]);
-
-  const minSwipeDistance = 50;
-
-  const getVideoSrc = (project: typeof projects[0]) => {
-    const videoPath = isMobile && project.mobileVideo ? project.mobileVideo : project.video;
-    return videoPath ? getPublicAssetPath(videoPath) : undefined;
+  const getVideoSrc = (project: Project) => {
+    return project.video ? getPublicAssetPath(project.video) : undefined;
   };
-
-  const nextSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % projects.length);
-  }, []);
-
-  const prevSlide = useCallback(() => {
-    setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
-  }, []);
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
-  };
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX);
-  };
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
-    const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-    
-    if (isLeftSwipe) {
-      prevSlide(); // RTL: swipe left = previous
-    } else if (isRightSwipe) {
-      nextSlide(); // RTL: swipe right = next
-    }
-  };
-
-  // Autoplay
-  useEffect(() => {
-    if (isPaused) return;
-    
-    const interval = setInterval(() => {
-      nextSlide();
-    }, AUTOPLAY_INTERVAL);
-
-    return () => clearInterval(interval);
-  }, [isPaused, nextSlide]);
 
   return (
     <section id="portfolio" className="section-padding bg-cream-dark/70" dir="rtl">
@@ -153,133 +81,60 @@ const Portfolio = () => {
           </h2>
         </div>
 
-        {/* Carousel */}
-        <div 
-          className="flex flex-col gap-6"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Main large image */}
-          <div 
-            className="w-full max-w-4xl mx-auto relative"
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
-          >
-            <div 
-              className="group relative isolate overflow-hidden rounded-3xl aspect-[16/10] cursor-pointer shadow-xl"
-              style={{ backgroundColor: projects[activeIndex].bgColor || 'hsl(var(--secondary))' }}
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project) => (
+            <div
+              key={project.title}
+              className={`group relative overflow-hidden rounded-2xl shadow-lg cursor-pointer transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 ${
+                project.isLongScreen 
+                  ? "aspect-[3/4]" 
+                  : "aspect-[4/3]"
+              }`}
+              onClick={() => setSelectedProject(project)}
             >
-              {projects[activeIndex].video ? (
-                <video
-                  src={getVideoSrc(projects[activeIndex])}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 z-0 ${
-                    projects[activeIndex].title === "Captain Invest"
-                      ? "md:object-[-60px_top] md:translate-y-[-28px] object-center"
-                      : projects[activeIndex].title === "Firesafety Toolkit" ||
-                          projects[activeIndex].title === "המרחב הפתוח"
-                        ? "md:object-center max-md:object-[center_85%]"
-                        : ""
-                  }`}
-                />
-              ) : (
-                <img
-                  src={projects[activeIndex].image}
-                  alt={projects[activeIndex].title}
-                  className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 z-0 ${
-                    projects[activeIndex].title === "מפגשי העצמה נשית"
-                      ? "max-md:scale-110"
-                      : ""
-                  }`}
-                />
-              )}
-              
-              {/* Fullscreen button */}
-              <button
-                onClick={() => setIsFullscreen(true)}
-                className="absolute top-4 left-4 w-10 h-10 bg-black/30 hover:bg-black/50 rounded-full flex items-center justify-center transition-all z-10 backdrop-blur-sm"
-                aria-label="מסך מלא"
-              >
-                <Maximize2 className="w-5 h-5 text-white" />
-              </button>
-              
-              {/* Content - hidden on mobile, shown on desktop */}
-              <div className="hidden md:block absolute bottom-0 left-0 right-0 p-8 z-20">
-                <span className={`text-sm font-medium ${
-                  projects[activeIndex].darkText ? "text-[#1a2a4a]/70" : "text-white/70"
-                }`}>
-                  {projects[activeIndex].category}
-                </span>
-                <h3 className={`font-headline text-3xl lg:text-4xl font-bold ${
-                  projects[activeIndex].darkText ? "text-[#1a2a4a]" : "text-white"
-                }`}>
-                  {projects[activeIndex].title}
-                </h3>
-              </div>
-
-              {/* Progress bar */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-20">
-                <div 
-                  className="h-full bg-[#D87341] transition-all"
-                  style={{
-                    animation: isPaused ? 'none' : `progress ${AUTOPLAY_INTERVAL}ms linear`,
-                    width: isPaused ? '0%' : '100%'
-                  }}
-                />
-              </div>
-            </div>
-
-            {/* Content - shown below image on mobile only */}
-            <div className="md:hidden text-center mt-3 relative z-30">
-              <span className="text-sm font-medium text-muted-foreground">
-                {projects[activeIndex].category}
-              </span>
-              <h3 className="font-headline text-xl font-bold text-foreground">
-                {projects[activeIndex].title}
-              </h3>
-            </div>
-
-            {/* Navigation arrows - hidden on mobile */}
-            <div className="hidden md:flex absolute top-1/2 -translate-y-1/2 left-4 right-4 justify-between pointer-events-none">
-              <button
-                onClick={prevSlide}
-                className="w-12 h-12 bg-transparent hover:bg-white/20 rounded-full flex items-center justify-center transition-all pointer-events-auto hover:scale-110"
-              >
-                <ChevronRight className="w-6 h-6 text-[#1a2a4a]" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="w-12 h-12 bg-transparent hover:bg-white/20 rounded-full flex items-center justify-center transition-all pointer-events-auto hover:scale-110"
-              >
-                <ChevronLeft className="w-6 h-6 text-[#1a2a4a]" />
-              </button>
-            </div>
-          </div>
-
-          {/* Thumbnails - below main image */}
-          <div className="flex justify-center gap-3">
-            {projects.map((project, index) => (
-              <button
-                key={project.title}
-                onClick={() => setActiveIndex(index)}
-                className={`relative overflow-hidden rounded-xl w-20 h-14 md:w-24 md:h-16 transition-all duration-300 ${
-                  index === activeIndex 
-                    ? "ring-2 ring-[#D87341] shadow-lg scale-110" 
-                    : "opacity-50 hover:opacity-100"
-                }`}
-              >
+              {/* Image/Video Container */}
+              <div className="absolute inset-0 bg-secondary">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className={`w-full h-full transition-transform duration-500 group-hover:scale-105 ${
+                    project.isLongScreen 
+                      ? "object-cover object-top" 
+                      : "object-cover"
+                  }`}
                 />
-              </button>
-            ))}
-          </div>
+              </div>
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              {/* Zoom Icon */}
+              <div className="absolute top-4 left-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <ZoomIn className="w-5 h-5 text-white" />
+              </div>
+
+              {/* Content */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <span className="text-sm font-medium text-white/80 mb-1 block">
+                  {project.category}
+                </span>
+                <h3 className="font-headline text-xl font-bold text-white">
+                  {project.title}
+                </h3>
+              </div>
+
+              {/* Always visible label on mobile */}
+              <div className="md:hidden absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <span className="text-xs font-medium text-white/80 block">
+                  {project.category}
+                </span>
+                <h3 className="font-headline text-lg font-bold text-white">
+                  {project.title}
+                </h3>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="text-center mt-12">
@@ -293,65 +148,50 @@ const Portfolio = () => {
       </div>
 
       {/* Fullscreen Dialog */}
-      <Dialog open={isFullscreen} onOpenChange={setIsFullscreen}>
-        <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 border-none bg-black/95 flex items-center justify-center">
+      <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] w-full h-full p-0 border-none bg-black/95 flex items-center justify-center overflow-hidden">
           <DialogClose className="absolute top-4 right-4 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all backdrop-blur-sm">
             <X className="w-6 h-6 text-white" />
           </DialogClose>
           
-          <div className="relative w-full h-full flex items-center justify-center p-4">
-            {projects[activeIndex].video ? (
+          <div className="relative w-full h-full flex items-center justify-center p-4 overflow-auto">
+            {selectedProject?.video ? (
               <video
-                src={getVideoSrc(projects[activeIndex])}
+                src={getVideoSrc(selectedProject)}
                 autoPlay
                 loop
                 muted
                 playsInline
                 className="max-w-full max-h-full object-contain rounded-lg"
               />
+            ) : selectedProject?.isLongScreen ? (
+              <div className="w-full h-full overflow-auto flex justify-center">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-auto max-w-full h-auto object-contain"
+                />
+              </div>
             ) : (
               <img
-                src={projects[activeIndex].image}
-                alt={projects[activeIndex].title}
+                src={selectedProject?.image}
+                alt={selectedProject?.title}
                 className="max-w-full max-h-full object-contain rounded-lg"
               />
             )}
           </div>
           
-          {/* Navigation in fullscreen */}
-          <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
-            <button
-              onClick={prevSlide}
-              className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all pointer-events-auto backdrop-blur-sm"
-            >
-              <ChevronRight className="w-6 h-6 text-white" />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all pointer-events-auto backdrop-blur-sm"
-            >
-              <ChevronLeft className="w-6 h-6 text-white" />
-            </button>
-          </div>
-          
           {/* Title overlay */}
-          <div className="absolute bottom-8 left-0 right-0 text-center">
+          <div className="absolute bottom-8 left-0 right-0 text-center pointer-events-none">
             <span className="text-sm font-medium text-white/70">
-              {projects[activeIndex].category}
+              {selectedProject?.category}
             </span>
             <h3 className="font-headline text-2xl md:text-3xl font-bold text-white">
-              {projects[activeIndex].title}
+              {selectedProject?.title}
             </h3>
           </div>
         </DialogContent>
       </Dialog>
-
-      <style>{`
-        @keyframes progress {
-          from { width: 0%; }
-          to { width: 100%; }
-        }
-      `}</style>
     </section>
   );
 };
