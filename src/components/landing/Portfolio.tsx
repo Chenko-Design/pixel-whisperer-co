@@ -104,9 +104,9 @@ const Portfolio = () => {
           </h2>
         </div>
 
-        {/* Stacked Projects List */}
+        {/* Regular Projects */}
         <div className="flex flex-col gap-12 md:gap-16">
-          {projects.map((project, index) => (
+          {projects.filter(p => !p.isLongScreen).map((project, index) => (
             <div
               key={project.title}
               ref={(el) => (itemRefs.current[index] = el)}
@@ -124,17 +124,11 @@ const Portfolio = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Image Container */}
-                <div 
-                  className={`relative w-full overflow-hidden bg-secondary ${
-                    project.isLongScreen ? 'aspect-[9/16]' : 'aspect-[16/9]'
-                  }`}
-                >
+                <div className="relative w-full overflow-hidden bg-secondary aspect-[16/9]">
                   <img
                     src={project.image}
                     alt={project.title}
-                    className={`w-full h-full transition-transform duration-700 group-hover:scale-[1.02] ${
-                      project.isLongScreen ? 'object-cover object-top' : 'object-cover'
-                    }`}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                   {/* Gradient overlay */}
                   <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
@@ -148,7 +142,7 @@ const Portfolio = () => {
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                {/* Content - appears on hover for desktop, always visible on mobile */}
+                {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                   <div className="md:translate-y-4 md:group-hover:translate-y-0 md:opacity-0 md:group-hover:opacity-100 transition-all duration-300">
                     <span className="inline-block px-3 py-1 bg-[#D87341]/90 text-white text-sm font-medium rounded-full mb-3">
@@ -159,6 +153,56 @@ const Portfolio = () => {
                     </h3>
                   </div>
                 </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Long Screen Projects - Terra and מתכננת side by side */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+          {projects.filter(p => p.title === "Terra" || p.title === "מתכננת").map((project, index) => (
+            <div
+              key={project.title}
+              className="group cursor-pointer transition-all duration-500 hover:scale-[1.01]"
+              onClick={() => setSelectedProject(project)}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-auto rounded-2xl shadow-lg transition-shadow duration-500 group-hover:shadow-2xl"
+              />
+              <div className="mt-4 text-center">
+                <span className="text-sm font-medium text-muted-foreground">
+                  {project.category}
+                </span>
+                <h3 className="font-headline text-xl md:text-2xl font-bold text-foreground">
+                  {project.title}
+                </h3>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Photography - Full width */}
+        <div className="mt-16">
+          {projects.filter(p => p.title === "Photography").map((project) => (
+            <div
+              key={project.title}
+              className="group cursor-pointer transition-all duration-500 hover:scale-[1.005]"
+              onClick={() => setSelectedProject(project)}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full max-w-2xl mx-auto h-auto rounded-2xl shadow-lg transition-shadow duration-500 group-hover:shadow-2xl"
+              />
+              <div className="mt-4 text-center">
+                <span className="text-sm font-medium text-muted-foreground">
+                  {project.category}
+                </span>
+                <h3 className="font-headline text-xl md:text-2xl font-bold text-foreground">
+                  {project.title}
+                </h3>
               </div>
             </div>
           ))}
