@@ -124,29 +124,27 @@ const Portfolio = () => {
                 onClick={() => setSelectedProject(project)}
               >
                 {/* Image Container */}
-                <div 
-                  className={`relative w-full overflow-hidden bg-secondary flex items-center justify-center ${
-                    project.isLongScreen 
-                      ? '' 
-                      : 'aspect-[16/9]'
-                  }`}
-                >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className={`transition-transform duration-700 group-hover:scale-[1.02] ${
-                      project.isLongScreen 
-                        ? '-rotate-90 w-full h-auto' 
-                        : 'w-full h-full object-cover'
-                    }`}
-                    style={project.isLongScreen ? { maxWidth: 'none' } : {}}
-                  />
-                  
-                  {/* Gradient overlay for long screens */}
-                  {project.isLongScreen && (
-                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
-                  )}
-                </div>
+                {project.isLongScreen ? (
+                  <div className="relative w-full bg-secondary">
+                    <div className="relative w-full" style={{ paddingBottom: '300%' }}>
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 h-full w-auto max-w-none transition-transform duration-700 group-hover:scale-[1.02]"
+                      />
+                    </div>
+                    {/* Gradient overlay */}
+                    <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+                  </div>
+                ) : (
+                  <div className="relative w-full overflow-hidden bg-secondary aspect-[16/9]">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                )}
 
                 {/* Zoom Icon */}
                 <div className="absolute top-6 left-6 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
