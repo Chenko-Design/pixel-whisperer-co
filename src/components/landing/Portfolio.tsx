@@ -182,7 +182,7 @@ const Portfolio = () => {
                 src={project.image}
                 alt={project.title}
                 className={`block w-full rounded-[5px] shadow-lg transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-xl ${
-                  project.forceTall ? 'h-[310px] object-cover object-center' : 'h-auto'
+                  project.forceTall ? 'h-[320px] object-cover object-center' : 'h-auto'
                 }`}
               />
               <div className="mt-3 mb-14 text-center">
