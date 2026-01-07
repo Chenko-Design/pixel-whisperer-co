@@ -63,6 +63,13 @@ const Hero = () => {
           backgroundPosition: 'center'
         }}
       >
+        {/* Warm overlay for text readability */}
+        <div 
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(135deg, hsla(25, 40%, 30%, 0.4) 0%, hsla(220, 50%, 12%, 0.5) 100%)'
+          }}
+        />
         {/* Main content - centered */}
         <div className="text-center max-w-4xl mx-auto" dir="rtl">
           {/* Main Heading with subtitle */}
