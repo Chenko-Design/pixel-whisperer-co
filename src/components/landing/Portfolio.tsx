@@ -28,15 +28,24 @@ interface Project {
   video?: string;
   isLongScreen?: boolean;
   cropToMatch?: boolean; // Crop to match standard aspect ratio like Ridely
+  noDialog?: boolean; // Disable click to open dialog
 }
 
 const projects: Project[] = [
+  // Column 1 - tall images
   {
     title: "Terra סטודיו לקרמיקה",
     category: "אתר קטלוג",
     image: projectTerra,
     isLongScreen: true,
   },
+  {
+    title: "Ridely",
+    category: "אפליקציה",
+    image: projectRidely,
+    isLongScreen: true,
+  },
+  // Column 2 - medium images
   {
     title: "מעיין יניב עיצוב פנים",
     category: "אתר תדמית",
@@ -49,12 +58,7 @@ const projects: Project[] = [
     image: projectTopbred,
     isLongScreen: true,
   },
-  {
-    title: "Ridely",
-    category: "אפליקציה",
-    image: projectRidely,
-    isLongScreen: true,
-  },
+  // Column 3 - mixed
   {
     title: "Eyal Photograph",
     category: "אתר תדמית",
@@ -73,6 +77,7 @@ const projects: Project[] = [
     image: projectFiresafety,
     isLongScreen: true,
     cropToMatch: true,
+    noDialog: true,
   },
 ];
 
@@ -171,12 +176,12 @@ const Portfolio = () => {
         </div>
 
         {/* Long Screen Projects - Masonry Layout */}
-        <div className="columns-1 md:columns-2 lg:columns-4 gap-4 mt-16 space-y-4">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-4 mt-16 space-y-4">
           {projects.filter(p => p.isLongScreen).map((project) => (
             <div
               key={project.title}
-              className="group cursor-pointer transition-all duration-500 hover:scale-[1.01] break-inside-avoid"
-              onClick={() => setSelectedProject(project)}
+              className={`group transition-all duration-500 hover:scale-[1.01] break-inside-avoid ${!project.noDialog ? 'cursor-pointer' : ''}`}
+              onClick={() => !project.noDialog && setSelectedProject(project)}
             >
               <img
                 src={project.image}
