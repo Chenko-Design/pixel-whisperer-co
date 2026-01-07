@@ -70,8 +70,8 @@ const Hero = () => {
             background: 'linear-gradient(135deg, hsla(25, 45%, 35%, 0.45) 0%, hsla(25, 40%, 30%, 0.4) 40%, hsla(220, 50%, 12%, 0.5) 100%)'
           }}
         />
-        {/* Main content - centered */}
-        <div className="text-center max-w-4xl mx-auto" dir="rtl">
+        {/* Main content - aligned left */}
+        <div className="text-right max-w-4xl w-full mr-auto ml-0 md:ml-16 lg:ml-24" dir="rtl">
           {/* Main Heading with subtitle */}
           <div className="inline-block">
           <h1 
