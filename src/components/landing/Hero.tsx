@@ -96,7 +96,7 @@ const Hero = () => {
           
           {/* 3 Feature Bullets with separators */}
           <div 
-            className="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 mb-14 md:mb-20 animate-fade-up md:pr-[15%]"
+            className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 mb-14 md:mb-20 animate-fade-up md:pl-[15%]"
             style={{ animationDelay: "0.3s" }}
           >
             <span className="text-white font-medium text-sm md:text-base cursor-pointer transition-transform duration-200 hover:-translate-y-1">עיצוב שמדבר אתכם</span>
@@ -125,7 +125,7 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div 
-            className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-5 mb-10 animate-fade-up md:pr-[15%]"
+            className="flex flex-wrap justify-center md:justify-end gap-3 md:gap-5 mb-10 animate-fade-up md:pl-[15%]"
             style={{ animationDelay: "0.4s" }}
           >
             <Button 
@@ -152,7 +152,7 @@ const Hero = () => {
           
           {/* Social Icons */}
           <div 
-            className="flex justify-center md:justify-start items-center gap-6 animate-fade-up md:pr-[15%]"
+            className="flex justify-center md:justify-end items-center gap-6 animate-fade-up md:pl-[15%]"
             style={{ animationDelay: "0.6s" }}
           >
             <a href="tel:0528934634" className="text-foreground hover:text-foreground/70 transition-colors">
@@ -168,7 +168,7 @@ const Hero = () => {
 
           {/* Contact Info */}
           <div 
-            className="flex justify-center md:justify-start items-center gap-4 mt-10 animate-fade-up text-foreground text-sm md:text-base md:pr-[15%]"
+            className="flex justify-center md:justify-end items-center gap-4 mt-10 animate-fade-up text-foreground text-sm md:text-base md:pl-[15%]"
             style={{ animationDelay: "0.7s" }}
           >
             <a href="tel:0528934634" className="hover:text-foreground/70 transition-colors">
