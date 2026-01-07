@@ -31,7 +31,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Terra",
-    category: "אתר תדמית",
+    category: "אתר קטלוג",
     image: projectTerra,
     isLongScreen: true,
   },
