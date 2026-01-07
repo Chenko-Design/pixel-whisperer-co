@@ -162,7 +162,7 @@ const Portfolio = () => {
                 alt={project.title}
                 className="w-full h-auto rounded-[5px] shadow-lg transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-xl"
               />
-              <div className="mt-3 text-center">
+              <div className="mt-3 mb-8 text-center">
                 <span className="text-sm font-medium text-muted-foreground">
                   {project.category}
                 </span>
