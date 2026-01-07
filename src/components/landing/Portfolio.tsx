@@ -13,6 +13,7 @@ import projectTerra from "@/assets/project-terra.jpg";
 import projectMetaknenet from "@/assets/project-metaknenet.jpg";
 import projectPhotography from "@/assets/project-photography.jpg";
 import projectCaptainLong from "@/assets/project-captain-long.jpg";
+import projectFiresafety from "@/assets/project-firesafety.png";
 
 // Get correct base path for public assets (videos, fonts, etc.)
 const getPublicAssetPath = (path: string) => {
@@ -51,6 +52,12 @@ const projects: Project[] = [
     title: "Ridely",
     category: "אפליקציה",
     image: projectRidely,
+    isLongScreen: true,
+  },
+  {
+    title: "Firesafety",
+    category: "אתר תדמית",
+    image: projectFiresafety,
     isLongScreen: true,
   },
   {
