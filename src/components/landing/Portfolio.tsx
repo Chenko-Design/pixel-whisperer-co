@@ -119,7 +119,7 @@ const Portfolio = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                    className="block w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
                   />
                   {/* Gradient overlay */}
                   <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
@@ -160,7 +160,7 @@ const Portfolio = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-auto rounded-[5px] shadow-lg transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-xl"
+                className="block w-full h-auto rounded-[5px] shadow-lg transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-xl"
               />
               <div className="mt-3 mb-14 text-center">
                 <span className="text-sm font-medium text-muted-foreground">
