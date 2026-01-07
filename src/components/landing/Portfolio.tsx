@@ -36,7 +36,7 @@ const projects: Project[] = [
     isLongScreen: true,
   },
   {
-    title: "מתכננת",
+    title: "מעיין יניב עיצוב פנים",
     category: "אתר תדמית",
     image: projectMetaknenet,
     isLongScreen: true,
