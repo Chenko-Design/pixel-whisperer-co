@@ -12,6 +12,7 @@ import projectCaptain from "@/assets/project-captain.jpg";
 import projectTerra from "@/assets/project-terra.jpg";
 import projectMetaknenet from "@/assets/project-metaknenet.jpg";
 import projectPhotography from "@/assets/project-photography.jpg";
+import projectCaptainLong from "@/assets/project-captain-long.jpg";
 
 // Get correct base path for public assets (videos, fonts, etc.)
 const getPublicAssetPath = (path: string) => {
@@ -60,6 +61,12 @@ const projects: Project[] = [
     title: "Photography",
     category: "אתר תדמית",
     image: projectPhotography,
+    isLongScreen: true,
+  },
+  {
+    title: "Captain Invest",
+    category: "דף נחיתה",
+    image: projectCaptainLong,
     isLongScreen: true,
   },
 ];
