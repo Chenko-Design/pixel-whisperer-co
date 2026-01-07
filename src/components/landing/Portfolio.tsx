@@ -53,6 +53,12 @@ const projects: Project[] = [
     image: projectCaptainLong,
     isLongScreen: true,
   },
+  {
+    title: "TopBred",
+    category: "דף נחיתה + אפליקציה",
+    image: projectTopbred,
+    isLongScreen: true,
+  },
 ];
 
 const Portfolio = () => {
