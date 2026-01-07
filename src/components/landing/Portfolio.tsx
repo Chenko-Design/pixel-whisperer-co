@@ -165,12 +165,12 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Long Screen Projects - All 3 side by side */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-16">
+        {/* Long Screen Projects - Masonry Layout */}
+        <div className="columns-1 md:columns-2 lg:columns-4 gap-4 mt-16 space-y-4">
           {projects.filter(p => p.isLongScreen).map((project) => (
             <div
               key={project.title}
-              className="group cursor-pointer transition-all duration-500 hover:scale-[1.01]"
+              className="group cursor-pointer transition-all duration-500 hover:scale-[1.01] break-inside-avoid"
               onClick={() => setSelectedProject(project)}
             >
               <img
