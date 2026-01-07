@@ -27,6 +27,7 @@ interface Project {
   image: string;
   video?: string;
   isLongScreen?: boolean;
+  matchHeight?: string;
 }
 
 const projects: Project[] = [
@@ -71,6 +72,7 @@ const projects: Project[] = [
     category: "אתר תדמית",
     image: projectFiresafety,
     isLongScreen: true,
+    matchHeight: "Ridely",
   },
 ];
 
@@ -179,7 +181,8 @@ const Portfolio = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="block w-full h-auto rounded-[5px] shadow-lg transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-xl"
+                className={`block w-full rounded-[5px] shadow-lg transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-xl ${project.matchHeight ? 'object-cover object-top' : 'h-auto'}`}
+                style={project.matchHeight ? { height: 'auto', maxHeight: '600px' } : undefined}
               />
               <div className="mt-3 mb-14 text-center">
                 <span className="text-sm font-medium text-muted-foreground">
