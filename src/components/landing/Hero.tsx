@@ -152,7 +152,7 @@ const Hero = () => {
           
           {/* Social Icons */}
           <div 
-            className="flex justify-center md:justify-end items-center gap-6 animate-fade-up md:pl-[25%]"
+            className="flex justify-center md:justify-end items-center gap-6 animate-fade-up md:pl-[32%]"
             style={{ animationDelay: "0.6s" }}
           >
             <a href="tel:0528934634" className="text-foreground hover:text-foreground/70 transition-colors">
