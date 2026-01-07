@@ -65,7 +65,7 @@ const projects: Project[] = [
   },
   {
     title: "Captain Invest",
-    category: "דף נחיתה",
+    category: "אתר תדמית",
     image: projectCaptainLong,
     isLongScreen: true,
   },
