@@ -42,7 +42,7 @@ const projects: Project[] = [
     isLongScreen: true,
   },
   {
-    title: "Photograph אייל",
+    title: "Eyal Photograph",
     category: "אתר תדמית",
     image: projectPhotography,
     isLongScreen: true,
