@@ -152,7 +152,7 @@ const Hero = () => {
           
           {/* Social Icons */}
           <div 
-            className="flex justify-center items-center gap-6 animate-fade-up"
+            className="flex justify-center md:justify-end items-center gap-6 animate-fade-up md:pl-[15%]"
             style={{ animationDelay: "0.6s" }}
           >
             <a href="tel:0528934634" className="text-foreground hover:text-foreground/70 transition-colors">
@@ -168,7 +168,7 @@ const Hero = () => {
 
           {/* Contact Info */}
           <div 
-            className="flex justify-center items-center gap-4 mt-10 animate-fade-up text-foreground text-sm md:text-base"
+            className="flex justify-center md:justify-end items-center gap-4 mt-10 animate-fade-up text-foreground text-sm md:text-base md:pl-[15%]"
             style={{ animationDelay: "0.7s" }}
           >
             <a href="tel:0528934634" className="hover:text-foreground/70 transition-colors">
