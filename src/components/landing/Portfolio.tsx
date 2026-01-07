@@ -169,7 +169,7 @@ const Portfolio = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.01]"
+                className="w-full h-auto rounded-2xl transition-transform duration-500 group-hover:scale-[1.01]"
               />
               <div className="mt-3 text-center">
                 <span className="text-sm font-medium text-muted-foreground">
