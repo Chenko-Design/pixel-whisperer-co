@@ -59,6 +59,12 @@ const projects: Project[] = [
     image: projectTopbred,
     isLongScreen: true,
   },
+  {
+    title: "Ridely",
+    category: "אפליקציה",
+    image: projectRidely,
+    isLongScreen: true,
+  },
 ];
 
 const Portfolio = () => {
