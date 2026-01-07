@@ -55,12 +55,6 @@ const projects: Project[] = [
     isLongScreen: true,
   },
   {
-    title: "Firesafety",
-    category: "אתר תדמית",
-    image: projectFiresafety,
-    isLongScreen: true,
-  },
-  {
     title: "Eyal Photograph",
     category: "אתר תדמית",
     image: projectPhotography,
@@ -70,6 +64,12 @@ const projects: Project[] = [
     title: "Captain Invest",
     category: "אתר תדמית",
     image: projectCaptainLong,
+    isLongScreen: true,
+  },
+  {
+    title: "Firesafety",
+    category: "אתר תדמית",
+    image: projectFiresafety,
     isLongScreen: true,
   },
 ];
