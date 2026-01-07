@@ -42,18 +42,6 @@ const projects: Project[] = [
     isLongScreen: true,
   },
   {
-    title: "Eyal Photograph",
-    category: "אתר תדמית",
-    image: projectPhotography,
-    isLongScreen: true,
-  },
-  {
-    title: "Captain Invest",
-    category: "אתר תדמית",
-    image: projectCaptainLong,
-    isLongScreen: true,
-  },
-  {
     title: "TopBred",
     category: "דף נחיתה + אפליקציה",
     image: projectTopbred,
@@ -63,6 +51,18 @@ const projects: Project[] = [
     title: "Ridely",
     category: "אפליקציה",
     image: projectRidely,
+    isLongScreen: true,
+  },
+  {
+    title: "Eyal Photograph",
+    category: "אתר תדמית",
+    image: projectPhotography,
+    isLongScreen: true,
+  },
+  {
+    title: "Captain Invest",
+    category: "אתר תדמית",
+    image: projectCaptainLong,
     isLongScreen: true,
   },
 ];
