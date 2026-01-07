@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Mail, MessageCircle, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
-import heroBg from "@/assets/hero-bg-waves.jpg";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   const [displayedText, setDisplayedText] = useState("");
