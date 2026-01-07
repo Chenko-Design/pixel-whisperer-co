@@ -30,22 +30,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Captain Invest",
-    category: "אתר תדמית",
-    image: projectCaptain,
-    video: "/videos/captain-invest.mp4",
-  },
-  {
-    title: "Ridely App",
-    category: "אפליקציה",
-    image: projectRidely,
-  },
-  {
-    title: "TopBred Website",
-    category: "אפליקציה + דף נחיתה",
-    image: projectTopbred,
-  },
-  {
     title: "Terra",
     category: "אתר תדמית",
     image: projectTerra,
