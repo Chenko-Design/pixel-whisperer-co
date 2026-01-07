@@ -71,7 +71,7 @@ const Hero = () => {
           }}
         />
         {/* Main content - aligned left */}
-        <div className="text-right max-w-4xl w-full mr-auto ml-0 md:ml-16 lg:ml-24" dir="rtl">
+        <div className="text-left max-w-4xl w-full ml-auto mr-0 md:mr-16 lg:mr-24" dir="rtl">
           {/* Main Heading with subtitle */}
           <div className="inline-block">
           <h1 
