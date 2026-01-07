@@ -27,7 +27,7 @@ interface Project {
   image: string;
   video?: string;
   isLongScreen?: boolean;
-  forceTall?: boolean;
+  cropToMatch?: boolean; // Crop to match standard aspect ratio like Ridely
 }
 
 const projects: Project[] = [
@@ -72,7 +72,7 @@ const projects: Project[] = [
     category: "אתר תדמית",
     image: projectFiresafety,
     isLongScreen: true,
-    forceTall: true,
+    cropToMatch: true,
   },
 ];
 
@@ -182,7 +182,7 @@ const Portfolio = () => {
                 src={project.image}
                 alt={project.title}
                 className={`block w-full rounded-[5px] shadow-lg transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-xl ${
-                  project.forceTall ? 'h-[320px] object-cover object-center' : 'h-auto'
+                  project.cropToMatch ? 'aspect-[3/4] object-cover object-top' : 'h-auto'
                 }`}
               />
               <div className="mt-3 mb-14 text-center">
