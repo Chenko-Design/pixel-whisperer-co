@@ -67,7 +67,7 @@ const Hero = () => {
         <div 
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'linear-gradient(135deg, hsla(25, 45%, 35%, 0.45) 0%, hsla(25, 40%, 30%, 0.4) 60%, hsla(220, 50%, 12%, 0.5) 100%)'
+            background: 'linear-gradient(135deg, hsla(25, 45%, 35%, 0.45) 0%, hsla(25, 40%, 30%, 0.4) 40%, hsla(220, 50%, 12%, 0.5) 100%)'
           }}
         />
         {/* Main content - centered */}
