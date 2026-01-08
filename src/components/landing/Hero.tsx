@@ -101,10 +101,7 @@ const Hero = () => {
             className="text-base md:text-lg lg:text-xl mt-2 md:mt-4 mb-6 md:mb-10 font-semibold text-white md:text-right md:pr-[22%]"
             style={{ letterSpacing: "-0.02em", textShadow: "1px 2px 4px rgba(0,0,0,0.3)" }}
           >
-            <TypewriterText 
-              text="בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה" 
-              delay={800}
-            />
+            בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
           </p>
           
           {/* 3 Feature Bullets with separators */}
