@@ -40,27 +40,27 @@ const projectsMobile: Project[] = [
     isLongScreen: true,
   },
   {
-    title: "Captain Invest",
-    category: "אתר תדמית",
-    image: projectCaptainLong,
-    isLongScreen: true,
-  },
-  {
     title: "Terra",
     category: "אתר קטלוג",
     image: projectTerra,
     isLongScreen: true,
   },
   {
-    title: "TopBred",
-    category: "דף נחיתה + אפליקציה",
-    image: projectTopbred,
-    isLongScreen: true,
-  },
-  {
     title: "Eyal Photograph",
     category: "אתר תדמית",
     image: projectPhotography,
+    isLongScreen: true,
+  },
+  {
+    title: "Captain Invest",
+    category: "אתר תדמית",
+    image: projectCaptainLong,
+    isLongScreen: true,
+  },
+  {
+    title: "TopBred",
+    category: "דף נחיתה + אפליקציה",
+    image: projectTopbred,
     isLongScreen: true,
   },
   {
