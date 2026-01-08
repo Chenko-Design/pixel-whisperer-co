@@ -23,7 +23,7 @@ const CTA = () => {
             <Button 
               variant="secondary" 
               size="xl" 
-              className={`group rounded-full py-3 px-8 bg-white text-foreground hover:bg-white/90 transition-all duration-500 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} 
+              className={`group rounded-full py-3 px-8 bg-white text-foreground shadow-lg hover:bg-white/90 hover:scale-105 hover:shadow-xl transition-all duration-500 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} 
               asChild
             >
               <a href="https://wa.me/972528934634">
