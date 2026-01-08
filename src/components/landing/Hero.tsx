@@ -3,6 +3,7 @@ import { Mail, MessageCircle, Phone } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroBgMobile from "@/assets/hero-bg-mobile.jpg";
 
 const TypewriterText = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   const [displayedText, setDisplayedText] = useState("");
@@ -57,12 +58,24 @@ const Hero = () => {
       {/* Hero Content with geometric background */}
       <div 
         className="flex-1 relative flex flex-col items-center justify-start px-6 md:px-16 pt-12 md:pt-12 pb-6 md:pb-10"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
       >
+        {/* Background images - mobile vs desktop */}
+        <div 
+          className="absolute inset-0 md:hidden"
+          style={{
+            backgroundImage: `url(${heroBgMobile})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center bottom'
+          }}
+        />
+        <div 
+          className="absolute inset-0 hidden md:block"
+          style={{
+            backgroundImage: `url(${heroBg})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center'
+          }}
+        />
         {/* Warm overlay for text readability */}
         <div 
           className="absolute inset-0 pointer-events-none"
