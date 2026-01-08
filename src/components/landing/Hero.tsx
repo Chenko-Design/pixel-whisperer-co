@@ -88,7 +88,7 @@ const Hero = () => {
           {/* Main Heading with subtitle */}
           <div className="inline-block">
           <h1 
-              className="font-matritsa text-[clamp(2.2rem,10vw,3rem)] md:text-6xl lg:text-7xl text-white mb-8 animate-fade-up"
+              className="font-matritsa text-[clamp(2.2rem,10vw,3rem)] md:text-6xl lg:text-7xl text-white mb-4 md:mb-8 animate-fade-up"
               style={{ textShadow: "2px 4px 8px rgba(0,0,0,0.15)", lineHeight: "1.3" }}
             >
               <span className="md:hidden">חולמים על אתר<br />שגורם ללקוחות להבין<br />שהם במקום הנכון?</span>
@@ -98,7 +98,7 @@ const Hero = () => {
           
           {/* Tagline with typing animation */}
           <p 
-            className="text-base md:text-lg lg:text-xl mt-2 md:mt-4 mb-6 md:mb-10 font-semibold md:text-right md:pr-[22%]"
+            className="text-base md:text-lg lg:text-xl mt-1 md:mt-4 mb-4 md:mb-10 font-semibold md:text-right md:pr-[22%]"
             style={{ color: "hsl(220, 50%, 12%)", letterSpacing: "-0.02em" }}
           >
             <TypewriterText 
@@ -109,7 +109,7 @@ const Hero = () => {
           
           {/* 3 Feature Bullets with separators */}
           <div 
-            className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 mb-14 md:mb-20 animate-fade-up md:pl-[15%]"
+            className="flex flex-wrap justify-center md:justify-end gap-4 md:gap-6 mb-10 md:mb-20 animate-fade-up md:pl-[15%]"
             style={{ animationDelay: "0.3s" }}
           >
             <span className="text-white font-medium text-sm md:text-base cursor-pointer transition-transform duration-200 hover:-translate-y-1">עיצוב שמדבר אתכם</span>
