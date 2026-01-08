@@ -31,8 +31,8 @@ interface Project {
   noDialog?: boolean; // Disable click to open dialog
 }
 
-// All views use same order, optimized for balanced columns
-const projects: Project[] = [
+// Mobile/Tablet order (1-2 columns)
+const projectsMobile: Project[] = [
   {
     title: "סטודיו MY",
     category: "אתר תדמית",
@@ -67,6 +67,55 @@ const projects: Project[] = [
     title: "Ridely",
     category: "אפליקציה",
     image: projectRidely,
+    isLongScreen: true,
+  },
+  {
+    title: "Firesafety",
+    category: "אתר תדמית",
+    image: projectFiresafety,
+    isLongScreen: true,
+    cropToMatch: true,
+    noDialog: true,
+  },
+];
+
+// Desktop order (3 columns) - Ridely and Firesafety in column 1 under סטודיו MY
+// Column 1: pos 1, 4, 7 | Column 2: pos 2, 5 | Column 3: pos 3, 6
+const projectsDesktop: Project[] = [
+  {
+    title: "סטודיו MY",
+    category: "אתר תדמית",
+    image: projectMetaknenet,
+    isLongScreen: true,
+  },
+  {
+    title: "Captain Invest",
+    category: "אתר תדמית",
+    image: projectCaptainLong,
+    isLongScreen: true,
+  },
+  {
+    title: "Terra",
+    category: "אתר קטלוג",
+    image: projectTerra,
+    isLongScreen: true,
+  },
+  {
+    title: "Ridely",
+    category: "אפליקציה",
+    image: projectRidely,
+    isLongScreen: true,
+  },
+  {
+    title: "TopBred",
+    category: "דף נחיתה + אפליקציה",
+    image: projectTopbred,
+    isLongScreen: true,
+  },
+  {
+    title: "Eyal Photograph",
+    category: "אתר תדמית",
+    image: projectPhotography,
     isLongScreen: true,
   },
   {
@@ -121,7 +170,7 @@ const Portfolio = () => {
 
         {/* Regular Projects */}
         <div className="flex flex-col gap-12 md:gap-16">
-          {projects.filter(p => !p.isLongScreen).map((project, index) => (
+          {projectsMobile.filter(p => !p.isLongScreen).map((project, index) => (
             <div
               key={project.title}
               ref={(el) => (itemRefs.current[index] = el)}
@@ -173,9 +222,36 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Long Screen Projects - Masonry Layout */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-4 mt-16 space-y-4">
-          {projects.filter(p => p.isLongScreen).map((project) => (
+        {/* Long Screen Projects - Mobile/Tablet (1-2 columns) */}
+        <div className="lg:hidden columns-1 md:columns-2 gap-4 mt-16 space-y-4">
+          {projectsMobile.filter(p => p.isLongScreen).map((project) => (
+            <div
+              key={project.title}
+              className={`group transition-all duration-500 hover:scale-[1.01] break-inside-avoid ${!project.noDialog ? 'cursor-pointer' : ''}`}
+              onClick={() => !project.noDialog && setSelectedProject(project)}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className={`block w-full rounded-[5px] shadow-lg transition-all duration-500 group-hover:scale-[1.01] group-hover:shadow-xl ${
+                  project.cropToMatch ? 'aspect-[3/2] object-cover object-center' : 'h-auto'
+                }`}
+              />
+              <div className="mt-3 mb-14 text-center">
+                <span className="text-sm font-medium text-muted-foreground">
+                  {project.category}
+                </span>
+                <h3 className="font-headline text-lg md:text-xl font-bold text-foreground">
+                  {project.title}
+                </h3>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Long Screen Projects - Desktop (3 columns) */}
+        <div className="hidden lg:block columns-3 gap-4 mt-16 space-y-4">
+          {projectsDesktop.filter(p => p.isLongScreen).map((project) => (
             <div
               key={project.title}
               className={`group transition-all duration-500 hover:scale-[1.01] break-inside-avoid ${!project.noDialog ? 'cursor-pointer' : ''}`}
