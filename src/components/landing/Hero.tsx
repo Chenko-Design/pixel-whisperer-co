@@ -190,7 +190,7 @@ const Hero = () => {
 
           {/* Contact Info - blurred strip background */}
           <div 
-            className="flex justify-center md:justify-end items-center gap-4 mt-10 animate-fade-up text-white md:text-[hsl(220,50%,12%)] text-sm md:text-base md:pr-[20%] px-6 py-3 md:px-0 md:py-0 rounded-full md:rounded-none bg-white/15 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none whitespace-nowrap"
+            className="flex justify-center md:justify-end items-center gap-4 mt-10 animate-fade-up text-white md:text-[hsl(220,50%,12%)] text-sm md:text-base md:pl-[15%] px-6 py-3 md:px-0 md:py-0 rounded-full md:rounded-none bg-white/15 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none whitespace-nowrap"
             style={{ animationDelay: "0.7s" }}
           >
             <a href="tel:0528934634" className="hover:opacity-70 transition-colors">
