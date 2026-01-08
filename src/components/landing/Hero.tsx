@@ -65,7 +65,7 @@ const Hero = () => {
           style={{
             backgroundImage: `url(${heroBgMobile})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center bottom'
+            backgroundPosition: 'center 70%'
           }}
         />
         <div 
