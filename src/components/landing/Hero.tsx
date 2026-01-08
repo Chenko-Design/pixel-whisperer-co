@@ -84,7 +84,7 @@ const Hero = () => {
           }}
         />
         {/* Main content - centered text, positioned to the left */}
-        <div className="text-center max-w-4xl w-full mr-[18%] md:mr-[22%]" dir="rtl">
+        <div className="text-center max-w-4xl w-full md:mr-[22%]" dir="rtl">
           {/* Main Heading with subtitle */}
           <div className="inline-block">
           <h1 
