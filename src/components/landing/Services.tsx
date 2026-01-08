@@ -1,4 +1,5 @@
 import { Globe, Rocket, Layout, RefreshCw } from "lucide-react";
+import { useStaggerAnimation } from "@/hooks/use-scroll-animation";
 
 const services = [
   {
@@ -28,13 +29,15 @@ const services = [
 ];
 
 const Services = () => {
+  const { ref, isVisible, getItemDelay } = useStaggerAnimation(services.length);
+
   return (
     <section className="section-padding bg-cream-dark/70 relative overflow-hidden" dir="rtl">
       {/* Decorative blob */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-[#D87341]/20 rounded-full -translate-y-1/2 -translate-x-1/2" />
       <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#F4CBB5]/30 rounded-full translate-y-1/2 translate-x-1/2" />
-      <div className="container-tight relative z-10">
-        <div className="text-center mb-16">
+      <div className="container-tight relative z-10" ref={ref}>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">מה אני מציעה</span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold">
             שירותים
@@ -45,7 +48,8 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group flex items-center gap-4 md:gap-6 p-5 md:p-8 rounded-2xl bg-card border-r-4 border-r-[#D87341] border border-border/30 hover:shadow-lg transition-all duration-300 h-[120px] md:h-auto md:min-h-[100px]"
+              className={`group flex items-center gap-4 md:gap-6 p-5 md:p-8 rounded-2xl bg-card border-r-4 border-r-[#D87341] border border-border/30 hover:shadow-lg transition-all duration-500 h-[120px] md:h-auto md:min-h-[100px] ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
+              style={getItemDelay(index)}
             >
               <div className={`w-12 h-12 md:w-16 md:h-16 ${service.accent} rounded-xl md:rounded-2xl flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                 <service.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />

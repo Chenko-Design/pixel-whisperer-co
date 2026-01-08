@@ -1,3 +1,5 @@
+import { useStaggerAnimation } from "@/hooks/use-scroll-animation";
+
 const steps = [
   {
     number: "01",
@@ -32,13 +34,15 @@ const steps = [
 ];
 
 const Process = () => {
+  const { ref, isVisible, getItemDelay } = useStaggerAnimation(steps.length);
+
   return (
     <section className="section-padding relative overflow-hidden" dir="rtl">
       {/* Background decoration */}
       <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#F4CBB5]/20 decorative-blob blur-3xl animate-morph" />
       
-      <div className="container-tight relative z-10">
-        <div className="text-center mb-16">
+      <div className="container-tight relative z-10" ref={ref}>
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">תהליך העבודה</span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             איך זה עובד?
@@ -52,7 +56,7 @@ const Process = () => {
         <div className="hidden md:block relative">
           {/* Wavy SVG Line */}
           <svg 
-            className="absolute top-1/2 right-0 w-full h-24 -translate-y-1/2 z-0" 
+            className={`absolute top-1/2 right-0 w-full h-24 -translate-y-1/2 z-0 transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}
             viewBox="0 0 1200 100" 
             preserveAspectRatio="none"
             fill="none"
@@ -63,6 +67,12 @@ const Process = () => {
               strokeWidth="3" 
               strokeLinecap="round"
               fill="none"
+              className={`transition-all duration-1000 ${isVisible ? 'stroke-dashoffset-0' : ''}`}
+              style={{
+                strokeDasharray: 1500,
+                strokeDashoffset: isVisible ? 0 : 1500,
+                transition: 'stroke-dashoffset 1.5s ease-out'
+              }}
             />
             <defs>
               <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -80,8 +90,11 @@ const Process = () => {
               return (
                 <div 
                   key={step.number} 
-                  className="flex flex-col items-center group"
-                  style={{ width: `${100 / steps.length}%` }}
+                  className={`flex flex-col items-center group transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                  style={{ 
+                    width: `${100 / steps.length}%`,
+                    transitionDelay: `${index * 150}ms`
+                  }}
                 >
                   {/* Content above or below */}
                   <div className={`flex flex-col items-center ${isTop ? 'order-1' : 'order-3'}`}>
@@ -125,7 +138,11 @@ const Process = () => {
           
           <div className="space-y-8">
             {steps.map((step, index) => (
-              <div key={step.number} className="relative flex items-start gap-6 pr-12">
+              <div 
+                key={step.number} 
+                className={`relative flex items-start gap-6 pr-12 transition-all duration-500 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}
+                style={getItemDelay(index)}
+              >
                 {/* Circle point */}
                 <div className="absolute right-4 w-5 h-5 rounded-full bg-[#D87341] border-4 border-[#F4CBB5] shadow-lg" />
                 
