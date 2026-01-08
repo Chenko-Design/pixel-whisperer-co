@@ -249,12 +249,12 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Long Screen Projects - Desktop (3 columns grid - row-based order RTL) */}
-        <div className="hidden lg:grid grid-cols-3 gap-4 mt-16" dir="rtl">
-          {projectsMobile.filter(p => p.isLongScreen).map((project) => (
+        {/* Long Screen Projects - Desktop (3 columns) */}
+        <div className="hidden lg:block columns-3 gap-4 mt-16 space-y-4">
+          {projectsDesktop.filter(p => p.isLongScreen).map((project) => (
             <div
               key={project.title}
-              className={`group transition-all duration-500 hover:scale-[1.01] ${!project.noDialog ? 'cursor-pointer' : ''}`}
+              className={`group transition-all duration-500 hover:scale-[1.01] break-inside-avoid ${!project.noDialog ? 'cursor-pointer' : ''}`}
               onClick={() => !project.noDialog && setSelectedProject(project)}
             >
               <img
