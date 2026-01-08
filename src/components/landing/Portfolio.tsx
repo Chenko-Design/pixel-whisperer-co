@@ -40,18 +40,18 @@ const projects: Project[] = [
     isLongScreen: true,
   },
   {
+    title: "Eyal Photograph",
+    category: "אתר תדמית",
+    image: projectPhotography,
+    isLongScreen: true,
+  },
+  {
     title: "Firesafety",
     category: "אתר תדמית",
     image: projectFiresafety,
     isLongScreen: true,
     cropToMatch: true,
     noDialog: true,
-  },
-  {
-    title: "Ridely",
-    category: "אפליקציה",
-    image: projectRidely,
-    isLongScreen: true,
   },
   // Column 2 - medium images
   {
@@ -68,9 +68,9 @@ const projects: Project[] = [
   },
   // Column 3 - mixed
   {
-    title: "Eyal Photograph",
-    category: "אתר תדמית",
-    image: projectPhotography,
+    title: "Ridely",
+    category: "אפליקציה",
+    image: projectRidely,
     isLongScreen: true,
   },
   {
