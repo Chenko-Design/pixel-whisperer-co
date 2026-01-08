@@ -154,7 +154,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full py-3 w-[160px] border-white text-white backdrop-blur-sm bg-white/10 hover:bg-white/20 md:bg-transparent md:backdrop-blur-none md:hover:bg-white/10"
+              className="rounded-full py-3 w-[160px] border-white text-white backdrop-blur-sm bg-white/10 hover:bg-white/20 md:bg-transparent md:backdrop-blur-none md:hover:bg-white/10 shadow-sm shadow-black/10"
               asChild
             >
               <a href="#portfolio">
