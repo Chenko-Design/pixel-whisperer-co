@@ -154,7 +154,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="rounded-full py-3 w-[160px] border-white text-white backdrop-blur-sm bg-white/10 hover:bg-white/20"
+              className="rounded-full py-3 w-[160px] border-white text-white backdrop-blur-sm bg-white/10 hover:bg-white/20 md:bg-transparent md:backdrop-blur-none md:hover:bg-white/10"
               asChild
             >
               <a href="#portfolio">
@@ -190,7 +190,7 @@ const Hero = () => {
 
           {/* Contact Info - blurred strip background */}
           <div 
-            className="inline-flex justify-center md:justify-end items-center gap-4 mt-10 animate-fade-up text-white md:text-[hsl(220,50%,12%)] text-sm md:text-base md:mr-auto md:ml-[15%] px-6 py-3 rounded-full bg-white/15 backdrop-blur-sm whitespace-nowrap"
+            className="inline-flex justify-center md:justify-start items-center gap-4 mt-10 animate-fade-up text-white md:text-[hsl(220,50%,12%)] text-sm md:text-base md:mr-auto px-6 py-3 rounded-full bg-white/15 backdrop-blur-sm whitespace-nowrap"
             style={{ animationDelay: "0.7s" }}
           >
             <a href="tel:0528934634" className="hover:opacity-70 transition-colors">
