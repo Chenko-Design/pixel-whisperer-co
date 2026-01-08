@@ -165,7 +165,7 @@ const Hero = () => {
           
           {/* Social Icons - circles with blurred background */}
           <div 
-            className="flex justify-center md:justify-end items-center gap-4 animate-fade-up md:pl-[30%]"
+            className="flex justify-center md:justify-end items-center gap-4 animate-fade-up md:pl-[20%]"
             style={{ animationDelay: "0.6s" }}
           >
             <a 
