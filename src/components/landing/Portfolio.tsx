@@ -31,72 +31,12 @@ interface Project {
   noDialog?: boolean; // Disable click to open dialog
 }
 
-// Desktop order (3 columns)
-const projectsDesktop: Project[] = [
-  {
-    title: "Terra",
-    category: "אתר קטלוג",
-    image: projectTerra,
-    isLongScreen: true,
-  },
-  {
-    title: "Eyal Photograph",
-    category: "אתר תדמית",
-    image: projectPhotography,
-    isLongScreen: true,
-  },
-  {
-    title: "Firesafety",
-    category: "אתר תדמית",
-    image: projectFiresafety,
-    isLongScreen: true,
-    cropToMatch: true,
-    noDialog: true,
-  },
+// All views use same order, optimized for balanced columns
+const projects: Project[] = [
   {
     title: "סטודיו MY",
     category: "אתר תדמית",
     image: projectMetaknenet,
-    isLongScreen: true,
-  },
-  {
-    title: "TopBred",
-    category: "דף נחיתה + אפליקציה",
-    image: projectTopbred,
-    isLongScreen: true,
-  },
-  {
-    title: "Ridely",
-    category: "אפליקציה",
-    image: projectRidely,
-    isLongScreen: true,
-  },
-  {
-    title: "Captain Invest",
-    category: "אתר תדמית",
-    image: projectCaptainLong,
-    isLongScreen: true,
-  },
-];
-
-// Mobile order (1 column)
-const projectsMobile: Project[] = [
-  {
-    title: "סטודיו MY",
-    category: "אתר תדמית",
-    image: projectMetaknenet,
-    isLongScreen: true,
-  },
-  {
-    title: "Terra",
-    category: "אתר קטלוג",
-    image: projectTerra,
-    isLongScreen: true,
-  },
-  {
-    title: "Eyal Photograph",
-    category: "אתר תדמית",
-    image: projectPhotography,
     isLongScreen: true,
   },
   {
@@ -106,9 +46,21 @@ const projectsMobile: Project[] = [
     isLongScreen: true,
   },
   {
+    title: "Terra",
+    category: "אתר קטלוג",
+    image: projectTerra,
+    isLongScreen: true,
+  },
+  {
     title: "TopBred",
     category: "דף נחיתה + אפליקציה",
     image: projectTopbred,
+    isLongScreen: true,
+  },
+  {
+    title: "Eyal Photograph",
+    category: "אתר תדמית",
+    image: projectPhotography,
     isLongScreen: true,
   },
   {
@@ -169,7 +121,7 @@ const Portfolio = () => {
 
         {/* Regular Projects */}
         <div className="flex flex-col gap-12 md:gap-16">
-          {projectsDesktop.filter(p => !p.isLongScreen).map((project, index) => (
+          {projects.filter(p => !p.isLongScreen).map((project, index) => (
             <div
               key={project.title}
               ref={(el) => (itemRefs.current[index] = el)}
@@ -221,9 +173,9 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Long Screen Projects - Masonry Layout - Desktop */}
-        <div className="hidden md:block columns-2 lg:columns-3 gap-4 mt-16 space-y-4">
-          {projectsDesktop.filter(p => p.isLongScreen).map((project) => (
+        {/* Long Screen Projects - Masonry Layout */}
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-4 mt-16 space-y-4">
+          {projects.filter(p => p.isLongScreen).map((project) => (
             <div
               key={project.title}
               className={`group transition-all duration-500 hover:scale-[1.01] break-inside-avoid ${!project.noDialog ? 'cursor-pointer' : ''}`}
@@ -241,33 +193,6 @@ const Portfolio = () => {
                   {project.category}
                 </span>
                 <h3 className="font-headline text-lg md:text-xl font-bold text-foreground">
-                  {project.title}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Long Screen Projects - Mobile */}
-        <div className="md:hidden flex flex-col gap-4 mt-16">
-          {projectsMobile.filter(p => p.isLongScreen).map((project) => (
-            <div
-              key={project.title}
-              className={`group transition-all duration-500 ${!project.noDialog ? 'cursor-pointer' : ''}`}
-              onClick={() => !project.noDialog && setSelectedProject(project)}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className={`block w-full rounded-[5px] shadow-lg ${
-                  project.cropToMatch ? 'aspect-[3/2] object-cover object-center' : 'h-auto'
-                }`}
-              />
-              <div className="mt-3 mb-14 text-center">
-                <span className="text-sm font-medium text-muted-foreground">
-                  {project.category}
-                </span>
-                <h3 className="font-headline text-lg font-bold text-foreground">
                   {project.title}
                 </h3>
               </div>
