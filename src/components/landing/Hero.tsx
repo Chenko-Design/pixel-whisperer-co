@@ -98,8 +98,8 @@ const Hero = () => {
           
           {/* Tagline with typing animation */}
           <p 
-            className="text-base md:text-lg lg:text-xl mt-2 md:mt-4 mb-6 md:mb-10 font-semibold md:text-right md:pr-[22%]"
-            style={{ color: "hsl(220, 50%, 12%)", letterSpacing: "-0.02em" }}
+            className="text-base md:text-lg lg:text-xl mt-2 md:mt-4 mb-6 md:mb-10 font-semibold text-white md:text-[hsl(220,50%,12%)] md:text-right md:pr-[22%]"
+            style={{ letterSpacing: "-0.02em" }}
           >
             <TypewriterText 
               text="בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה" 
