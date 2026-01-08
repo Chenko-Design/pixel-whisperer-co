@@ -79,13 +79,18 @@ const projectsMobile: Project[] = [
   },
 ];
 
-// Desktop order (3 columns) - Eyal Photograph in column 1 under סטודיו MY
-// Column 1: pos 1, 4, 7 | Column 2: pos 2, 5 | Column 3: pos 3, 6
+// Desktop order (3 columns) - Eyal Photograph directly after סטודיו MY to keep them in same column
 const projectsDesktop: Project[] = [
   {
     title: "סטודיו MY",
     category: "אתר תדמית",
     image: projectMetaknenet,
+    isLongScreen: true,
+  },
+  {
+    title: "Eyal Photograph",
+    category: "אתר תדמית",
+    image: projectPhotography,
     isLongScreen: true,
   },
   {
@@ -98,12 +103,6 @@ const projectsDesktop: Project[] = [
     title: "Terra",
     category: "אתר קטלוג",
     image: projectTerra,
-    isLongScreen: true,
-  },
-  {
-    title: "Eyal Photograph",
-    category: "אתר תדמית",
-    image: projectPhotography,
     isLongScreen: true,
   },
   {
