@@ -57,7 +57,7 @@ const Hero = () => {
 
       {/* Hero Content with geometric background */}
       <div 
-        className="flex-1 relative flex flex-col items-center justify-start px-6 md:px-16 pt-12 md:pt-12 pb-6 md:pb-10"
+        className="flex-1 relative flex flex-col items-center justify-start px-6 md:px-16 pt-6 md:pt-12 pb-6 md:pb-10"
       >
         {/* Background images - mobile vs desktop */}
         <div 
