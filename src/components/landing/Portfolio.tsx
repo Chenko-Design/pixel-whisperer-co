@@ -34,7 +34,7 @@ interface Project {
 const projects: Project[] = [
   // Column 1 - tall images
   {
-    title: "Terra סטודיו לקרמיקה",
+    title: "Terra",
     category: "אתר קטלוג",
     image: projectTerra,
     isLongScreen: true,
