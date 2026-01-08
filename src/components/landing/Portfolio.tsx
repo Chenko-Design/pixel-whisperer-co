@@ -47,7 +47,7 @@ const projects: Project[] = [
   },
   // Column 2 - medium images
   {
-    title: "מעיין יניב עיצוב פנים",
+    title: "סטודיו MY",
     category: "אתר תדמית",
     image: projectMetaknenet,
     isLongScreen: true,
