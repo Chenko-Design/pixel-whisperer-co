@@ -8,10 +8,10 @@ const CTA = () => {
   return (
     <section className="section-padding" dir="rtl">
       <div className="container-tight" ref={ref}>
-        <div className={`bg-gradient-to-br from-[#F4CBB5] to-[#E8B59A] text-foreground rounded-3xl p-10 md:p-16 text-center relative overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}>
+        <div className={`bg-gradient-to-b from-[#D5C8BE] to-[#C9BAB0] text-foreground rounded-3xl p-10 md:p-16 text-center relative overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}>
           {/* Decorative elements with blur */}
-          <div className="absolute top-0 right-0 w-72 h-72 bg-[#D87341]/20 blur-3xl -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-56 h-56 bg-white/30 blur-2xl translate-y-1/2 -translate-x-1/2" />
+          <div className="absolute top-0 right-0 w-72 h-72 bg-[#B8A99E]/30 blur-3xl -translate-y-1/2 translate-x-1/2" />
+          <div className="absolute bottom-0 left-0 w-56 h-56 bg-white/20 blur-2xl translate-y-1/2 -translate-x-1/2" />
           
           <div className="relative z-10">
             <h2 className={`font-headline text-2xl md:text-3xl lg:text-4xl font-bold mb-4 transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
