@@ -1,4 +1,5 @@
 import { useStaggerAnimation } from "@/hooks/use-scroll-animation";
+import { useParallax } from "@/hooks/use-parallax";
 
 const steps = [
   {
@@ -35,11 +36,20 @@ const steps = [
 
 const Process = () => {
   const { ref, isVisible, getItemDelay } = useStaggerAnimation(steps.length);
+  const parallaxSlow = useParallax(0.1);
+  const parallaxFast = useParallax(-0.15);
 
   return (
     <section className="section-padding relative overflow-hidden" dir="rtl">
-      {/* Background decoration */}
-      <div className="absolute bottom-20 right-10 w-80 h-80 bg-[#F4CBB5]/20 decorative-blob blur-3xl animate-morph" />
+      {/* Background decoration with parallax */}
+      <div 
+        className="absolute bottom-20 right-10 w-80 h-80 bg-[#F4CBB5]/20 decorative-blob blur-3xl animate-morph"
+        style={parallaxSlow}
+      />
+      <div 
+        className="absolute top-40 left-20 w-56 h-56 bg-[#D87341]/10 rounded-full blur-2xl"
+        style={parallaxFast}
+      />
       
       <div className="container-tight relative z-10" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
