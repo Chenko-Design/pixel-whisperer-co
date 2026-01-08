@@ -36,13 +36,13 @@ const Services = () => {
 
   return (
     <section className="section-padding bg-cream-dark/70 relative overflow-hidden" dir="rtl">
-      {/* Decorative blob with parallax */}
+      {/* Decorative blob with parallax - subtle like Value Proposition */}
       <div 
-        className="absolute top-0 left-0 w-64 h-64 bg-[#D87341]/20 rounded-full -translate-y-1/2 -translate-x-1/2"
+        className="absolute top-0 left-0 w-72 h-72 bg-[#D87341]/15 decorative-blob blur-3xl"
         style={parallaxSlow}
       />
       <div 
-        className="absolute bottom-0 right-0 w-48 h-48 bg-[#F4CBB5]/30 rounded-full translate-y-1/2 translate-x-1/2"
+        className="absolute bottom-0 right-0 w-56 h-56 bg-[#F4CBB5]/20 blur-2xl"
         style={parallaxFast}
       />
       <div className="container-tight relative z-10" ref={ref}>
