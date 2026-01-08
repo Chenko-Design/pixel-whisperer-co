@@ -98,12 +98,10 @@ const Hero = () => {
           
           {/* Tagline with typing animation */}
           <p 
-            className="text-base md:text-lg lg:text-xl mt-2 md:mt-4 mb-6 md:mb-10 font-semibold text-white md:text-right md:pr-[22%]"
-            style={{ letterSpacing: "-0.02em", textShadow: "1px 2px 4px rgba(0,0,0,0.3)" }}
+            className="text-base md:text-lg lg:text-xl mt-2 md:mt-4 mb-6 md:mb-10 font-semibold md:text-right md:pr-[22%]"
+            style={{ color: "hsl(220, 50%, 12%)", letterSpacing: "-0.02em" }}
           >
-            <span className="inline-block px-4 py-2 rounded-full bg-foreground/20">
-              בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
-            </span>
+            בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
           </p>
           
           {/* 3 Feature Bullets with separators */}
