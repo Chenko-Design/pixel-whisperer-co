@@ -8,7 +8,7 @@ const CTA = () => {
   return (
     <section className="section-padding" dir="rtl">
       <div className="container-tight" ref={ref}>
-        <div className={`bg-gradient-to-br from-[#D87341] to-[#C4652F] text-white rounded-3xl p-10 md:p-16 text-center relative overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}>
+        <div className={`bg-gradient-to-br from-[hsl(220,50%,12%)] to-[hsl(220,50%,18%)] text-white rounded-3xl p-10 md:p-16 text-center relative overflow-hidden transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'}`}>
           {/* Decorative elements with blur */}
           <div className="absolute top-0 right-0 w-72 h-72 bg-white/25 blur-3xl -translate-y-1/2 translate-x-1/2" />
           <div className="absolute bottom-0 left-0 w-56 h-56 bg-white/20 blur-2xl translate-y-1/2 -translate-x-1/2" />
@@ -23,7 +23,7 @@ const CTA = () => {
             <Button 
               variant="secondary" 
               size="xl" 
-              className={`group rounded-full py-3 px-8 bg-white text-[#D87341] hover:bg-white/90 transition-all duration-500 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} 
+              className={`group rounded-full py-3 px-8 bg-white text-foreground hover:bg-white/90 transition-all duration-500 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} 
               asChild
             >
               <a href="https://wa.me/972528934634">
