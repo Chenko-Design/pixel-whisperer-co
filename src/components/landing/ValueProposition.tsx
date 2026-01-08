@@ -7,6 +7,7 @@ import digitalArtAnimation from "@/assets/digital-art-animation.json";
 import careerAnimation from "@/assets/career-animation.json";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useStaggerAnimation } from "@/hooks/use-scroll-animation";
+import { useParallax } from "@/hooks/use-parallax";
 
 const iconColor = "from-[#D87341] to-[#E8956A]";
 
@@ -74,11 +75,20 @@ const ValueProposition = () => {
   const isMobile = useIsMobile();
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const { ref, isVisible, getItemDelay } = useStaggerAnimation(values.length);
+  const parallaxSlow = useParallax(0.15);
+  const parallaxFast = useParallax(-0.1);
 
   return (
     <section className="section-padding relative overflow-hidden" dir="rtl">
-      {/* Background decoration */}
-      <div className="absolute top-20 left-10 w-64 h-64 bg-[#F4CBB5]/30 decorative-blob blur-3xl animate-morph" />
+      {/* Background decoration with parallax */}
+      <div 
+        className="absolute top-20 left-10 w-64 h-64 bg-[#F4CBB5]/30 decorative-blob blur-3xl animate-morph"
+        style={parallaxSlow}
+      />
+      <div 
+        className="absolute bottom-40 right-20 w-48 h-48 bg-[#D87341]/15 rounded-full blur-2xl"
+        style={parallaxFast}
+      />
       
       <div className="container-tight relative z-10" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

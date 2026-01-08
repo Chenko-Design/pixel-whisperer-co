@@ -1,5 +1,6 @@
 import { Globe, Rocket, Layout, RefreshCw } from "lucide-react";
 import { useStaggerAnimation } from "@/hooks/use-scroll-animation";
+import { useParallax } from "@/hooks/use-parallax";
 
 const services = [
   {
@@ -30,12 +31,20 @@ const services = [
 
 const Services = () => {
   const { ref, isVisible, getItemDelay } = useStaggerAnimation(services.length);
+  const parallaxSlow = useParallax(0.12);
+  const parallaxFast = useParallax(-0.08);
 
   return (
     <section className="section-padding bg-cream-dark/70 relative overflow-hidden" dir="rtl">
-      {/* Decorative blob */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-[#D87341]/20 rounded-full -translate-y-1/2 -translate-x-1/2" />
-      <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#F4CBB5]/30 rounded-full translate-y-1/2 translate-x-1/2" />
+      {/* Decorative blob with parallax */}
+      <div 
+        className="absolute top-0 left-0 w-64 h-64 bg-[#D87341]/20 rounded-full -translate-y-1/2 -translate-x-1/2"
+        style={parallaxSlow}
+      />
+      <div 
+        className="absolute bottom-0 right-0 w-48 h-48 bg-[#F4CBB5]/30 rounded-full translate-y-1/2 translate-x-1/2"
+        style={parallaxFast}
+      />
       <div className="container-tight relative z-10" ref={ref}>
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">מה אני מציעה</span>
