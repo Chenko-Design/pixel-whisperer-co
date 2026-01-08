@@ -170,19 +170,19 @@ const Hero = () => {
           >
             <a 
               href="tel:0528934634" 
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/25 transition-all"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white md:text-[hsl(220,50%,12%)] hover:bg-white/25 transition-all"
             >
               <Phone className="h-5 w-5 md:h-6 md:w-6" />
             </a>
             <a 
               href="https://wa.me/972528934634" 
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/25 transition-all"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white md:text-[hsl(220,50%,12%)] hover:bg-white/25 transition-all"
             >
               <MessageCircle className="h-5 w-5 md:h-6 md:w-6" />
             </a>
             <a 
               href="mailto:chen.shraga@gmail.com" 
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/25 transition-all"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center text-white md:text-[hsl(220,50%,12%)] hover:bg-white/25 transition-all"
             >
               <Mail className="h-5 w-5 md:h-6 md:w-6" />
             </a>
@@ -190,17 +190,17 @@ const Hero = () => {
 
           {/* Contact Info - blurred strip background */}
           <div 
-            className="inline-flex justify-center md:justify-end items-center gap-4 mt-10 animate-fade-up text-white text-sm md:text-base md:mr-auto md:ml-[15%] px-6 py-3 rounded-full bg-white/15 backdrop-blur-sm whitespace-nowrap"
+            className="inline-flex justify-center md:justify-end items-center gap-4 mt-10 animate-fade-up text-white md:text-[hsl(220,50%,12%)] text-sm md:text-base md:mr-auto md:ml-[15%] px-6 py-3 rounded-full bg-white/15 backdrop-blur-sm whitespace-nowrap"
             style={{ animationDelay: "0.7s" }}
           >
-            <a href="tel:0528934634" className="hover:text-white/70 transition-colors">
+            <a href="tel:0528934634" className="hover:opacity-70 transition-colors">
               052-8934634
             </a>
             <div className="flex gap-1.5">
-              <div className="w-[2px] h-5 bg-white/60 rounded-full" />
-              <div className="w-[2px] h-5 bg-white/60 rounded-full" />
+              <div className="w-[2px] h-5 bg-white/60 md:bg-[hsl(220,50%,12%)]/40 rounded-full" />
+              <div className="w-[2px] h-5 bg-white/60 md:bg-[hsl(220,50%,12%)]/40 rounded-full" />
             </div>
-            <a href="mailto:chen.shraga@gmail.com" className="hover:text-white/70 transition-colors">
+            <a href="mailto:chen.shraga@gmail.com" className="hover:opacity-70 transition-colors">
               chen.shraga@gmail.com
             </a>
           </div>
