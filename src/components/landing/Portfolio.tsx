@@ -40,6 +40,14 @@ const projects: Project[] = [
     isLongScreen: true,
   },
   {
+    title: "Firesafety",
+    category: "אתר תדמית",
+    image: projectFiresafety,
+    isLongScreen: true,
+    cropToMatch: true,
+    noDialog: true,
+  },
+  {
     title: "Ridely",
     category: "אפליקציה",
     image: projectRidely,
@@ -70,14 +78,6 @@ const projects: Project[] = [
     category: "אתר תדמית",
     image: projectCaptainLong,
     isLongScreen: true,
-  },
-  {
-    title: "Firesafety",
-    category: "אתר תדמית",
-    image: projectFiresafety,
-    isLongScreen: true,
-    cropToMatch: true,
-    noDialog: true,
   },
 ];
 
