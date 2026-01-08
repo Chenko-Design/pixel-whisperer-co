@@ -160,7 +160,7 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="section-padding bg-cream-dark/70" dir="rtl">
       <div className="container-tight">
-        <div className="text-center mb-8 md:mb-16">
+        <div className="text-center mb-4 md:mb-16">
           <span className="inline-block text-accent font-semibold text-sm tracking-wide mb-3">פורטפוליו</span>
           <h2 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold">
             עבודות נבחרות
