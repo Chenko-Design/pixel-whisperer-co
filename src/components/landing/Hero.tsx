@@ -84,7 +84,7 @@ const Hero = () => {
           }}
         />
         {/* Main content - centered text, positioned to the left */}
-        <div className="text-center max-w-4xl w-full md:mr-[22%]" dir="rtl">
+        <div className="relative z-10 text-center max-w-4xl w-full md:mr-[22%]" dir="rtl">
           {/* Main Heading with subtitle */}
           <div className="inline-block">
           <h1 
@@ -101,7 +101,9 @@ const Hero = () => {
             className="text-base md:text-lg lg:text-xl mt-2 md:mt-4 mb-6 md:mb-10 font-semibold text-white md:text-right md:pr-[22%]"
             style={{ letterSpacing: "-0.02em", textShadow: "1px 2px 4px rgba(0,0,0,0.3)" }}
           >
-            בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
+            <span className="inline-block px-4 py-2 rounded-full bg-foreground/20">
+              בנייה ועיצוב אתרים נקיים, חכמים ומדויקים שמניעים את העסק שלך קדימה
+            </span>
           </p>
           
           {/* 3 Feature Bullets with separators */}
