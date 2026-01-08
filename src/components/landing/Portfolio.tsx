@@ -79,7 +79,7 @@ const projectsMobile: Project[] = [
   },
 ];
 
-// Desktop order (3 columns) - Ridely and Firesafety in column 1 under סטודיו MY
+// Desktop order (3 columns) - Eyal Photograph in column 1 under סטודיו MY
 // Column 1: pos 1, 4, 7 | Column 2: pos 2, 5 | Column 3: pos 3, 6
 const projectsDesktop: Project[] = [
   {
@@ -101,9 +101,9 @@ const projectsDesktop: Project[] = [
     isLongScreen: true,
   },
   {
-    title: "Ridely",
-    category: "אפליקציה",
-    image: projectRidely,
+    title: "Eyal Photograph",
+    category: "אתר תדמית",
+    image: projectPhotography,
     isLongScreen: true,
   },
   {
@@ -113,9 +113,9 @@ const projectsDesktop: Project[] = [
     isLongScreen: true,
   },
   {
-    title: "Eyal Photograph",
-    category: "אתר תדמית",
-    image: projectPhotography,
+    title: "Ridely",
+    category: "אפליקציה",
+    image: projectRidely,
     isLongScreen: true,
   },
   {
