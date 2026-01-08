@@ -17,7 +17,7 @@ const CTA = () => {
             <h2 className={`font-headline text-2xl md:text-3xl lg:text-4xl font-bold mb-4 transition-all duration-500 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               רוצה אתר או דף נחיתה שמרגיש נכון לעסק שלך?
             </h2>
-            <p className={`text-white text-lg mb-8 max-w-xl mx-auto transition-all duration-500 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <p className={`text-foreground text-lg mb-8 max-w-xl mx-auto transition-all duration-500 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               אני כאן כדי לבנות לך חוויה מקצועית, נקייה ומדויקת באווירה רגועה ונעימה.
             </p>
             <Button 
